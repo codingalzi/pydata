@@ -1,3 +1,5 @@
 # 파이썬 데이터분석
 
 강의노트입니다.
+
+python data analysis
