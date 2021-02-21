@@ -10,8 +10,7 @@
 ### 목차
 
 1. 강의소개 &nbsp;
-    [[html]](./slides/handson-ml2-01.slides.html)
-    [[pdf]](./slides/handson-ml2-01-slides.pdf)
+    [[html]](./notebooks/pydata01-intro.html)
 1. ...
 
 *주의: HTML을 이용하여 슬라이드를 사용할 경우 전진과 후진을 `space`와 `shift+space` 키를 활용할 것.*
@@ -31,7 +30,7 @@
 추천 활용법: [GitHub:python-data-analysis](https://github.com/codingalzi/python-data-analysis)를 복제한 후에 
 아나콘다의 주피터 노트북 활용.
 
-* 참조: [오프라인 프로그래밍 환경설정: 아나콘다 소개](./notebooks/pydata_intro.html)
+* 참조: [오프라인 프로그래밍 환경설정: 아나콘다 소개](./notebooks/pydata01-intro.html)
 ---
 
 #### 깃허브 마크다운 사용법 
