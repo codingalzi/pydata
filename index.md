@@ -1,4 +1,4 @@
-# 파이썬 데이터분석
+# Python Data Analysis
 
 강의노트입니다.
 
