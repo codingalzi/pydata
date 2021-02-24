@@ -27,7 +27,7 @@
 
 #### 오프라인
 
-추천 활용법: [<img src="view-on-github.png" alt="View On GitHub" style="width:20px;"/>](https://github.com/codingalzi/python-data-analysis)를 
+추천 활용법: [<img src="view-on-github.png" alt="View On GitHub"/>](https://github.com/codingalzi/python-data-analysis)를 
 복제한 후에 아나콘다의 주피터 노트북 활용.
 
 * 참조: [오프라인 프로그래밍 환경설정: 아나콘다 소개](./notebooks/pydata01-intro.html)
