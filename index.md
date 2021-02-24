@@ -1,4 +1,4 @@
-[__파이썬 러리브러리를 활용한 데이터분석__(2판)](https://m.hanbit.co.kr/store/books/book_view.html?p_code=B6417848794#)의
+[__파이썬 라이브러리를 활용한 데이터 분석__(2판)](https://m.hanbit.co.kr/store/books/book_view.html?p_code=B6417848794#)의
 [소스코드](https://github.com/wesm/pydata-book)를 담고 있는 주피터 노트북을 바탕으로 파이썬 데이터 분석 기초 강의노트 모음집을 제공합니다.
 
 ### 목차
@@ -28,11 +28,5 @@
 
 ### 감사의 글
 
-책의 [소스코드](https://github.com/wesm/pydata-book)를 
-공개한 저자 웨스 맥키니에게 진심어린 감사를 전합니다.
-
----
-
-### 깃허브 마크다운 사용법 
-
-깃허브에서 사용되는 마크다운에 자세한 안내는 [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/) 참조.
+<파이썬 라이브러리를 활용한 데이터 분석> 책의 소스코드를 
+공개한 저자 웨스 맥키니(Wes McKinney)에게 진심어린 감사를 전합니다.
