@@ -1,6 +1,5 @@
-웨스 맥키니(Wes McKinney)의 
-[__파이썬 러리브러리를 활용한 데이터분석__(2판)](https://m.hanbit.co.kr/store/books/book_view.html?p_code=B6417848794#)의 
-주피터 노트북과 강의 슬라이드 제공
+[__파이썬 러리브러리를 활용한 데이터분석__(2판)](https://m.hanbit.co.kr/store/books/book_view.html?p_code=B6417848794#)의
+소스코드를 담고 있는 주피터 노트북을 
 
 #### 감사의 글
 
@@ -20,7 +19,7 @@
 #### 온라인
 
 추천 활용법: [구글 코랩 활용 ](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/)
-<a href="https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>
 
 * 주의: 온라인 상에서 작업한 내용은 저장되지 않으며, 따라서 먼저 자신의 계정으로 사본을 만들어야 함.
 * [구글 코랩 사용법 안내 동영상](https://www.youtube.com/watch?v=Jb_n90gHdP0) 참조
