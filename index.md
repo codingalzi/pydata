@@ -19,14 +19,14 @@
 #### 온라인
 
 추천 활용법: [구글 코랩 활용 ](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/)
-<a href="https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>
+<a href="https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 * 주의: 온라인 상에서 작업한 내용은 저장되지 않으며, 따라서 먼저 자신의 계정으로 사본을 만들어야 함.
 * [구글 코랩 사용법 안내 동영상](https://www.youtube.com/watch?v=Jb_n90gHdP0) 참조
 
 #### 오프라인
 
-추천 활용법: [<img src="view-on-github.png" alt="View On GitHub" style="height:20px;vertical-align:middle;"/>](https://github.com/codingalzi/python-data-analysis) 를 
+추천 활용법: [<img src="view-on-github.png" alt="View On GitHub" style="height:30px;"/>](https://github.com/codingalzi/python-data-analysis) 를 
 복제한 후에 아나콘다의 주피터 노트북 활용.
 
 * 참조: [오프라인 프로그래밍 환경설정: 아나콘다 소개](./notebooks/pydata01-intro.html)
