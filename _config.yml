@@ -3,4 +3,4 @@ title: 파이썬 데이터분석
 description: 파이썬 데이터분석에 필요한 기초 지식 제공
 show_downloads: false
 github:
-  is_project_page: true
+  is_project_page: false
