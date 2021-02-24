@@ -25,7 +25,7 @@
 
 ### 오프라인
 
-추천 활용법: [강의 주피터 노트북 리포지토리](https://github.com/codingalzi/python-data-analysis)
+추천 활용법: [ 리포지토리](https://github.com/codingalzi/python-data-analysis)
 [<img src="view-on-github.png" alt="View On GitHub" style="height:25px;"/>](https://github.com/codingalzi/python-data-analysis) 를 
 복제한 후에 아나콘다의 주피터 노트북 활용.
 
