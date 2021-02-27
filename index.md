@@ -15,6 +15,10 @@
 
 ### 프로그래밍 환경
 
+아래에서 소개하는 온라인 또는 오프라인 환경설정을 선택해서 사용할 수 있습니다. 
+온라인 활용법은 아무런 설치과정 없이 바로 실습할 수 있는 환경을,
+반면에 오프라인 환경설정은 조금 익숙해지면 보다 편리하며 개별화된 프로그래밍 환경을 제공합니다. 
+
 #### 온라인
 
 추천 활용법: [구글 코랩 활용 ](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/)
@@ -29,4 +33,4 @@
 [<img src="view-on-github.png" alt="View On GitHub" style="height:25px;"/>](https://github.com/codingalzi/python-data-analysis) 를 
 복제한 후에 아나콘다의 주피터 노트북 활용.
 
-* 참조: [오프라인 프로그래밍 환경설정: 아나콘다 소개](./notebooks/pydata01-intro.html)
+* [아나콘다 프로그래밍 환경설정 안내](./INSTALL.md) 참조
