@@ -33,4 +33,4 @@
 [<img src="view-on-github.png" alt="View On GitHub" style="height:25px;"/>](https://github.com/codingalzi/python-data-analysis) 를 
 복제한 후에 아나콘다의 주피터 노트북 활용.
 
-* [아나콘다 프로그래밍 환경설정 안내](./INSTALL.md) 참조
+* [오프라인 프로그래밍 환경설정 안내](./INSTALL.md) 참조

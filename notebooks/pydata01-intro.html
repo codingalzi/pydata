@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>GongSu02_Anaconda</title>
+<title>pydata01-intro</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13077,17 +13077,19 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="&#50500;&#45208;&#53080;&#45796;(Anaconda)-&#49548;&#44060;">&#50500;&#45208;&#53080;&#45796;(Anaconda) &#49548;&#44060;<a class="anchor-link" href="#&#50500;&#45208;&#53080;&#45796;(Anaconda)-&#49548;&#44060;">&#182;</a></h1>
+<h1 id="&#44053;&#51032;-&#49548;&#44060;">&#44053;&#51032; &#49548;&#44060;<a class="anchor-link" href="#&#44053;&#51032;-&#49548;&#44060;">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>안내:</strong>
-여기서는 오프라인 개발환경을 준비하는 방법을 설명한다.
-하지만 개발환경 설정이 조금 어렵게 다가오는 경우 온라인 개발환경인 
-<a href="https://colab.research.google.com/">구글 코랩</a> 사용을 추천한다.</p>
+<p>머신러닝/딥러닝 기술이 획기적으로 발전하면서 데이터 분석 및 인공지능 관련 연구의 
+중요성이 사회, 경제, 산업의 거의 모든 분야에 지대한 영향을 미치고 있으며,
+앞으로 그런 경향이 더욱 강화될 것으로 기대된다.</p>
+<p>본 강의는 데이터 분석의 기본 아이디어와 다양한 활용법을 실전 예제와 
+함께 전달한다. 
+여기서 다루는 내용은 또한 머신러닝/딥러닝 학습을 위한 기초 지식으로 활용된다.</p>
 
 </div>
 </div>
@@ -13095,10 +13097,20 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#50500;&#45208;&#53080;&#45796;-&#54056;&#53412;&#51648;-&#49548;&#44060;">&#50500;&#45208;&#53080;&#45796; &#54056;&#53412;&#51648; &#49548;&#44060;<a class="anchor-link" href="#&#50500;&#45208;&#53080;&#45796;-&#54056;&#53412;&#51648;-&#49548;&#44060;">&#182;</a></h2><ul>
-<li>파이썬 프로그래밍 언어 개발환경 </li>
-<li>파이썬 기본 패키지 이외에 데이터분석용 필수 패키지 포함 </li>
-<li>파이썬 데이터분석, 머신러닝, 딥러닝 등에 가장 많이 활용되는 패키지 제공</li>
+<h2 id="&#45936;&#51060;&#53552;-&#44284;&#54617;&#44284;-&#54028;&#51060;&#50028;-&#45936;&#51060;&#53552;-&#48516;&#49437;">&#45936;&#51060;&#53552; &#44284;&#54617;&#44284; &#54028;&#51060;&#50028; &#45936;&#51060;&#53552; &#48516;&#49437;<a class="anchor-link" href="#&#45936;&#51060;&#53552;-&#44284;&#54617;&#44284;-&#54028;&#51060;&#50028;-&#45936;&#51060;&#53552;-&#48516;&#49437;">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>데이터 과학이란 <strong>주어진 데이터로부터 수학과 통계 지식을 활용하여 필요한 정보를 추출하는 학문 분야</strong>이다.
+반면에 파이썬 데이터 분석은 <strong>데이터 과학의 주요 연구 도구</strong>이다.</p>
+<p>파이썬 데이터 분석 학습을 위해 아래 분야의 기초지식이 요구되지만
+미적분학, 선형대수, 확률과통계 관련 이론은 여기서는 필요한 최소의 내용만 다룬다.</p>
+<ul>
+<li>파이썬 프로그래밍</li>
+<li>미적분학, 선형대수, 확률과통계</li>
 </ul>
 
 </div>
@@ -13107,28 +13119,161 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#50500;&#45208;&#53080;&#45796;-&#54056;&#53412;&#51648;-&#45796;&#50868;&#47196;&#46300;-&#48143;-&#49444;&#52824;">&#50500;&#45208;&#53080;&#45796; &#54056;&#53412;&#51648; &#45796;&#50868;&#47196;&#46300; &#48143; &#49444;&#52824;<a class="anchor-link" href="#&#50500;&#45208;&#53080;&#45796;-&#54056;&#53412;&#51648;-&#45796;&#50868;&#47196;&#46300;-&#48143;-&#49444;&#52824;">&#182;</a></h2><p>아나콘다 패키지를 다운로드 하려면 아래 사이트를 방문한다</p>
-<p><a href="https://www.anaconda.com/download/">https://www.anaconda.com/download/</a></p>
-<p><strong>파이썬3</strong> 최신 버전을 지원하는 설치파일을 다운로드한 후 실행하여 설치한다.</p>
-
+<h2 id="&#45936;&#51060;&#53552;-&#44284;&#54617;,-&#51064;&#44277;&#51648;&#45733;,-&#47672;&#49888;&#47084;&#45789;,-&#46373;&#47084;&#45789;">&#45936;&#51060;&#53552; &#44284;&#54617;, &#51064;&#44277;&#51648;&#45733;, &#47672;&#49888;&#47084;&#45789;, &#46373;&#47084;&#45789;<a class="anchor-link" href="#&#45936;&#51060;&#53552;-&#44284;&#54617;,-&#51064;&#44277;&#51648;&#45733;,-&#47672;&#49888;&#47084;&#45789;,-&#46373;&#47084;&#45789;">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#51452;&#54588;&#53552;-&#45432;&#53944;&#48513;-&#54876;&#50857;">&#51452;&#54588;&#53552; &#45432;&#53944;&#48513; &#54876;&#50857;<a class="anchor-link" href="#&#51452;&#54588;&#53552;-&#45432;&#53944;&#48513;-&#54876;&#50857;">&#182;</a></h2><p>아나콘다 패키지를 설치하면 구글 코랩과 거의 동일하게 작동하는 주피터 노트북을 활용할 수 있다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#52280;&#44256;-&#46041;&#50689;&#49345;">&#52280;&#44256; &#46041;&#50689;&#49345;<a class="anchor-link" href="#&#52280;&#44256;-&#46041;&#50689;&#49345;">&#182;</a></h2><p>아나콘다 패키지 설치 및 주피터 노트북 기본 사용법은 아래 동영상을 참조할 수 있다.</p>
+<p>데이터 과학과 인공지능, 머신러닝, 딥러닝의 관계는 아래 그림으로 설명된다.</p>
+<p><img src="./images/ai-ml-relation.png" style="width:500px;"></p>
+<p>그림 출처: <a href="http://www.kyobobook.co.kr/readIT/readITColumnView.laf?thmId=00198&amp;sntnId=14142">교보문고: 에이지 오브 머신러닝</a></p>
+<p>위 그림에서 언급된 분야들의 정의는 다음과 같다.</p>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=cMB6-AxatPU&amp;list=PLRYL8FHwJMhD_Wi22JLm2VURrjt_iVX7X&amp;index=1">[파이썬 기초]NO 1. 파이썬 개요 및 아나콘다 설치</a></li>
-<li><a href="https://www.youtube.com/watch?v=4_-IIfbdR5M&amp;list=PLRYL8FHwJMhD_Wi22JLm2VURrjt_iVX7X&amp;index=2">[파이썬 기초]NO.2 주피터 노트북 사용법</a></li>
+<li>인공지능: 사고(thinking), 학습(learning) 등 인간의 지적능력을 컴퓨터를 통해 구현하는 
+  기술 또는 해당 연구 분야</li>
+<li>머신러닝: 컴퓨터가 데이터로부터 스스로 정보를 추출하는 기법 또는 해당 연구 분야.</li>
+<li>딥러닝: 심층 신경망 이론을 기반으로 복잡한 비선형 문제를 해결하는 머신러닝 기법 
+  또는 해당 연구 분야    </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>역사적 관점에서 바라본 인공지능, 머신러닝, 딥러닝의 관계는 다음과 같다.</p>
+<p><img src="./images/ai-ml-relation2.png" style="width:600px;"></p>
+<p>그림 출처: <a href="https://blogs.nvidia.com/blog/2016/07/29/whats-difference-artificial-intelligence-machine-learning-deep-learning-ai/">NVIDIA 블로그</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#51452;&#50836;-&#54617;&#49845;&#45236;&#50857;">&#51452;&#50836; &#54617;&#49845;&#45236;&#50857;<a class="anchor-link" href="#&#51452;&#50836;-&#54617;&#49845;&#45236;&#50857;">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>파이썬 프로그래밍 언어 기초</li>
+<li>numpy 기초</li>
+<li>pandas 기초</li>
+<li>데이터 불러오기 및 저장</li>
+<li>데이터 전처리: 데이터 정제 및 변환</li>
+<li>데이터 다루기: 조인, 병합, 변형</li>
+<li>데이터 시각화</li>
+<li>데이터 집계와 그룹화</li>
+<li>시계열 데이터</li>
+<li>고급 pandas</li>
+<li>모델링 라이브러리: statsmodels, scikit-learn</li>
+<li>데이터 분석 실전 예제</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#54028;&#51060;&#50028;(Python)">&#54028;&#51060;&#50028;(Python)<a class="anchor-link" href="#&#54028;&#51060;&#50028;(Python)">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>프로그래밍 실습에 사용되는 파이썬(Python)은 현재 데이터 분석 및 머신러닝 분야에서 
+가장 많이 사용되는 프로그래밍언어이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#51064;&#44592;&#46020;">&#51064;&#44592;&#46020;<a class="anchor-link" href="#&#51064;&#44592;&#46020;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>TIOBE Index 2021년 2월 기준 세 번째로 가장 많이 사용되는 프로그래밍 언어이며 
+점유율이 점점 높아지고 있다.</p>
+<p><img src="images/tiobe-index202102.png" style="width:750px"></p>
+<p>그림출처: <a href="https://www.tiobe.com/tiobe-index/">TIOBE Index</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>데이터 과학 분야로 한정할 경우 파이썬의 인기도가 가장 높다.</p>
+<p><img src="images/KDnuggets-software-poll-2019.jpg" style="height:400px"></p>
+<p>그림출처: <a href="https://www.kdnuggets.com/2019/05/poll-top-data-science-machine-learning-platforms.html">KDnuggets</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#50616;&#50612;-&#53945;&#49457;">&#50616;&#50612; &#53945;&#49457;<a class="anchor-link" href="#&#50616;&#50612;-&#53945;&#49457;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>파이썬이 데이터 과학 분야에서 인기가 높은 이유는 다음과 같다.</p>
+<ul>
+<li>범용 프로그래밍언어</li>
+<li>R, 매트랩, SQL, 엑셀 등 특정 분야에서 유용하게 사용되는 언어들의 기능 지원</li>
+<li>데이터 적재, 시각화, 통계, 자연어 처리, 이미지 처리 등에 필요한 라이브러리 제공</li>
+<li>머신러닝, 데이터 분석 등에 활용될 수 있는 라이브러리 및 도구의 지속적 개발<ul>
+<li><a href="https://www.anaconda.com/products/individual">Anaconda</a>,</li>
+<li><a href="https://www.tensorflow.org/">TensorFlow</a>,</li>
+<li><a href="https://scikit-learn.org/">scikit-learn</a>,</li>
+<li><a href="https://keras.io/">Keras</a>,</li>
+<li><a href="https://keras.io/">PyTorch</a> 등등</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#52280;&#44256;-&#51088;&#47308;">&#52280;&#44256; &#51088;&#47308;<a class="anchor-link" href="#&#52280;&#44256;-&#51088;&#47308;">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>파이썬 데이터 분석 프로그래밍 왕기초<ul>
+<li><a href="https://formal.hknu.ac.kr/Gongsu-DataSci/">파이썬 데이터 과학 입문</a></li>
+</ul>
+</li>
+<li>판다스(pandas) 실전 활용법 소개 동영상 모음집<ul>
+<li><a href="https://www.youtube.com/playlist?list=PL5-da3qGB5ICCsgW1MxlZ0Hq8LL5U3u9y">Data analysis in Python with Pandas</a><ul>
+<li>자동번역 한글자막 수준이 매우 우수: 설정 =&gt; 자막 =&gt; 자동 번역 =&gt; 한국어</li>
+<li><a href="https://nbviewer.jupyter.org/github/justmarkham/pandas-videos/blob/master/pandas.ipynb">강의노트</a> 제공됨.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 </div>
