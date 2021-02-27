@@ -10,7 +10,7 @@
 ### 목차
 
 1. 강의소개 &nbsp;
-    [[html]](./notebooks/pydata01-intro.md)
+    [[html]](./notebooks/pydata01-intro.html), [[markdown]](./pydata01-intro.md)
 1. ...
 
 ### 프로그래밍 환경
