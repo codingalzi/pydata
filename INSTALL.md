@@ -12,9 +12,9 @@
 
 ### 다운로드 및 설치
 
-아나콘다 패키지를 사용하는 [다운로드](https://www.anaconda.com/products/individual)한 다음에 
+아나콘다 패키지를 [다운로드](https://www.anaconda.com/products/individual)한 다음에 
 설치하면 됩니다. 초보자의 경우 기본 설정 그대로 설치하세요.
-설치 파일은 OS(운영체제)에 맞춰 Python 3.x 버전의 64-Bit Graphical Installer를 다운로드하면 됩니다. 
+설치 파일은 자신의 OS(운영체제)에 맞춰 Python 3.x 버전의 64-Bit Graphical Installer를 선택하면 됩니다. 
 
 ### 참고 동영상
 
