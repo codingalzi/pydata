@@ -20,14 +20,14 @@
 
 아래에서 소개하는 온라인 또는 오프라인 환경설정을 선택해서 사용할 수 있습니다. 
 온라인 활용법은 아무런 설치과정 없이 바로 실습할 수 있는 환경을,
-반면에 오프라인 환경설정은 조금 익숙해지면 보다 편리하며 개별화된 프로그래밍 환경을 제공합니다. 
+반면에 오프라인 환경설정은 보다 편리하며 개별화된 프로그래밍 환경을 제공합니다. 
 
 #### 온라인
 
 추천 활용법: [구글 코랩 활용 ](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/)
 <a href="https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-* 주의: 온라인 상에서 작업한 내용은 저장되지 않으며, 따라서 먼저 자신의 계정으로 사본을 만들어야 함.
+* 주의: 온라인 상에서 작업한 내용은 저장되지 않으며, 따라서 먼저 자신의 계정으로 사본을 만든 후에 수정 및 실행해야 함.
 * [구글 코랩 사용법 안내 동영상](https://www.youtube.com/watch?v=Jb_n90gHdP0) 참조
 
 #### 오프라인
