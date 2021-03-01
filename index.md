@@ -11,6 +11,8 @@
 
 1. 강의소개 &nbsp;
     [[html]](./notebooks/pydata01-intro.html)
+1. 파이썬 프로그래밍 기초 1부 &nbsp;
+    [[html]](./notebooks/pydata02-python-basics-1.html)
 1. ...
 
 ### 프로그래밍 환경
