@@ -12,7 +12,8 @@
 1. 강의소개 &nbsp;
     [[html]](./notebooks/pydata01-intro.html)
 1. 파이썬 프로그래밍 기초 1부 &nbsp;
-    [[html]](./notebooks/pydata02-python-basics-1.html)
+    [[html]](./notebooks/pydata02-python-basics-1.html),
+    [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata02-python-basics-1.ipynb)
 1. ...
 
 ### 프로그래밍 환경
