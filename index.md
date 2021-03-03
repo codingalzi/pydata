@@ -12,7 +12,7 @@
 
 1. 강의소개 &nbsp;
     [[html]](./notebooks/pydata01-intro.html)
-1. 파이썬 프로그래밍 기초 1부: 기본 문법 &nbsp;
+1. 파이썬 프로그래밍 기초 1부: 기초 문법 &nbsp;
     [[html]](./notebooks/pydata02-python-basics-1.html),
     [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata02-python-basics-1.ipynb)
 1. 파이썬 프로그래밍 기초 2부: 스칼라 자료형, 제어문, `range()` 함수 &nbsp;
