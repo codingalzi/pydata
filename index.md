@@ -40,12 +40,20 @@
 * 주의: 온라인 상에서 작업한 내용은 저장되지 않으며, 따라서 먼저 자신의 계정으로 사본을 만든 후에 수정 및 실행해야 함.
 * [구글 코랩 사용법 안내 동영상](https://www.youtube.com/watch?v=Jb_n90gHdP0) 참조
 
+주피터 노트북 사용법을 익히면 구글 코랩에 보다 쉽게 적응할 수 있습니다.
+
+* [주피터 노트북 사용법](https://www.youtube.com/watch?v=4_-IIfbdR5M&list=PLRYL8FHwJMhD_Wi22JLm2VURrjt_iVX7X&index=2)
+
+
 #### 오프라인
 
 추천 활용법: [프로젝트 리포지토리](https://github.com/codingalzi/python-data-analysis) 
     <a href="https://github.com/codingalzi/python-data-analysis"><img src="view-on-github.png" alt="View On GitHub" style="height:25px;"/></a> 를 복제한 후에 아나콘다의 주피터 노트북 활용.
 
 * [오프라인 프로그래밍 환경설정 안내](INSTALL.md) 참조
+* [아나콘다 패키지 설치](https://youtu.be/cMB6-AxatPU?list=PLRYL8FHwJMhD_Wi22JLm2VURrjt_iVX7X&t=154)
+* [주피터 노트북 사용법](https://www.youtube.com/watch?v=4_-IIfbdR5M&list=PLRYL8FHwJMhD_Wi22JLm2VURrjt_iVX7X&index=2)
+
 
 ### 참고 자료
 
