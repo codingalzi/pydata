@@ -20,6 +20,11 @@
     [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata03-python-basics-2.ipynb)
 1. ...
 
+**링크 활용법**
+
+* html 버전: 읽기 전용 주피터 노트북
+* colab 버전: 구글 코랩에서 직접 실행 가능한 주피터 노트북
+
 ### 권장 사항
 
 파이썬 프로그래밍이 처음이거나 기초가 약하다면 아래 파이썬 데이터 분석 프로그래밍 왕기초 내용을 먼저 읽기를 추천합니다.
