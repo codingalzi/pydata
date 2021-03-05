@@ -4,9 +4,8 @@
 
 ### 감사의 글
 
-소중한 소스코드를 공개한 [웨스 맥키니(Wes McKinney)](https://github.com/wesm/pydata-book)와 
-[오렐리앙 제롱(Aur&eacute;lien G&eacute;ron)](https://github.com/ageron/handson-ml2), 
-그리고 강의자료를 지원한 한빛아카데미에게 진심어린 감사를 전합니다.
+소중한 소스코드를 공개한 [웨스 맥키니(Wes McKinney)](https://github.com/wesm/pydata-book)에게 
+진심어린 감사를 전합니다.
 
 ### 목차
 
