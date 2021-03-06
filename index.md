@@ -25,6 +25,10 @@
     [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata05-python-basics-4.ipynb)
 1. 파이썬 프로그래밍 기초 5부: 함수, 파일 &nbsp;
     (준비중)
+1. numpy 기본: 배열과 벡터 연산 &nbsp;
+    (준비중)
+1. 고급 numpy &nbsp;
+    (준비중)
 1. ...
 
 **링크 활용법**
