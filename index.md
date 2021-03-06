@@ -24,8 +24,6 @@
     [[html]](./notebooks/pydata05-python-basics-4.html),
     [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata05-python-basics-4.ipynb)
 1. 파이썬 프로그래밍 기초 5부: 함수, 파일 &nbsp;
-    [[html]](./notebooks/pydata06-python-basics-5.html),
-    [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata06-python-basics-5.ipynb)
     (준비중)
 1. ...
 
