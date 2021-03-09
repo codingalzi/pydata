@@ -23,8 +23,9 @@
 1. 파이썬 프로그래밍 기초 4부: 모음 자료형 2편(사전, 집합), 조건 제시법(comprehension) &nbsp;
     [[html]](./notebooks/pydata05-python-basics-4.html),
     [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata05-python-basics-4.ipynb)
-1. 파이썬 프로그래밍 기초 5부: 함수, 파일 &nbsp;
-    (준비중)
+1. 파이썬 프로그래밍 기초 5부: 함수, 파일 (미완성)&nbsp;
+    [[html]](./notebooks/pydata06-python-basics-5.html),
+    [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata06-python-basics-5.ipynb)
 1. numpy 기본: 배열과 벡터 연산 &nbsp;
     (준비중)
 1. 고급 numpy &nbsp;
