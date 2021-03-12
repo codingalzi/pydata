@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>pydata06-python-basics-5</title>
+<title>pydata03-python-basics-3</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13017,6 +13017,25 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
+<style type="text/css">
+    
+
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            /*preferredFont: "TeX",*/
+            /*availableFonts: ["TeX", "STIX"],*/
+            styles: {
+                scale: 100,
+                ".MathJax_Display": {
+                    "font-size": "100%",
+                }
+            }
+        }
+    });
+</script>
+    
+    </style>
 
 
 <style type="text/css">
@@ -13077,7 +13096,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="&#54028;&#51060;&#50028;-&#54532;&#47196;&#44536;&#47000;&#48141;-&#44592;&#52488;-5&#48512;">&#54028;&#51060;&#50028; &#54532;&#47196;&#44536;&#47000;&#48141; &#44592;&#52488; 5&#48512;<a class="anchor-link" href="#&#54028;&#51060;&#50028;-&#54532;&#47196;&#44536;&#47000;&#48141;-&#44592;&#52488;-5&#48512;">&#182;</a></h1>
+<h1 id="&#54028;&#51060;&#50028;-&#54532;&#47196;&#44536;&#47000;&#48141;-&#44592;&#52488;-2&#48512;-3&#54200;">&#54028;&#51060;&#50028; &#54532;&#47196;&#44536;&#47000;&#48141; &#44592;&#52488; 2&#48512; 3&#54200;<a class="anchor-link" href="#&#54028;&#51060;&#50028;-&#54532;&#47196;&#44536;&#47000;&#48141;-&#44592;&#52488;-2&#48512;-3&#54200;">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13086,7 +13105,6 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#51452;&#50836;-&#45236;&#50857;">&#51452;&#50836; &#45236;&#50857;<a class="anchor-link" href="#&#51452;&#50836;-&#45236;&#50857;">&#182;</a></h2><ul>
 <li>함수</li>
-<li>파일</li>
 </ul>
 
 </div>
@@ -14339,7 +14357,9 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clean_strings</span><span class="p">(</span><span class="n">states</span><span class="p">,</span> <span class="n">clean_ops</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cleaned_strings</span> <span class="o">=</span> <span class="n">clean_strings</span><span class="p">(</span><span class="n">states</span><span class="p">,</span> <span class="n">clean_ops</span><span class="p">)</span>
+
+<span class="n">cleaned_strings</span>
 </pre></div>
 
     </div>
@@ -14376,6 +14396,129 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#50672;&#49845;&#47928;&#51228;">&#50672;&#49845;&#47928;&#51228;<a class="anchor-link" href="#&#50672;&#49845;&#47928;&#51228;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>리스트에 세 번 항목으로 사용된 'Georgia'처럼 중복 사용된 항목을 제거하는 방법은 무엇인가?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em><strong>견본 답안 1</strong></em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>리스트에서 중복 항목을 제거하는 가장 간단한 방법은 집합 자료형으로 형변환으로 했다가
+다시 리스트로 형변환을 실행하는 것이다. 
+즉, 다음과 같이 실행한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">cleaned_strings</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[34]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;West Virginia&#39;, &#39;Georgia&#39;, &#39;Florida&#39;, &#39;South Carolina&#39;, &#39;Alabama&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em><strong>견본 답안 2</strong></em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>리스트에서 집합으로, 집합에서 리스트로 변형하면 기존 리시스트의 순서가 반드시 지켜지지 않는다.
+이유는 집합 자체에 순서 개념이 없기 때문이다.
+따라서 기존 리스트에 포함된 항목들의 순서를 유지하려면 <code>for</code> 반복문을 
+사용하는 것 이외에 달리 특별한 방법이 없다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_cleaned_strings</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">cleaned_strings</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">new_cleaned_strings</span><span class="p">:</span>
+        <span class="n">new_cleaned_strings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        
+<span class="n">new_cleaned_strings</span>        
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[35]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;Alabama&#39;, &#39;Georgia&#39;, &#39;Florida&#39;, &#39;South Carolina&#39;, &#39;West Virginia&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="&#44256;&#44228;-&#54632;&#49688;">&#44256;&#44228; &#54632;&#49688;<a class="anchor-link" href="#&#44256;&#44228;-&#54632;&#49688;">&#182;</a></h3>
 </div>
 </div>
@@ -14391,7 +14534,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">higher_func1</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
@@ -14413,7 +14556,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_three</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
@@ -14435,7 +14578,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">higher_func1</span><span class="p">(</span><span class="n">add_three</span><span class="p">)</span>
@@ -14451,7 +14594,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[36]:</div>
+    <div class="prompt output_prompt">Out[38]:</div>
 
 
 
@@ -14498,7 +14641,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
@@ -14514,7 +14657,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[37]:</div>
+    <div class="prompt output_prompt">Out[39]:</div>
 
 
 
@@ -14540,7 +14683,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
@@ -14556,7 +14699,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[38]:</div>
+    <div class="prompt output_prompt">Out[40]:</div>
 
 
 
@@ -14581,7 +14724,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_numbers</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
@@ -14595,7 +14738,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_numbers</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
@@ -14611,7 +14754,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[40]:</div>
+    <div class="prompt output_prompt">Out[42]:</div>
 
 
 
@@ -14644,7 +14787,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">higher_func2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -14668,7 +14811,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_three_new</span> <span class="o">=</span> <span class="n">higher_func2</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -14689,7 +14832,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_three_new</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="o">==</span> <span class="n">add_three</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
@@ -14705,7 +14848,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[43]:</div>
+    <div class="prompt output_prompt">Out[45]:</div>
 
 
 
@@ -14722,7 +14865,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_three_new</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span> <span class="o">==</span> <span class="n">add_three</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span>
@@ -14738,7 +14881,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[44]:</div>
+    <div class="prompt output_prompt">Out[46]:</div>
 
 
 
@@ -14768,7 +14911,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">higher_func2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -14798,10 +14941,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">apply_to_list</span><span class="p">(</span><span class="n">some_list</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">apply_to_list</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">some_list</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">some_list</span><span class="p">]</span>
 </pre></div>
 
@@ -14829,12 +14972,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ints</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 
-<span class="n">apply_to_list</span><span class="p">(</span><span class="n">ints</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">apply_to_list</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ints</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14847,13 +14990,251 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[47]:</div>
+    <div class="prompt output_prompt">Out[49]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
 <pre>[8, 0, 2, 10, 12]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>참고:</strong> <code>apply_to_list()</code> 함수는 파이썬에서 기본으로 제공하는 <code>map()</code> 함수의 일부 기능을 구현하였다. 
+단, <code>map()</code> 함수의 반환값은 리스트가 아닌 <code>map</code>이라는 이터러블 객체다.
+이터러블 객체에 대한 자세한 설명은 잠시 뒤에 이루어진다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ints</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">new_ints</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ints</span><span class="p">)</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">new_ints</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[50]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>map</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>new_ints</code> 에 담긴 항목을 확인하려면 리스트로 형변환하면 된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ints</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ints</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[51]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[8, 0, 2, 10, 12]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>물론 이터러블 자료형의 특성을 <code>for</code> 반복문에 적용해도 된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">new_ints</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>8, 0, 2, 10, 12, </pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>참고:</strong> <code>new_ints</code>와 같은 이터러블 자료형은 <code>for</code> 반복문에 한 번 사용되면 더 이상 사용될 수 없다.
+아래 결과에서 아무 것도 출력되지 않는 이유가 거기에 있다.
+이유는 <code>map</code>과 같은 이터러블 자료형은 포함된 항목을 한 번 만 순회하도록 만들어졌기 때문이다.
+단, 리스트보다 메모리를 훨씬 덜 차지하고 속도도 빠르다는 장점이 있어서 
+매우 많은 항목을 한 번 순회하는 용도로 많이 사용된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">new_ints</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>map()</code> 함수는 여러 개의 인자를 받는 함수도 사용할 수 있다. 단,
+인자의 개수만큼의 리스트가 인자로 사용되어야 한다.
+그러면 각 리스트의 동일한 인덱스에 위치한 값을 묶어 첫째 인자로 사용된 함수의 인자로 전달된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[54]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[101, 202, 303]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>리스트의 길이가 다르면 가장 짧은 리스트의 항목 수만큼만 함수를 적용한 결과를 리스트로 반환한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">z</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[55]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[101, -202]</pre>
 </div>
 
 </div>
@@ -14889,7 +15270,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_chars</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -14911,7 +15292,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">strings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;card&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;aaaa&#39;</span><span class="p">,</span> <span class="s1">&#39;abab&#39;</span><span class="p">]</span>
@@ -14933,7 +15314,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="n">count_chars</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">strings</span><span class="p">]</span>
@@ -14949,7 +15330,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[50]:</div>
+    <div class="prompt output_prompt">Out[58]:</div>
 
 
 
@@ -14974,7 +15355,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">strings</span><span class="p">:</span>
@@ -15019,7 +15400,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">strings</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">count_chars</span><span class="p">)</span>
@@ -15036,7 +15417,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[52]:</div>
+    <div class="prompt output_prompt">Out[60]:</div>
 
 
 
@@ -15064,7 +15445,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">strings</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
@@ -15081,7 +15462,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[53]:</div>
+    <div class="prompt output_prompt">Out[61]:</div>
 
 
 
@@ -15118,7 +15499,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_three</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">add_numbers</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -15141,7 +15522,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_three</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -15157,7 +15538,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[55]:</div>
+    <div class="prompt output_prompt">Out[63]:</div>
 
 
 
@@ -15174,7 +15555,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_three</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
@@ -15190,7 +15571,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[56]:</div>
+    <div class="prompt output_prompt">Out[64]:</div>
 
 
 
@@ -15237,7 +15618,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
@@ -15260,7 +15641,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">multi_add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
@@ -15276,7 +15657,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_3_5</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="c1"># 3 + 5 + 8 계산</span>
@@ -15292,7 +15673,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[59]:</div>
+    <div class="prompt output_prompt">Out[67]:</div>
 
 
 
@@ -15318,7 +15699,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_3_5_second</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">multi_add</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -15339,7 +15720,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_3_5_second</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -15360,12 +15741,12 @@ div#notebook {
 
 <div class="output_subarea output_text output_error">
 <pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-61-16fc5e63f483&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>add_3_5_second<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">4</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-69-16fc5e63f483&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>add_3_5_second<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-cyan-intense-fg ansi-bold">4</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
 
-<span class="ansi-red-fg">TypeError</span>: multi_add() got multiple values for argument &#39;x&#39;</pre>
+<span class="ansi-red-intense-fg ansi-bold">TypeError</span>: multi_add() got multiple values for argument &#39;x&#39;</pre>
 </div>
 </div>
 
@@ -15376,7 +15757,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>오류가 발생하는 이유는 순서대로 인자가 전달되어 사용된 인자 4가 <code>y</code>가 아닌 <code>x</code>에게 전달되기 때문이다.
+<p>오류가 발생하는 이유는 기존 함수의 매개변수가 선언된 순서대로 인자가 전달되기 때문이다.
+즉, 4가 <code>y</code>가 아닌 <code>x</code>에게 전달되어, <code>x</code>에 대한 인자가 두번 지정되는 오류가 발생하게 된다.
 해결책 중에 하나는 매개변수를 키워드로 사용하는 것이다.</p>
 
 </div>
@@ -15384,7 +15766,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_3_5_second</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -15400,7 +15782,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[62]:</div>
+    <div class="prompt output_prompt">Out[70]:</div>
 
 
 
@@ -15419,14 +15801,14 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>하지만 이 방식은 매개변수를 기억해야 한다는 점에서 매우 불편하다.
-이럴 때는 그냥 람다 함수를 이용하여 부분 적용 함수를 정의해야 한다.</p>
+이럴 때는 그냥 람다 함수를 이용하여 부분 적용 함수를 정의하는 게 보다 좋다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_3_5_second</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">multi_add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -15447,287 +15829,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_3_5_second</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[64]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>12</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Generators">Generators<a class="anchor-link" href="#Generators">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">some_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
-<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">some_dict</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>a
-b
-c
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dict_iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">some_dict</span><span class="p">)</span>
-<span class="n">dict_iterator</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[66]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;dict_keyiterator at 0x7fcc0890a7c0&gt;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">dict_iterator</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[67]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">squares</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Generating squares from 1 to </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="k">yield</span> <span class="n">i</span> <span class="o">**</span> <span class="mi">2</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gen</span> <span class="o">=</span> <span class="n">squares</span><span class="p">()</span>
-<span class="n">gen</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[69]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;generator object squares at 0x7fcc08897510&gt;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Generating squares from 1 to 100
-1 4 9 16 25 36 49 64 81 100 </pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Generator-expresssions">Generator expresssions<a class="anchor-link" href="#Generator-expresssions">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gen</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
-<span class="n">gen</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[71]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;generator object &lt;genexpr&gt; at 0x7fcc08838900&gt;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>def _make_gen():
-    for x in range(100):
-        yield x ** 2
-gen = _make_gen()</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
-<span class="nb">dict</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_3_5_second</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -15746,1064 +15851,9 @@ gen = _make_gen()</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{0: 0, 1: 1, 2: 4, 3: 9, 4: 16}</pre>
+<pre>12</pre>
 </div>
 
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="itertools-module">itertools module<a class="anchor-link" href="#itertools-module">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">itertools</span>
-<span class="n">first_letter</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Alan&#39;</span><span class="p">,</span> <span class="s1">&#39;Adam&#39;</span><span class="p">,</span> <span class="s1">&#39;Wes&#39;</span><span class="p">,</span> <span class="s1">&#39;Will&#39;</span><span class="p">,</span> <span class="s1">&#39;Albert&#39;</span><span class="p">,</span> <span class="s1">&#39;Steven&#39;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">letter</span><span class="p">,</span> <span class="n">names</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">first_letter</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">names</span><span class="p">))</span> <span class="c1"># names is a generator</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>A [&#39;Alan&#39;, &#39;Adam&#39;]
-W [&#39;Wes&#39;, &#39;Will&#39;]
-A [&#39;Albert&#39;]
-S [&#39;Steven&#39;]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Errors-and-Exception-Handling">Errors and Exception Handling<a class="anchor-link" href="#Errors-and-Exception-Handling">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;1.2345&#39;</span><span class="p">)</span>
-<span class="nb">float</span><span class="p">(</span><span class="s1">&#39;something&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-74-6d335c618d25&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> float<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;1.2345&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>float<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;something&#39;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">ValueError</span>: could not convert string to float: &#39;something&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">attempt_float</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">x</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">attempt_float</span><span class="p">(</span><span class="s1">&#39;1.2345&#39;</span><span class="p">)</span>
-<span class="n">attempt_float</span><span class="p">(</span><span class="s1">&#39;something&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[76]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;something&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">float</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-77-82f777b0e564&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>float<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">TypeError</span>: float() argument must be a string or a number, not &#39;tuple&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">attempt_float</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">x</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">attempt_float</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-79-8b0026e9e6b7&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>attempt_float<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-78-6209ddecd2b5&gt;</span> in <span class="ansi-cyan-fg">attempt_float</span><span class="ansi-blue-fg">(x)</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">def</span> attempt_float<span class="ansi-blue-fg">(</span>x<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span>     <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> float<span class="ansi-blue-fg">(</span>x<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span class="ansi-green-fg">except</span> ValueError<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span>         <span class="ansi-green-fg">return</span> x
-
-<span class="ansi-red-fg">TypeError</span>: float() argument must be a string or a number, not &#39;tuple&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">attempt_float</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">x</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>f = open(path, 'w')</p>
-<p>try:
-    write_to_file(f)
-finally:
-    f.close()</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>f = open(path, 'w')</p>
-<p>try:
-    write_to_file(f)
-except:
-    print('Failed')
-else:
-    print('Succeeded')
-finally:
-    f.close()</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Exceptions-in-IPython">Exceptions in IPython<a class="anchor-link" href="#Exceptions-in-IPython">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="In-[10]:-%run-examples/ipython_bug.py">In [10]: %run examples/ipython_bug.py<a class="anchor-link" href="#In-[10]:-%run-examples/ipython_bug.py">&#182;</a></h2><p>AssertionError                            Traceback (most recent call last)
-/home/wesm/code/pydata-book/examples/ipython_bug.py in <module>()
-     13     throws_an_exception()
-     14
----&gt; 15 calling_things()</p>
-<p>/home/wesm/code/pydata-book/examples/ipython_bug.py in calling_things()
-     11 def calling_things():
-     12     works_fine()
----&gt; 13     throws_an_exception()
-     14
-     15 calling_things()</p>
-<p>/home/wesm/code/pydata-book/examples/ipython_bug.py in throws_an_exception()
-      7     a = 5
-      8     b = 6
-----&gt; 9     assert(a + b == 10)
-     10
-     11 def calling_things():</p>
-<p>AssertionError:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Files-and-the-Operating-System">Files and the Operating System<a class="anchor-link" href="#Files-and-the-Operating-System">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">pushd</span> book-materials
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[Errno 2] No such file or directory: &#39;book-materials&#39;
-/Users/gslee/Documents/GitHub/python-data-analysis/notebooks
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[81]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&#39;~/Documents/GitHub/python-data-analysis/notebooks&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[82]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;examples/segismundo.txt&#39;</span>
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-82-259ba9b94e6f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> path <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">&#39;examples/segismundo.txt&#39;</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>f <span class="ansi-blue-fg">=</span> open<span class="ansi-blue-fg">(</span>path<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;examples/segismundo.txt&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>for line in f:
-    pass</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)]</span>
-<span class="n">lines</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-83-ada7b22a8d17&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>lines <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span>x<span class="ansi-blue-fg">.</span>rstrip<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">for</span> x <span class="ansi-green-fg">in</span> open<span class="ansi-blue-fg">(</span>path<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> lines
-
-<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;examples/segismundo.txt&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[84]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-84-b5edb7b78a9a&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>f<span class="ansi-blue-fg">.</span>close<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">AttributeError</span>: &#39;function&#39; object has no attribute &#39;close&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[85]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">f</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-85-07d54f58d282&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">with</span> open<span class="ansi-blue-fg">(</span>path<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> f<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span>     lines <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span>x<span class="ansi-blue-fg">.</span>rstrip<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">for</span> x <span class="ansi-green-fg">in</span> f<span class="ansi-blue-fg">]</span>
-
-<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;examples/segismundo.txt&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[86]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">f2</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>  <span class="c1"># Binary mode</span>
-<span class="n">f2</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-86-91676110daad&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>f <span class="ansi-blue-fg">=</span> open<span class="ansi-blue-fg">(</span>path<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> f<span class="ansi-blue-fg">.</span>read<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> f2 <span class="ansi-blue-fg">=</span> open<span class="ansi-blue-fg">(</span>path<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;rb&#39;</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># Binary mode</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> f2<span class="ansi-blue-fg">.</span>read<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;examples/segismundo.txt&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
-<span class="n">f2</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-87-94427c25f75b&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>f<span class="ansi-blue-fg">.</span>tell<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> f2<span class="ansi-blue-fg">.</span>tell<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">AttributeError</span>: &#39;function&#39; object has no attribute &#39;tell&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[88]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">getdefaultencoding</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[88]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;utf-8&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[89]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-89-8b146ec12130&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>f<span class="ansi-blue-fg">.</span>seek<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> f<span class="ansi-blue-fg">.</span>read<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">AttributeError</span>: &#39;function&#39; object has no attribute &#39;seek&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[90]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="n">f2</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-90-14e2420c73f0&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>f<span class="ansi-blue-fg">.</span>close<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> f2<span class="ansi-blue-fg">.</span>close<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">AttributeError</span>: &#39;function&#39; object has no attribute &#39;close&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[91]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;tmp.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">handle</span><span class="p">:</span>
-    <span class="n">handle</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;tmp.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-<span class="n">lines</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-91-b5f9b7a91945&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">with</span> open<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;tmp.txt&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;w&#39;</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> handle<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg">     </span>handle<span class="ansi-blue-fg">.</span>writelines<span class="ansi-blue-fg">(</span>x <span class="ansi-green-fg">for</span> x <span class="ansi-green-fg">in</span> open<span class="ansi-blue-fg">(</span>path<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">if</span> len<span class="ansi-blue-fg">(</span>x<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">&gt;</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">with</span> open<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;tmp.txt&#39;</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> f<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     lines <span class="ansi-blue-fg">=</span> f<span class="ansi-blue-fg">.</span>readlines<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> lines
-
-<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;examples/segismundo.txt&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[92]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;tmp.txt&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Bytes-and-Unicode-with-Files">Bytes and Unicode with Files<a class="anchor-link" href="#Bytes-and-Unicode-with-Files">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[93]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">chars</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">chars</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-93-b3e5d16127fa&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">with</span> open<span class="ansi-blue-fg">(</span>path<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> f<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span>     chars <span class="ansi-blue-fg">=</span> f<span class="ansi-blue-fg">.</span>read<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> chars
-
-<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;examples/segismundo.txt&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">data</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-94-6e10f1bed205&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">with</span> open<span class="ansi-blue-fg">(</span>path<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;rb&#39;</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> f<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span>     data <span class="ansi-blue-fg">=</span> f<span class="ansi-blue-fg">.</span>read<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> data
-
-<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;examples/segismundo.txt&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[95]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
-<span class="n">data</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-95-51c3557a5bf1&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>data<span class="ansi-blue-fg">.</span>decode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;utf8&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> data<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-cyan-fg">4</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">.</span>decode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;utf8&#39;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;data&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[96]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sink_path</span> <span class="o">=</span> <span class="s1">&#39;sink.txt&#39;</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">source</span><span class="p">:</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sink_path</span><span class="p">,</span> <span class="s1">&#39;xt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;iso-8859-1&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sink</span><span class="p">:</span>
-        <span class="n">sink</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sink_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;iso-8859-1&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-96-83e4bc815eaa&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> sink_path <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">&#39;sink.txt&#39;</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">with</span> open<span class="ansi-blue-fg">(</span>path<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> source<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span>     <span class="ansi-green-fg">with</span> open<span class="ansi-blue-fg">(</span>sink_path<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;xt&#39;</span><span class="ansi-blue-fg">,</span> encoding<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;iso-8859-1&#39;</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> sink<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>         sink<span class="ansi-blue-fg">.</span>write<span class="ansi-blue-fg">(</span>source<span class="ansi-blue-fg">.</span>read<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-green-fg">with</span> open<span class="ansi-blue-fg">(</span>sink_path<span class="ansi-blue-fg">,</span> encoding<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;iso-8859-1&#39;</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> f<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;examples/segismundo.txt&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[97]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">sink_path</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-97-0a6746cf5ca6&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>os<span class="ansi-blue-fg">.</span>remove<span class="ansi-blue-fg">(</span>sink_path<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;sink.txt&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[98]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-98-017c9897ab43&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>f <span class="ansi-blue-fg">=</span> open<span class="ansi-blue-fg">(</span>path<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> f<span class="ansi-blue-fg">.</span>read<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">5</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> f<span class="ansi-blue-fg">.</span>seek<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">4</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> f<span class="ansi-blue-fg">.</span>read<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> f<span class="ansi-blue-fg">.</span>close<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;examples/segismundo.txt&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[99]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">popd</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>/Users/gslee/Documents/GitHub/python-data-analysis/notebooks
-popd -&gt; ~/Documents/GitHub/python-data-analysis/notebooks
-</pre>
-</div>
 </div>
 
 </div>
