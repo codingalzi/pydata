@@ -13,21 +13,26 @@
 
 ### 목차
 
-1. 파이썬 프로그래밍 기초 1부: 기초 문법 &nbsp;
-    [[html]](./notebooks/pydata02-python-basics-1.html),
-    [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata02-python-basics-1.ipynb)
-1. 파이썬 프로그래밍 기초 2부: 스칼라 자료형, 제어문(if 조건문, for 반복문, while 반복문) &nbsp;
-    [[html]](./notebooks/pydata03-python-basics-2.html),
-    [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata03-python-basics-2.ipynb)
-1. 파이썬 프로그래밍 기초 3부: 모음 자료형 1편(튜플, 리스트), `range()` 함수 &nbsp;
-    [[html]](./notebooks/pydata04-python-basics-3.html),
-    [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata04-python-basics-3.ipynb)
-1. 파이썬 프로그래밍 기초 4부: 모음 자료형 2편(사전, 집합), 조건 제시법(comprehension) &nbsp;
-    [[html]](./notebooks/pydata05-python-basics-4.html),
-    [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata05-python-basics-4.ipynb)
-1. 파이썬 프로그래밍 기초 5부: 함수, 파일 (미완성)&nbsp;
-    [[html]](./notebooks/pydata06-python-basics-5.html),
-    [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata06-python-basics-5.ipynb)
+1. 파이썬 프로그래밍 기초 1부 
+    - 1편: 기초 문법 &nbsp;
+        [[html]](./notebooks/pydata02-python-basics-1.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata02-python-basics-1.ipynb)
+    - 2편: 스칼라 자료형, 제어문(if 조건문, for 반복문, while 반복문) &nbsp;
+        [[html]](./notebooks/pydata02-python-basics-2.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata02-python-basics-2.ipynb)
+1. 파이썬 프로그래밍 기초 2부
+    - 1편: 모음 자료형 1편(튜플, 리스트), `range()` 함수 &nbsp;
+        [[html]](./notebooks/pydata03-python-basics-1.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata03-python-basics-1.ipynb)
+    - 2편: 모음 자료형 2편(사전, 집합), 조건 제시법(comprehension) &nbsp;
+        [[html]](./notebooks/pydata03-python-basics-2.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata03-python-basics-2.ipynb)
+    - 3편: 함수 &nbsp;
+        [[html]](./notebooks/pydata03-python-basics-3.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata03-python-basics-3.ipynb)
+    - 4편: 이터러블/이터레이터/제너레이터, 오류와 예외처리, 파일 &nbsp;
+        [[html]](./notebooks/pydata03-python-basics-4.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata03-python-basics-4.ipynb)
 1. numpy 기본: 배열과 벡터 연산 &nbsp;
     (준비중)
 1. 고급 numpy &nbsp;
