@@ -33,7 +33,7 @@
     - 4편: 이터러블/이터레이터/제너레이터, 오류와 예외처리, 파일 &nbsp;
         [[html]](./notebooks/pydata03-python-basics-4.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata03-python-basics-4.ipynb)
-1. 넘파이(numpy) 기본: 어레이와 어레이 연산
+1. 넘파이(numpy) 기본: 어레이와 연산
     - 1편: 넘파이 어레이 정의, 어레이 연산 &nbsp;
         [[html]](./notebooks/pydata04-numpy-basics-1.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata04-numpy-basics-1.ipynb)
