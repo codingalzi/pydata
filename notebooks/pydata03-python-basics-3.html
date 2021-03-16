@@ -13106,10 +13106,10 @@ div#notebook {
 <li>함수는 <code>def</code> 예약어를 이용하여 선언한다.</li>
 <li>함수는 여러 개의 인자를 받을 수 있으며, 인자를 받는 역할을 수행하는 변수를 <strong>매개변수</strong> 또는 
   <strong>키워드</strong>라고 한다.</li>
-<li>함수의 인자는 위치 인자와 키워드 인자로 구분된다.
+<li>함수의 인자는 <strong>위치 인자</strong>와 키<strong>워드 인자</strong>로 구분된다.
   예를 들어, 아래 함수에서 <code>x</code>와 <code>y</code>는 위치 인자를 받는 매개변수이고,
   <code>z</code>는 키워드 인자를 받는 매개변수이다.</li>
-<li>키워드 인자는 함수를 선언할 때 함께 지정되며, 해당 함수를 호출할 때 키워드 인자를 따로 지정하지 않으면
+<li>키워드 인자는 함수를 선언할 때 함께 지정되며, 해당 함수를 호출할 때 키워드 인자를 별도로 지정하지 않으면
   함수를 선언할 때 지정된 기본값이 사용된다.</li>
 </ul>
 
@@ -13482,7 +13482,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>모든 변수는 이처럼 역할에 따라 활동 영역이 달라진다.
 변수의 활동영역을 <strong>스코프</strong>(scope)라 부르며, 
-변수들의 스코프에 따라 구분하여 관리하는 도구가 <strong>네임 스페이스</strong>(name space)이다.</p>
+변수를 스코프에 따라 구분하여 관리하는 도구가 <strong>네임 스페이스</strong>(name space)이다.</p>
 <p>예를 들어, 전역변수 네임 스페이스에 포함된 변수는 <code>globals()</code> 함수를 이용하여 확인할 수 있다.
 아래 코드를 실행하면 매우 많은 변수를 확인하게 된다.</p>
 <div class="highlight"><pre><span></span><span class="nb">globals</span><span class="p">()</span>
@@ -13587,8 +13587,8 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>함수는 실행 중에 <code>return</code> 예약어를 만나는 순간에 지정된 값을 반환하고 실행을 멈춘다.
 즉, 원칙적으로 하나의 값만 반환할 수 있다는 의미이다.
-그런데 튜플을 이용하여 여러 개의 값을 하나로 묶어 반환할 수 있다.
-예를 들어, 아래 함수는 <code>a</code>, <code>b</code>, <code>c</code> 세 개의 값을 튜플로 반환한다.</p>
+그런데 튜플을 이용하여 여러 개의 값을 하나로 묶어서 하나의 값으로 반환할 수 있다.
+예를 들어, 아래 함수는 <code>a</code>, <code>b</code>, <code>c</code> 세 개의 값을 튜플로 묶어 반환한다.</p>
 
 </div>
 </div>
@@ -13663,16 +13663,16 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>제1종 객체</strong>(first-class object)는 변수 선언, 함수의 인자 및 반환값 등으로 사용되어
-저장 및 변경이 가능한 객체를 의미한다. 
+<p>변수를 선언할 때 또는 함수의 인자 및 반환값 등으로 사용되어
+저장 및 변경이 가능한 객체를 <strong>제1종 객체</strong>(first-class object)라 한다.
 정수, 부동소수점, 문자열, 리스트, 튜플, 사전 등이 대표적인 제1종 객체이다.
 그런데 파이썬에서는 함수도 제1종 객체이다. 
 앞서 파이썬에서 다루는 모든 값은 객체라고 하였는데 함수 역시 객체로 정의된다.</p>
-<p><strong>참고:</strong> 프로그래밍 언어에 따라 제1종 객체의 범위가 다르다.
-예를 들어, 파이썬, 자바 등에서는 함수는 제1종 객체가 아니다.</p>
 <p><strong>참고:</strong> '제1종 객체' 표현 대신에 '1급 객체' 표현이 참고서에 많이 사용된다. 
 하지만 객체를 1급, 2급 등으로 나누는 것은 표현상 적절하지 않다는 판단하에 여기서는 제1종, 제2종 등의
-표현을 사용한다.</p>
+표현을 사용한다.
+프로그래밍 언어에 따라 제1종 객체의 범위가 다르다.
+예를 들어, C와 자바 등에서는 함수는 제1종 객체가 아니다.</p>
 
 </div>
 </div>
@@ -13710,8 +13710,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>예를 들어, 스페이스, 느낌표, 물음표 등의 기호를 삭제하거나, 단어의 첫글자를 대문자로 변경하는 작업이 필요하다.
-단, 하나의 문자열에 포함된 단어들 사이의 빈 공간은 그대로 두어야 한다.</p>
-<p>언급된 작업 모두 문자열 메서드 또는 문자열과 관련된 함수로 처리할 수 있다.</p>
+언급된 작업 모두 문자열 메서드 또는 문자열과 관련된 함수로 처리할 수 있다.</p>
 
 </div>
 </div>
@@ -13806,7 +13805,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><code>re</code> 모듈의 <code>sub()</code> 함수: 문자열의 일부를 다른 문자령로 대체하기</li>
+<li><code>re</code> 모듈의 <code>sub()</code> 함수: 문자열의 일부를 다른 문자열로 대체</li>
 </ul>
 
 </div>
@@ -13818,19 +13817,9 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
-</pre></div>
 
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;[!#?]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s2">&quot;Geo#rgi?a!&quot;</span><span class="p">)</span>
+<span class="c1"># [!#?]: 느낌표, 샵, 물음표 를 대상으로 한다는 의미임.</span>
+<span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;[!#?]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s2">&quot;Geo#rgi?a!&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13843,7 +13832,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -13870,7 +13859,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
@@ -13893,7 +13882,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[20]:</div>
+    <div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -13917,14 +13906,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>아래 함수는 임의의 리스트에 대해 언급된 전처리를 처리하도록 하는 함수이다.</p>
+<p>아래 함수는 임의의 리스트에 대해 앞서 언급된 전처리를 수행하는 함수이다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">clean_strings</span><span class="p">(</span><span class="n">strings</span><span class="p">):</span>
@@ -13952,7 +13941,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clean_strings</span><span class="p">(</span><span class="n">states</span><span class="p">)</span>
@@ -13968,7 +13957,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[22]:</div>
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
@@ -14004,14 +13993,13 @@ div#notebook {
 <p>예를 들어, <code>strip()</code>과 <code>title()</code> 두 문자열 메서드의 이름으로 구성된 리스트는 아래와 같다.</p>
 <p><strong>주의사항:</strong> 함수를 명기 할 때 괄호를 사용하면 함수가 실행되어 반환한 값을 가리킨다. 
 따라서 괄호를 사용하지 않아야 함수 자체가 값으로 취급된다.</p>
-<p><strong>참고:</strong> 함수가 제1종 객체가 아닌 프로그래밍 언어에서는 함수들의 리스트, 어레이 등을 보다 복잡하게 다루어야 한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="nb">str</span><span class="o">.</span><span class="n">strip</span><span class="p">,</span> <span class="nb">str</span><span class="o">.</span><span class="n">title</span><span class="p">]</span>
@@ -14027,7 +14015,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[23]:</div>
+    <div class="prompt output_prompt">Out[22]:</div>
 
 
 
@@ -14052,7 +14040,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">remove_punctuation</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
@@ -14067,14 +14055,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>앞서 사용된 세 작업을 수행하는 함수들의 리스트가 다음과 같다.</p>
+<p>이제 앞서 사용된 세 작업을 수행하는 함수들의 리스트는 다음과 같다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clean_ops</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="o">.</span><span class="n">strip</span><span class="p">,</span> <span class="n">remove_punctuation</span><span class="p">,</span> <span class="nb">str</span><span class="o">.</span><span class="n">title</span><span class="p">]</span>
@@ -14099,7 +14087,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">clean_strings</span><span class="p">(</span><span class="n">strings</span><span class="p">,</span> <span class="n">ops</span><span class="p">):</span>
@@ -14118,7 +14106,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clean_strings</span><span class="p">(</span><span class="n">states</span><span class="p">,</span> <span class="n">clean_ops</span><span class="p">)</span>
@@ -14134,7 +14122,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[27]:</div>
+    <div class="prompt output_prompt">Out[26]:</div>
 
 
 
@@ -14159,11 +14147,11 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>좋아 보인다. 그런데 'South   Carolina'의 경우 두 단어 사이에 스페이스가 너무 많이 들어가 있는데
-언급된 세 작업은 이를 처리하지 못한다.</p>
-<p>이런 문자열을 처리하는 방법은 문자열을 스페이스 기준으로 쪼갠 다음에 다시 하나의 문자열로 합치는 것이다.</p>
+언급된 세 작업은 이를 처리하지 못한다. 
+이런 문자열을 처리하는 방법은 문자열을 스페이스 기준으로 쪼갠 다음에 다시 하나의 문자열로 합치는 것이다.</p>
 <ul>
-<li><code>split()</code> 문자열 메서드: 지정된 인자를 기준으로 문자열 쪼개기. 반환값은 문자열들의 리스트.
-  인자를 지정하지 않으면 스페이스를 기준으로 사용.</li>
+<li><code>split()</code> 문자열 메서드: 지정된 인자를 기준으로 문자열 쪼개기. 반환값은 쪼개진 문자열들의 리스트.
+  인자를 지정하지 않으면 스페이스가 기본 인자로 사용됨.</li>
 </ul>
 
 </div>
@@ -14171,7 +14159,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;South   Carolina&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
@@ -14187,7 +14175,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[28]:</div>
+    <div class="prompt output_prompt">Out[27]:</div>
 
 
 
@@ -14206,7 +14194,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><code>join()</code> 문자열 메서드: 지정된 문자열을 기준으로 문자열들의 리스트를 하나의 문자열로 이어붙이기</li>
+<li><code>join()</code> 문자열 메서드: 지정된 문자열을 매개체로 이용하여 여러 문자열 이어붙이기</li>
 </ul>
 <p>예를 들어, 스페이스(" ")를 기준으로 <code>South</code>와 <code>Carolina</code>를 이어붙이는 방법은 다음과 같다.</p>
 
@@ -14215,7 +14203,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;South&#39;</span><span class="p">,</span> <span class="s1">&#39;Carolina&#39;</span><span class="p">])</span>
@@ -14231,7 +14219,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[29]:</div>
+    <div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -14256,7 +14244,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;South&#39;</span><span class="p">,</span> <span class="s1">&#39;Carolina&#39;</span><span class="p">])</span>
@@ -14272,7 +14260,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[30]:</div>
+    <div class="prompt output_prompt">Out[29]:</div>
 
 
 
@@ -14290,16 +14278,16 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>위 두 작업을 처리하는 함수를 기존의 처리 함수 리스트에 추가해야 한다.
+<p>위 두 작업을 처리하는 함수를 <code>clean_ops</code>가 가리키는 함수 리스트에 추가해야 한다.
 <code>split()</code> 문자열 메서드는 <code>str.split</code> 으로 지정하면 되지만,
-<code>join()</code> 문자열 메서드는 여기서 필요한 스페이스 기준을 지정해야 하기에 아래와 같이 함수를 새로 정의해서 사용한다.</p>
+<code>join()</code> 문자열 메서드는 여기서 필요한 스페이스를 이어붙이기의 매개체로 지정해야 하기에 아래와 같이 함수를 새로 정의해서 사용한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">space_join</span><span class="p">(</span><span class="n">a_list</span><span class="p">):</span>
@@ -14314,7 +14302,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>이제 위 두 함수를 <code>clean_ops</code> 리스트에 추가한 후에 <code>clean_string()</code> 함수를 다시 실행하자.</p>
+<p>이제 위 두 함수를 <code>clean_ops</code> 리스트에 추가한 후에 <code>clean_string()</code> 함수를 다시 실행하면
+보다 깔끔하게 정돈된 문자열들의 리스트가 생성된다.</p>
 <p><strong>주의사항:</strong> <code>clean_string()</code> 함수는 전혀 수정하지 않는다.</p>
 
 </div>
@@ -14322,7 +14311,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clean_ops</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">,</span> <span class="n">space_join</span><span class="p">])</span>
@@ -14335,7 +14324,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cleaned_strings</span> <span class="o">=</span> <span class="n">clean_strings</span><span class="p">(</span><span class="n">states</span><span class="p">,</span> <span class="n">clean_ops</span><span class="p">)</span>
@@ -14353,7 +14342,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[33]:</div>
+    <div class="prompt output_prompt">Out[32]:</div>
 
 
 
@@ -14384,7 +14373,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>리스트에 세 번 항목으로 사용된 'Georgia'처럼 중복 사용된 항목을 제거하는 방법은 무엇인가?</p>
+<p>'Georgia'처럼 중복 사용된 리스트의 항목을 제거하는 방법은 무엇인가?</p>
 
 </div>
 </div>
@@ -14400,7 +14389,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>리스트에서 중복 항목을 제거하는 가장 간단한 방법은 집합 자료형으로 형변환으로 했다가
+<p>리스트에서 중복 항목을 제거하는 가장 간단한 방법은 집합 자료형으로 형변환했다가
 다시 리스트로 형변환을 실행하는 것이다. 
 즉, 다음과 같이 실행한다.</p>
 
@@ -14409,7 +14398,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">cleaned_strings</span><span class="p">))</span>
@@ -14425,13 +14414,13 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[34]:</div>
+    <div class="prompt output_prompt">Out[33]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&#39;West Virginia&#39;, &#39;Georgia&#39;, &#39;Florida&#39;, &#39;South Carolina&#39;, &#39;Alabama&#39;]</pre>
+<pre>[&#39;Georgia&#39;, &#39;West Virginia&#39;, &#39;Florida&#39;, &#39;Alabama&#39;, &#39;South Carolina&#39;]</pre>
 </div>
 
 </div>
@@ -14451,7 +14440,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>리스트에서 집합으로, 집합에서 리스트로 변형하면 기존 리시스트의 순서가 반드시 지켜지지 않는다.
+<p>리스트에서 집합으로, 집합에서 리스트로 형변환하면 기존 리스트에 포함된 항목들의 순서가 반드시 지켜지지 않는다.
 이유는 집합 자체에 순서 개념이 없기 때문이다.
 따라서 기존 리스트에 포함된 항목들의 순서를 유지하려면 <code>for</code> 반복문을 
 사용하는 것 이외에 달리 특별한 방법이 없다.</p>
@@ -14461,7 +14450,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_cleaned_strings</span> <span class="o">=</span> <span class="p">[]</span>
@@ -14482,7 +14471,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[35]:</div>
+    <div class="prompt output_prompt">Out[34]:</div>
 
 
 
@@ -14515,7 +14504,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">higher_func1</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
@@ -14537,7 +14526,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_three</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
@@ -14559,7 +14548,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">higher_func1</span><span class="p">(</span><span class="n">add_three</span><span class="p">)</span>
@@ -14575,7 +14564,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[38]:</div>
+    <div class="prompt output_prompt">Out[37]:</div>
 
 
 
@@ -14608,21 +14597,26 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>람다 함수는 이름이 없이 정의된 함수를 의미한다. 
-이름이 없기 때문에 사용할 때 함수 정의 자체를 항상 함께 표현해야 하며,
-이를 위해 람다(lambda)라는 예약어가 사용된다.</p>
-<p>k개의 인자를 받는 함수를 람다 함수로 정의하는 양식은 아래와 같다.</p>
+<p>람다 함수는 이름 없이 정의된 함수를 의미한다. 
+k개의 인자를 받는 함수를 람다 함수로 정의하는 양식은 아래와 같다.</p>
 <div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">변수1</span><span class="p">,</span> <span class="n">변수2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">변수k</span><span class="p">:</span> <span class="n">반환값</span>
 </pre></div>
 <p><strong>주의사항:</strong> 반환값을 지정할 때 <code>return</code> 예약어가 사용되지 않는다.</p>
-<p>예를 들어 두 수의 합을 계산하는 함수는 다음과 같이 정의한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#50696;&#51228;">&#50696;&#51228;<a class="anchor-link" href="#&#50696;&#51228;">&#182;</a></h4><p>예를 들어 두 수의 합을 반환하는 함수는 다음과 같이 정의한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
@@ -14638,7 +14632,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[39]:</div>
+    <div class="prompt output_prompt">Out[38]:</div>
 
 
 
@@ -14657,14 +14651,14 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>람다 함수는 이름이 없기 때문에 사용하려면 항상 람다 함수 자체를 하나의 이름처럼 사용해야 한다.
-예를 들어, 2와 4를 더우주려면 다음과 같이 사용한다.</p>
+예를 들어, 2와 4를 더하려면 다음과 같이 사용한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
@@ -14680,7 +14674,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[40]:</div>
+    <div class="prompt output_prompt">Out[39]:</div>
 
 
 
@@ -14698,77 +14692,16 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>실제로 위 람다 함수를 일반적으로 정의하려면 아래처럼 <code>def</code> 예약어와 함수의 이름을 지정해야 한다.</p>
+<h4 id="&#50696;&#51228;">&#50696;&#51228;<a class="anchor-link" href="#&#50696;&#51228;">&#182;</a></h4><p>예를 들어, 아래 고계 함수는 숫자 <code>x</code>가 인자로 들어오면 
+그 <code>x</code>를 자신의 인자 <code>y</code>와 더한 값을 반환하는 함수 <code>f()</code>를 반환한다.
+즉, 함수 내에서 다른 함수를 정의하고 그 함수를 반환값으로 지정한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_numbers</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_numbers</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[42]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>6</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#50696;&#51228;">&#50696;&#51228;<a class="anchor-link" href="#&#50696;&#51228;">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>예를 들어, 아래 고계 함수는 숫자가 들어오면 해당 숫자를 더한 값을 반환하는 함수를 반환한다.
-즉, 함수 정의 내부에서 다른 함수를 정의하고 그 함수를 반환값으로 지정함에 주의해야 한다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">higher_func2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -14785,14 +14718,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>add_three()</code> 함수를 아래와 같이 정의해도 된다.</p>
+<p>위 함수를 이용하여 <code>add_three()</code> 함수를 아래와 같이 정의할 수 있다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_three_new</span> <span class="o">=</span> <span class="n">higher_func2</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -14813,7 +14746,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_three_new</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="o">==</span> <span class="n">add_three</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
@@ -14829,7 +14762,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[45]:</div>
+    <div class="prompt output_prompt">Out[42]:</div>
 
 
 
@@ -14846,7 +14779,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_three_new</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span> <span class="o">==</span> <span class="n">add_three</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span>
@@ -14862,7 +14795,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[46]:</div>
+    <div class="prompt output_prompt">Out[43]:</div>
 
 
 
@@ -14882,7 +14815,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>그런데 <code>higher_func2()</code> 함수의 본문에서
 정의된 함수 <code>f()</code>는 함수의 리턴값으로만 사용되며
-다른 곳에서는 전혀 사용하지 않는다.
+다른 곳에서는 전혀 사용할 수 없다.
 이처럼 한 번만 사용할 함수를 정의하기 위해 굳이 이름을 줄 필요가 없으며,
 함수가 간단하게 정의되기에 아래와 같이 람다 함수를 바로 반환하도록 하는 게
 이해에 보다 도움이 된다.</p>
@@ -14892,7 +14825,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">higher_func2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -14922,7 +14855,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">apply_to_list</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">some_list</span><span class="p">):</span>
@@ -14942,18 +14875,15 @@ div#notebook {
 <li><code>some_list</code>: 리스트를 인자로 받음.</li>
 <li><code>f</code>: 하나의 인자를 받는 함수를 인자로 받음.</li>
 </ul>
-<p><strong>주의사항:</strong> 파이썬의 매개변수는 자료형을 명시하지 않기 때문에 원칙적으로는 임의의 자료형의 값을
-받을 수 있다. 하지만 함수의 원래 기능과 맞지 않는 값을 인자로 사용하면 실행 중에 
-오류가 발생한다. 따라서 함수의 기능이 무엇인지 정확하게 파악한 후에 인자를 사용해야 한다.</p>
 <p>반환값은 <code>some_list</code>의 각 항목값과 함께 <code>f()</code> 함수를 호출하여 반환되는 값들로 이루어진 리스트이다.
-예를 들어, 각 항목의 두 배로 이루어진 리스트는 다음과 같이 구한다.</p>
+예를 들어, 각 항목의 두 배로 이루어진 리스트는 다음과 같이 생성한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ints</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
@@ -14971,7 +14901,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[49]:</div>
+    <div class="prompt output_prompt">Out[46]:</div>
 
 
 
@@ -14998,7 +14928,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ints</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
@@ -15017,7 +14947,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[50]:</div>
+    <div class="prompt output_prompt">Out[47]:</div>
 
 
 
@@ -15042,7 +14972,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ints</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
@@ -15060,7 +14990,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[51]:</div>
+    <div class="prompt output_prompt">Out[48]:</div>
 
 
 
@@ -15085,7 +15015,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">new_ints</span><span class="p">:</span>
@@ -15119,7 +15049,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>참고:</strong> <code>new_ints</code>와 같은 이터러블 자료형은 <code>for</code> 반복문에 한 번 사용되면 더 이상 사용될 수 없다.
 아래 결과에서 아무 것도 출력되지 않는 이유가 거기에 있다.
-이유는 <code>map</code>과 같은 이터러블 자료형은 포함된 항목을 한 번 만 순회하도록 만들어졌기 때문이다.
+이유는 <code>map</code>과 같은 이터러블 자료형은 포함된 항목을 한 번만 순회하도록 만들어졌기 때문이다.
 단, 리스트보다 메모리를 훨씬 덜 차지하고 속도도 빠르다는 장점이 있어서 
 매우 많은 항목을 한 번 순회하는 용도로 많이 사용된다.</p>
 
@@ -15128,7 +15058,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">new_ints</span><span class="p">:</span>
@@ -15152,7 +15082,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]))</span>
@@ -15168,7 +15098,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[54]:</div>
+    <div class="prompt output_prompt">Out[51]:</div>
 
 
 
@@ -15193,7 +15123,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">z</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
@@ -15209,7 +15139,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[55]:</div>
+    <div class="prompt output_prompt">Out[52]:</div>
 
 
 
@@ -15237,7 +15167,7 @@ div#notebook {
 <p>함수를 키워드 인자로 받는 경우에 람다 함수가 유용하게 활용된다.
 예를 들어, 리스트의 <code>sort()</code> 메서드는 항목을 크기 순으로 정렬한다.
 그리고 크기 기준의 기본으로
-숫자인 경우는 숫자 크기, 문자열인 경우는 사전식 알파벳 순 처럼 일반적으로 
+숫자인 경우는 숫자 크기, 문자열인 경우는 사전식 알파벳 순서와 같이 일반적으로 
 알려진 기준을 사용한다.</p>
 <p>하지만, 예를 들어, 문자열의 크기 기준을 문자열에 포함된 서로 다른 문자들의 개수로 정하면 
 크기 기준을 다르게 적용해서 정렬해야 한다.
@@ -15251,7 +15181,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_chars</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -15273,7 +15203,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">strings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;card&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;aaaa&#39;</span><span class="p">,</span> <span class="s1">&#39;abab&#39;</span><span class="p">]</span>
@@ -15295,7 +15225,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="n">count_chars</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">strings</span><span class="p">]</span>
@@ -15311,7 +15241,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[58]:</div>
+    <div class="prompt output_prompt">Out[55]:</div>
 
 
 
@@ -15329,59 +15259,18 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>위 조건제시법을 <code>for</code> 반복문으로 표현하면 다음과 같다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">strings</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">count_chars</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>2
-4
-3
-1
-2
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p>이제 <code>key</code> 매개변수의 인자를 <code>count_chars</code>로 지정하여 정렬하면 된다.</p>
-<p><strong>주의사항:</strong> 소괄호를 사용하지 않음에 주의하라.</p>
+<p><strong>주의사항:</strong> <code>count_chars()</code> 라고 적지 않음에 주의하라.
+만약, 그렇게 하면 <code>count_chars</code> 함수가 아니라 해당 함수를 호출하여 반환된 값이 <code>key</code>에 대한
+키워드 인자로 사용된다. 하지만 <code>count_chars</code> 함수는 인자를 반드시 하나 받아서 호출되어야 하기에
+오류가 발생한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">strings</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">count_chars</span><span class="p">)</span>
@@ -15398,7 +15287,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[60]:</div>
+    <div class="prompt output_prompt">Out[56]:</div>
 
 
 
@@ -15426,7 +15315,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">strings</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
@@ -15443,7 +15332,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[61]:</div>
+    <div class="prompt output_prompt">Out[57]:</div>
 
 
 
@@ -15480,7 +15369,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_three</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">add_numbers</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -15503,7 +15392,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_three</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -15519,15 +15408,21 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[63]:</div>
+    <div class="prompt"></div>
 
 
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-59-f88d5e7a4be4&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>add_three<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">5</span><span class="ansi-blue-fg">)</span>
 
+<span class="ansi-green-fg">&lt;ipython-input-58-cccb8dd81cda&gt;</span> in <span class="ansi-cyan-fg">&lt;lambda&gt;</span><span class="ansi-blue-fg">(y)</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>add_three <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">lambda</span> y<span class="ansi-blue-fg">:</span> add_numbers<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">,</span> y<span class="ansi-blue-fg">)</span>
 
-<div class="output_text output_subarea output_execute_result">
-<pre>8</pre>
+<span class="ansi-red-fg">NameError</span>: name &#39;add_numbers&#39; is not defined</pre>
 </div>
-
 </div>
 
 </div>
@@ -15536,7 +15431,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_three</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
@@ -15552,15 +15447,21 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[64]:</div>
+    <div class="prompt"></div>
 
 
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-60-0b267fdbca20&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>add_three<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">11</span><span class="ansi-blue-fg">)</span>
 
+<span class="ansi-green-fg">&lt;ipython-input-58-cccb8dd81cda&gt;</span> in <span class="ansi-cyan-fg">&lt;lambda&gt;</span><span class="ansi-blue-fg">(y)</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>add_three <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">lambda</span> y<span class="ansi-blue-fg">:</span> add_numbers<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">,</span> y<span class="ansi-blue-fg">)</span>
 
-<div class="output_text output_subarea output_execute_result">
-<pre>14</pre>
+<span class="ansi-red-fg">NameError</span>: name &#39;add_numbers&#39; is not defined</pre>
 </div>
-
 </div>
 
 </div>
@@ -15591,7 +15492,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>앞서 설명한 부분 적용 함수 기능은 기존에 정의된 함수를 활용하는 유용한 기법이다.
 람다 함수를 이용하는 방식 보다 편하게 부분 적용 함수를 정의하는 것을 도와주는 
-도구가 있다. 바로 <code>functools</code> 모듈의 <code>partial</code> 함수이며,
+도구가 있다. 바로 <code>functools</code> 모듈의 <code>partial()</code> 함수이며,
 기본 사용법은 다음과 같다.</p>
 
 </div>
@@ -15599,7 +15500,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
@@ -15608,6 +15509,31 @@ div#notebook {
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-61-3f91e91309dd&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">from</span> functools <span class="ansi-green-fg">import</span> partial
+<span class="ansi-green-intense-fg ansi-bold">      2</span> 
+<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>add_three <span class="ansi-blue-fg">=</span> partial<span class="ansi-blue-fg">(</span>add_numbers<span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;add_numbers&#39; is not defined</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -15622,7 +15548,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">multi_add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
@@ -15638,7 +15564,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_3_5</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="c1"># 3 + 5 + 8 계산</span>
@@ -15654,7 +15580,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[67]:</div>
+    <div class="prompt output_prompt">Out[63]:</div>
 
 
 
@@ -15673,14 +15599,14 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>add_3_5()</code> 함수를 정의할 때 미리 지정된 인자는 위치상 처음 두 개의 인자였다.
-그런데 아래처럼 첫째, 셋째 인자를 미리 지정하여 부분 적용 함수를 정의할 때 조심해야 한다.</p>
+그런데 아래처럼 첫째, 셋째 인자를 미리 지정하여 부분 적용 함수를 정의할 때는 상당히 조심해야 한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_3_5_second</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">multi_add</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -15701,7 +15627,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_3_5_second</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -15722,12 +15648,12 @@ div#notebook {
 
 <div class="output_subarea output_text output_error">
 <pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-69-16fc5e63f483&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>add_3_5_second<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-cyan-intense-fg ansi-bold">4</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-65-16fc5e63f483&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>add_3_5_second<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">4</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-red-intense-fg ansi-bold">TypeError</span>: multi_add() got multiple values for argument &#39;x&#39;</pre>
+<span class="ansi-red-fg">TypeError</span>: multi_add() got multiple values for argument &#39;x&#39;</pre>
 </div>
 </div>
 
@@ -15739,7 +15665,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>오류가 발생하는 이유는 기존 함수의 매개변수가 선언된 순서대로 인자가 전달되기 때문이다.
-즉, 4가 <code>y</code>가 아닌 <code>x</code>에게 전달되어, <code>x</code>에 대한 인자가 두번 지정되는 오류가 발생하게 된다.
+즉, 4가 <code>y</code>가 아닌 <code>x</code>에게 전달되어, <code>x</code>에 대한 인자가 두 번 지정되는 오류가 발생하게 된다.
 해결책 중에 하나는 매개변수를 키워드로 사용하는 것이다.</p>
 
 </div>
@@ -15747,7 +15673,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_3_5_second</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -15763,7 +15689,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[70]:</div>
+    <div class="prompt output_prompt">Out[66]:</div>
 
 
 
@@ -15789,7 +15715,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_3_5_second</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">multi_add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -15810,7 +15736,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_3_5_second</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -15826,7 +15752,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[72]:</div>
+    <div class="prompt output_prompt">Out[68]:</div>
 
 
 

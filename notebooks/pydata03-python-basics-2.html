@@ -13086,7 +13086,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#51452;&#50836;-&#45236;&#50857;">&#51452;&#50836; &#45236;&#50857;<a class="anchor-link" href="#&#51452;&#50836;-&#45236;&#50857;">&#182;</a></h2><ul>
 <li>모음 자료형 2편: 사전, 집합</li>
-<li>조건 제시법(Comprehension)</li>
+<li>조건제시법(Comprehension)</li>
 </ul>
 
 </div>
@@ -13117,11 +13117,11 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>현대 프로그래밍 분야에서 가장 중요하게 사용되는 자료형이 사전(<code>dict</code>)이다. 
+<p>현대 프로그래밍 언어 분야에서 가장 중요하게 사용되는 자료형이 사전(<code>dict</code>)이다. 
 특히, 데이터 분석 분야에서 더욱 그러하다. 
-언어에 따라 해시맵(hash map), 연관배열(associative array) 등으로 부르며,
+언어에 따라 해시맵(hash map), 연관배열(associative array) 등으로 불리기도 하며,
 조금씩 다른 성질을 갖기도 하지만 기본적으로 파이썬의 사전 자료형과 동일하게 작동한다.</p>
-<p><strong>참고:</strong> 사전 자료형을 사람에 따라 딕셔너리(dictionary)라고 부르기도 하지만 여기서는 사전을 사용한다.</p>
+<p><strong>참고:</strong> 사전 자료형을 사람에 따라 딕셔너리(dictionary)라고 부르기도 하지만 여기서는 사전이라 부른다.</p>
 
 </div>
 </div>
@@ -13142,8 +13142,8 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>사전 객체는 중괄호를 사용한다. 
 집합에 사용되는 기호와 동일하지만 항목이 <code>키:값</code> 형식이라면 사전 객체로 인식된다.</p>
-<p><strong>주의:</strong> <code>키:값</code> 은 파이썬에서 인정하는 값이 아니다. 
-따라서 위 형식은 사전 객체 이외에서는 사용할 수 없다.</p>
+<p><strong>주의:</strong> <code>키:값</code> 형식의 사전 항목은 파이썬에서 인정하는 제1종 객체가 아니며, 
+따라서 사전 객체의 항목으로만 사용된다.</p>
 
 </div>
 </div>
@@ -13212,7 +13212,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>반면에 공집합은 아래와 같이 선언한다.</p>
+<p><strong>참고:</strong> 공집합은 아래와 같이 선언한다.</p>
 
 </div>
 </div>
@@ -13273,7 +13273,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>d1</code>은 아래와 같이 두 개의 항목을 갖는 사전을 가리킨다.</p>
+<p>사전은 변경 가능하다.</p>
+<p>예를 들어, <code>d1</code>은 아래와 같이 두 개의 항목을 갖는 사전을 가리킨다.</p>
 
 </div>
 </div>
@@ -13316,8 +13317,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>사전은 변경 가능하다.<br>
-예를 들어, <code>7 : 'an integer'</code> 를 새로운 항목을 추가하려면 아래와 같이 진행한다.</p>
+<p><code>7 : 'an integer'</code> 를 새로운 항목을 추가하려면 아래와 같이 진행한다.</p>
 
 </div>
 </div>
@@ -13371,7 +13371,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>다음은 <code>'language' : 'python'</code> 을 추가한다.</p>
+<p>다음은 <code>'language' : 'python'</code> 을 추가해보자.</p>
 
 </div>
 </div>
@@ -13490,10 +13490,10 @@ div#notebook {
 
 <div class="output_subarea output_text output_error">
 <pre>
-<span class="ansi-cyan-intense-fg ansi-bold">  File </span><span class="ansi-green-intense-fg ansi-bold">&#34;&lt;ipython-input-10-374d1cd9f084&gt;&#34;</span><span class="ansi-cyan-intense-fg ansi-bold">, line </span><span class="ansi-green-intense-fg ansi-bold">1</span>
-<span class="ansi-yellow-intense-fg ansi-bold">    `c` in d1</span>
-<span class="ansi-white-intense-fg ansi-bold">    ^</span>
-<span class="ansi-red-intense-fg ansi-bold">SyntaxError</span><span class="ansi-red-intense-fg ansi-bold">:</span> invalid syntax
+<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-10-374d1cd9f084&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">1</span>
+<span class="ansi-red-fg">    `c` in d1</span>
+    ^
+<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax
 </pre>
 </div>
 </div>
@@ -13547,7 +13547,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>없는 키의 값의 확인하면 당연히 오류가 발생한다.</p>
+<p>없는 키의 값을 확인하려고 시도하면 <code>KeyError</code> 오류가 발생한다.</p>
 
 </div>
 </div>
@@ -13575,12 +13575,12 @@ div#notebook {
 
 <div class="output_subarea output_text output_error">
 <pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">KeyError</span>                                  Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-12-60b2f2ae7442&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>d1<span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-blue-intense-fg ansi-bold">&#39;c&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">]</span>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-12-60b2f2ae7442&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>d1<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;c&#39;</span><span class="ansi-blue-fg">]</span>
 
-<span class="ansi-red-intense-fg ansi-bold">KeyError</span>: &#39;c&#39;</pre>
+<span class="ansi-red-fg">KeyError</span>: &#39;c&#39;</pre>
 </div>
 </div>
 
@@ -13599,7 +13599,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="s1">&#39;c&#39;</span> <span class="ow">in</span> <span class="n">d1</span><span class="p">:</span> 
@@ -13612,18 +13612,36 @@ div#notebook {
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>키가 없어요.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>그런데 <code>get()</code> 메서드는 대괄호 기호와 동일한 일을 하면서 오류를 발생하지 않는다.</p>
+<p>그런데 <code>get()</code> 메서드는 대괄호 기호와 동일한 일을 하면서 오류를 발생시키지 않는다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d1</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
@@ -13639,14 +13657,14 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>get()</code> 메서드는 키가 존재하자 않으면 오류를 발생시키는 대신에 <code>None</code>을 반환한다.
 또한, 키가 존재하지 않을 때 지정된 값을 반환하도록 할 수도 있다.
-지정할 값을 둘째 인자로 정하면 된다.</p>
+지정할 값을 둘째 인자로 정해놓으면 된다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d1</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s2">&quot;키가 없어요&quot;</span><span class="p">)</span>
@@ -13662,7 +13680,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -13696,7 +13714,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>단어를 맨 처음에 위치한 알파벳을 기준으로 단어들을 정리하고자 한다. 
+<p>문자열 맨 처음에 위치한 알파벳을 기준으로 하여 문자열을 정리하고자 한다. 
 주어진 단어는 다음과 같다.</p>
 
 </div>
@@ -13704,7 +13722,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;bat&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;atom&#39;</span><span class="p">,</span> <span class="s1">&#39;book&#39;</span><span class="p">]</span>
@@ -13740,7 +13758,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 비어있는 사전 선언</span>
@@ -13763,7 +13781,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">by_letter</span>
@@ -13779,7 +13797,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -13797,15 +13815,15 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>이전 코드의 단점은 알파벳이 이미 사전에 키로 포함되어 있는가를 먼저 확인해야 한다는 것이다. 
-아래와 같이 <code>if ... else ...</code>를 사용하지 않으면 오류가 발생한다.</p>
+<p>잘 작동한다. 하지만 알파벳이 이미 사전에 키로 포함되어 있는가를 먼저 확인해야 하는 불편함이 존재한다.
+만약에 <code>if ... else ...</code>를 사용하지 않으면 오류가 발생한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">by_letter</span> <span class="o">=</span> <span class="p">{}</span>
@@ -13830,14 +13848,14 @@ div#notebook {
 
 <div class="output_subarea output_text output_error">
 <pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">KeyError</span>                                  Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-17-e0e34a4934c7&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">      3</span> <span class="ansi-green-intense-fg ansi-bold">for</span> word <span class="ansi-green-intense-fg ansi-bold">in</span> words<span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">      4</span>     letter <span class="ansi-yellow-intense-fg ansi-bold">=</span> word<span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-cyan-intense-fg ansi-bold">0</span><span class="ansi-yellow-intense-fg ansi-bold">]</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 5</span><span class="ansi-yellow-intense-fg ansi-bold">     </span>by_letter<span class="ansi-yellow-intense-fg ansi-bold">[</span>letter<span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>append<span class="ansi-yellow-intense-fg ansi-bold">(</span>word<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-19-e0e34a4934c7&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">for</span> word <span class="ansi-green-fg">in</span> words<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     letter <span class="ansi-blue-fg">=</span> word<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span>
+<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg">     </span>by_letter<span class="ansi-blue-fg">[</span>letter<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span>word<span class="ansi-blue-fg">)</span>
 
-<span class="ansi-red-intense-fg ansi-bold">KeyError</span>: &#39;a&#39;</pre>
+<span class="ansi-red-fg">KeyError</span>: &#39;a&#39;</pre>
 </div>
 </div>
 
@@ -13849,7 +13867,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>이유는 <code>'apple'</code> 단어에서 <code>'a' : ['apple']</code>을 추가 해야 하는데
-<code>'a'</code>가 아직 키로 사용되지 않았기에 오류가 나는 것이다.</p>
+<code>'a'</code>가 아직 키로 지정되지 않았기에 오류가 나는 것이다.</p>
 <p>반면에 아래와 같이 하면 오류가 발생하진 않지만 제대로 작동하지 않는다.</p>
 
 </div>
@@ -13857,7 +13875,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">by_letter</span> <span class="o">=</span> <span class="p">{}</span>
@@ -13874,7 +13892,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">by_letter</span>
@@ -13890,7 +13908,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
@@ -13908,17 +13926,18 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>이유는 새로운 단어로 매번 키의 값이 변경되기 때문이다.
+<p>이유는 새로운 단어로 매번 키의 값이 업데이트되기 때문이다.
 이와 같이 키가 기존에 사용되었는지 여부를 매번 확인하는 불편함을 한 번에 해결하려면
 <code>collections</code> 모듈의 <code>defaultdict</code> 클래스를 활용한다.
-즉, 굳이 키의 사용여부를 사용할 필요가 없으며, 만약에 없다면 키의 값으로 비어있는 리스트를 만들어준다.</p>
+즉, 굳이 키의 사용여부를 확인할 필요가 없다.
+이유는 만약에 키로 사용된 적이 없다면 키의 값으로 비어있는 리스트를 만들어서 항목을 추가해주기 때문이다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
@@ -13941,7 +13960,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[20]:</div>
+    <div class="prompt output_prompt">Out[22]:</div>
 
 
 
@@ -13967,7 +13986,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">by_letter</span> <span class="o">=</span> <span class="p">{}</span>
@@ -13989,7 +14008,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[21]:</div>
+    <div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -14021,7 +14040,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d1</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;some value&#39;</span>
@@ -14035,7 +14054,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d1</span>
@@ -14051,7 +14070,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[23]:</div>
+    <div class="prompt output_prompt">Out[25]:</div>
 
 
 
@@ -14074,7 +14093,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>del</code> 예약어는 함수가 아니라 파이썬 자체에서 지원하는 특별한 기능을 가진 일종의 명령문이다. 
+<p><code>del</code> 예약어는 함수가 아니라 파이썬 자체에서 지원하는 특별한 기능을 가진 명령문이다. 
 아래 명령문은 5를 키워드로 갖는 <code>5: 'some value'</code>를 사전에서 삭제한다.</p>
 
 </div>
@@ -14082,7 +14101,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">del</span> <span class="n">d1</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
@@ -14100,7 +14119,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[24]:</div>
+    <div class="prompt output_prompt">Out[26]:</div>
 
 
 
@@ -14129,7 +14148,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d1</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;dummy&#39;</span><span class="p">)</span>
@@ -14145,7 +14164,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[25]:</div>
+    <div class="prompt output_prompt">Out[27]:</div>
 
 
 
@@ -14162,7 +14181,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d1</span>
@@ -14178,7 +14197,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[26]:</div>
+    <div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -14210,7 +14229,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
@@ -14226,7 +14245,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[27]:</div>
+    <div class="prompt output_prompt">Out[29]:</div>
 
 
 
@@ -14258,7 +14277,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
@@ -14274,7 +14293,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[28]:</div>
+    <div class="prompt output_prompt">Out[30]:</div>
 
 
 
@@ -14308,7 +14327,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d1</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;b&#39;</span> <span class="p">:</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span> <span class="p">:</span> <span class="mi">12</span><span class="p">})</span>
@@ -14326,7 +14345,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[29]:</div>
+    <div class="prompt output_prompt">Out[31]:</div>
 
 
 
@@ -14351,7 +14370,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>기존에 포함된 키-값 에서 키의 값을 변경하려면 다음과 같이 한다.
+<p>기존에 포함된 키-값 에서 값을 변경하려면 다음과 같이 한다.
 리스트에서 항목을 수정하는 방식과 유사하며,
 인덱스 대신에 키를 이용한다.
 예를 들어, 아래 코드는 <code>'language'</code>의 값을 <code>'python'</code> 에서 <code>'python3'</code>로 업데이트한다.</p>
@@ -14361,7 +14380,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d1</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;python3&#39;</span>
@@ -14379,7 +14398,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[30]:</div>
+    <div class="prompt output_prompt">Out[32]:</div>
 
 
 
@@ -14408,16 +14427,15 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>모든 항목이 길이가 2인 튜플 또는 리스트인 튜플 또는 리스트를 인자로 사용하여
-새로운 사전을 생성한다.
-항목은 첫째 인자는 키, 둘째 인자는 값으로 사용된다.</p>
+<p>모든 항목이 길이가 2인 튜플 또는 리스트인 모음 자료형을 인자로 사용하여
+새로운 사전을 생성한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">dict</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)])</span>
@@ -14433,7 +14451,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[31]:</div>
+    <div class="prompt output_prompt">Out[33]:</div>
 
 
 
@@ -14450,7 +14468,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">dict</span><span class="p">(([</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]))</span>
@@ -14466,7 +14484,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[32]:</div>
+    <div class="prompt output_prompt">Out[34]:</div>
 
 
 
@@ -14491,7 +14509,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mapping</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))))</span>
@@ -14508,7 +14526,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[33]:</div>
+    <div class="prompt output_prompt">Out[35]:</div>
 
 
 
@@ -14533,11 +14551,11 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>사전의 키는 변경 불가능한 객체만 사용된다. 
-예를 들어 문자열, 정수, 실수, 튜플 등이다. 
+<p>변경 불가능한 객체만 사전의 키로 사용될 수 있다.
+예를 들어, 문자열, 정수, 실수, 튜플 등이다. 
 단, 튜플의 항목에 리스트 등 변경 가능한 값이 사용되지 않아야 한다.</p>
 <p>이렇게 사전의 키로 사용될 수 있는 값은 <strong>해시 가능</strong>(hashable)하다고 하며
-<code>hash()</code> 함수를 이용하여 해기 가능 여부를 판단할 수 있다.
+<code>hash()</code> 함수를 이용하여 해시 가능 여부를 판단할 수 있다.
 <code>hash()</code> 함수의 반환값은 두 종류이다.</p>
 <ul>
 <li>해시 가능일 때: 특정 정수</li>
@@ -14557,7 +14575,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">)</span>
@@ -14573,13 +14591,13 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[34]:</div>
+    <div class="prompt output_prompt">Out[36]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>-3013856278845514328</pre>
+<pre>628411430077112835</pre>
 </div>
 
 </div>
@@ -14590,7 +14608,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">hash</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
@@ -14606,7 +14624,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[35]:</div>
+    <div class="prompt output_prompt">Out[37]:</div>
 
 
 
@@ -14631,7 +14649,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">{(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="p">:</span> <span class="s2">&quot;튜플 사용 가능&quot;</span><span class="p">}</span>
@@ -14647,7 +14665,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[36]:</div>
+    <div class="prompt output_prompt">Out[38]:</div>
 
 
 
@@ -14672,7 +14690,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">hash</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
@@ -14693,12 +14711,12 @@ div#notebook {
 
 <div class="output_subarea output_text output_error">
 <pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-37-8ffc25aff872&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>hash<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-cyan-intense-fg ansi-bold">1</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-cyan-intense-fg ansi-bold">2</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-cyan-intense-fg ansi-bold">2</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-cyan-intense-fg ansi-bold">3</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-39-8ffc25aff872&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>hash<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-red-intense-fg ansi-bold">TypeError</span>: unhashable type: &#39;list&#39;</pre>
+<span class="ansi-red-fg">TypeError</span>: unhashable type: &#39;list&#39;</pre>
 </div>
 </div>
 
@@ -14716,7 +14734,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">{(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="p">:</span> <span class="s2">&quot;오류 발생&quot;</span><span class="p">}</span>
@@ -14737,12 +14755,12 @@ div#notebook {
 
 <div class="output_subarea output_text output_error">
 <pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-38-6760dc4613cc&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span><span class="ansi-yellow-intense-fg ansi-bold">{</span><span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-cyan-intense-fg ansi-bold">1</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-cyan-intense-fg ansi-bold">2</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-cyan-intense-fg ansi-bold">2</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-cyan-intense-fg ansi-bold">3</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">)</span> <span class="ansi-yellow-intense-fg ansi-bold">:</span> <span class="ansi-blue-intense-fg ansi-bold">&#34;오류 발생&#34;</span><span class="ansi-yellow-intense-fg ansi-bold">}</span>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-40-6760dc4613cc&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">:</span> <span class="ansi-blue-fg">&#34;오류 발생&#34;</span><span class="ansi-blue-fg">}</span>
 
-<span class="ansi-red-intense-fg ansi-bold">TypeError</span>: unhashable type: &#39;list&#39;</pre>
+<span class="ansi-red-fg">TypeError</span>: unhashable type: &#39;list&#39;</pre>
 </div>
 </div>
 
@@ -14762,7 +14780,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>집합 자료형은 수학에서 배운 집합과 동일한 개념이다.
 중괄호 기호를 사용하지만 사전 자료형과 혼동되지는 않을 것이다.
-집합의 항목들 사이에는 순서가 없으며, 중복도 허영하지 않는다.</p>
+집합의 항목들 사이에는 순서가 없으며, 중복도 허용하지 않는다.</p>
 <p><strong>참고:</strong> 사전과 집합은 순차 자료형이 아니다.</p>
 
 </div>
@@ -14770,7 +14788,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
@@ -14786,7 +14804,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[39]:</div>
+    <div class="prompt output_prompt">Out[41]:</div>
 
 
 
@@ -14811,7 +14829,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span> <span class="o">==</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>
@@ -14827,7 +14845,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[40]:</div>
+    <div class="prompt output_prompt">Out[42]:</div>
 
 
 
@@ -14859,7 +14877,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">set</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
@@ -14875,7 +14893,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[41]:</div>
+    <div class="prompt output_prompt">Out[43]:</div>
 
 
 
@@ -14892,7 +14910,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">set</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
@@ -14908,7 +14926,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[42]:</div>
+    <div class="prompt output_prompt">Out[44]:</div>
 
 
 
@@ -14933,7 +14951,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
@@ -14949,7 +14967,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[43]:</div>
+    <div class="prompt output_prompt">Out[45]:</div>
 
 
 
@@ -14966,7 +14984,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">tuple</span><span class="p">(</span><span class="nb">set</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
@@ -14982,7 +15000,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[44]:</div>
+    <div class="prompt output_prompt">Out[46]:</div>
 
 
 
@@ -15015,7 +15033,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a_set</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
@@ -15034,7 +15052,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[45]:</div>
+    <div class="prompt output_prompt">Out[47]:</div>
 
 
 
@@ -15053,14 +15071,15 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>항목 삭제는 <code>remove()</code> 메서드를 이용한다.
-<code>remove()</code> 메서드는 <code>None</code>을 반환한다.</p>
+<code>remove()</code> 메서드는 원소를 삭제하지만, 삭제된 값을 반환하지는 않는다.
+실제 반환값은 <code>None</code>이다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a_set</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -15073,7 +15092,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a_set</span>
@@ -15089,7 +15108,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[47]:</div>
+    <div class="prompt output_prompt">Out[49]:</div>
 
 
 
@@ -15114,7 +15133,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a_set</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -15135,12 +15154,12 @@ div#notebook {
 
 <div class="output_subarea output_text output_error">
 <pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">KeyError</span>                                  Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-48-ab9f1d1ba40e&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>a_set<span class="ansi-yellow-intense-fg ansi-bold">.</span>remove<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-cyan-intense-fg ansi-bold">4</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-50-ab9f1d1ba40e&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>a_set<span class="ansi-blue-fg">.</span>remove<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">4</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-red-intense-fg ansi-bold">KeyError</span>: 4</pre>
+<span class="ansi-red-fg">KeyError</span>: 4</pre>
 </div>
 </div>
 
@@ -15174,7 +15193,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
@@ -15188,7 +15207,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
@@ -15204,7 +15223,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[50]:</div>
+    <div class="prompt output_prompt">Out[52]:</div>
 
 
 
@@ -15229,7 +15248,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">|</span> <span class="n">b</span>
@@ -15245,7 +15264,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[51]:</div>
+    <div class="prompt output_prompt">Out[53]:</div>
 
 
 
@@ -15279,7 +15298,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
@@ -15295,7 +15314,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[52]:</div>
+    <div class="prompt output_prompt">Out[54]:</div>
 
 
 
@@ -15320,7 +15339,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span>
@@ -15336,7 +15355,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[53]:</div>
+    <div class="prompt output_prompt">Out[55]:</div>
 
 
 
@@ -15354,14 +15373,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>주의사항:</strong> 합집합, 교집합 연산은 기존의 집합은 변경하지 않고 새로운 집합을 생성한다.</p>
+<p><strong>주의사항:</strong> 합집합, 교집합 연산은 기존의 집합은 변경하지 않으면서 새로운 집합을 생성한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span>
@@ -15377,7 +15396,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[54]:</div>
+    <div class="prompt output_prompt">Out[56]:</div>
 
 
 
@@ -15394,7 +15413,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span>
@@ -15410,7 +15429,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[55]:</div>
+    <div class="prompt output_prompt">Out[57]:</div>
 
 
 
@@ -15442,7 +15461,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a_set</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
@@ -15459,7 +15478,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[56]:</div>
+    <div class="prompt output_prompt">Out[58]:</div>
 
 
 
@@ -15484,7 +15503,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a_set</span><span class="o">.</span><span class="n">issuperset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">})</span>
@@ -15500,7 +15519,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[57]:</div>
+    <div class="prompt output_prompt">Out[59]:</div>
 
 
 
@@ -15533,7 +15552,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
@@ -15555,13 +15574,13 @@ div#notebook {
 
 <div class="output_subarea output_text output_error">
 <pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-58-7549b6094bbb&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">      1</span> my_data <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-cyan-intense-fg ansi-bold">1</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-cyan-intense-fg ansi-bold">2</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-cyan-intense-fg ansi-bold">3</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-cyan-intense-fg ansi-bold">4</span><span class="ansi-yellow-intense-fg ansi-bold">]</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 2</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>my_set <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-yellow-intense-fg ansi-bold">{</span>my_data<span class="ansi-yellow-intense-fg ansi-bold">}</span>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-60-7549b6094bbb&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> my_data <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">4</span><span class="ansi-blue-fg">]</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>my_set <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">{</span>my_data<span class="ansi-blue-fg">}</span>
 
-<span class="ansi-red-intense-fg ansi-bold">TypeError</span>: unhashable type: &#39;list&#39;</pre>
+<span class="ansi-red-fg">TypeError</span>: unhashable type: &#39;list&#39;</pre>
 </div>
 </div>
 
@@ -15572,14 +15591,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#51312;&#44148;-&#51228;&#49884;&#48277;">&#51312;&#44148; &#51228;&#49884;&#48277;<a class="anchor-link" href="#&#51312;&#44148;-&#51228;&#49884;&#48277;">&#182;</a></h2>
+<h2 id="&#51312;&#44148;&#51228;&#49884;&#48277;">&#51312;&#44148;&#51228;&#49884;&#48277;<a class="anchor-link" href="#&#51312;&#44148;&#51228;&#49884;&#48277;">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>리스트, 집합, 사전을 수학 시간에 배운 조건 제시법(comprehension)을 이용하여 정의할 수 있다.
+<p>리스트, 집합, 사전을 수학 시간에 배운 조건제시법(comprehension)을 이용하여 정의할 수 있다.
 이 기법은 특히 리스트와 함께 매우 유용하게 활용된다.</p>
 
 </div>
@@ -15588,7 +15607,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#47532;&#49828;&#53944;-&#51312;&#44148;-&#51228;&#49884;&#48277;">&#47532;&#49828;&#53944; &#51312;&#44148; &#51228;&#49884;&#48277;<a class="anchor-link" href="#&#47532;&#49828;&#53944;-&#51312;&#44148;-&#51228;&#49884;&#48277;">&#182;</a></h3>
+<h3 id="&#47532;&#49828;&#53944;-&#51312;&#44148;&#51228;&#49884;&#48277;">&#47532;&#49828;&#53944; &#51312;&#44148;&#51228;&#49884;&#48277;<a class="anchor-link" href="#&#47532;&#49828;&#53944;-&#51312;&#44148;&#51228;&#49884;&#48277;">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -15596,17 +15615,17 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>예를 들어, 0부터 9 까지의 자연수 중에서 짝수로 이루어진 집합을 수학에서 
-조건 제시법으로 아래와 같이 정의한다.</p>
+조건제시법으로 아래와 같이 정의한다.</p>
 
 <pre><code>{ x | 0 &lt; x &lt; 10, 단 x는 짝수 } = { 0, 2, 4, 6, 8 }</code></pre>
-<p>여기서 집합을 리스트로 단어를 바꾸면 거의 바로 리스트 조건 제시법이 된다.</p>
+<p>여기서 집합 기호를 대괄호로 바꾸면 거의 바로 리스트 조건제시법이 된다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">%</span><span class="k">2</span> == 0]
@@ -15624,7 +15643,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[59]:</div>
+    <div class="prompt output_prompt">Out[61]:</div>
 
 
 
@@ -15642,14 +15661,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>위 조건 제시법은 아래 <code>for</code> 반복문을 활용한 코드와 동일하다.</p>
+<p>'위 조건제시법은 아래 <code>for</code> 반복문을 활용한 아래 코드와 동일하다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a_list</span> <span class="o">=</span> <span class="p">[]</span>
@@ -15671,7 +15690,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[60]:</div>
+    <div class="prompt output_prompt">Out[62]:</div>
 
 
 
@@ -15701,106 +15720,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">strings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;as&#39;</span><span class="p">,</span> <span class="s1">&#39;bat&#39;</span><span class="p">,</span> <span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="s1">&#39;dove&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">]</span>
 
 <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">strings</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[61]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&#39;BAT&#39;, &#39;CAR&#39;, &#39;DOVE&#39;, &#39;PYTHON&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#51665;&#54633;-&#51312;&#44148;-&#51228;&#49884;&#48277;">&#51665;&#54633; &#51312;&#44148; &#51228;&#49884;&#48277;<a class="anchor-link" href="#&#51665;&#54633;-&#51312;&#44148;-&#51228;&#49884;&#48277;">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>집합에 대한 조건 제시법 사용도 유사하다.
-아래 코드는 앞서 사용된 문자열들의 길이를 원소로 갖는 집합을 생성한다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unique_lengths</span> <span class="o">=</span> <span class="p">{</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">strings</span><span class="p">}</span>
-
-<span class="n">unique_lengths</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[62]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>{1, 2, 3, 4, 6}</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>참고:</strong> <code>map()</code> 함수를 이용하여 동일한 결과를 얻을 수 있다.
-하지만 조건 제시법을 사용하는 것을 추천한다. 
-이유는 보다 선명하게 정의를 이해할 수 있기 때문이다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">strings</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -15819,6 +15744,57 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
+<pre>[&#39;BAT&#39;, &#39;CAR&#39;, &#39;DOVE&#39;, &#39;PYTHON&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#51665;&#54633;-&#51312;&#44148;&#51228;&#49884;&#48277;">&#51665;&#54633; &#51312;&#44148;&#51228;&#49884;&#48277;<a class="anchor-link" href="#&#51665;&#54633;-&#51312;&#44148;&#51228;&#49884;&#48277;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>집합에 대한 조건제시법 사용도 유사하다.
+아래 코드는 앞서 사용된 문자열들의 길이를 원소로 갖는 집합을 생성한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unique_lengths</span> <span class="o">=</span> <span class="p">{</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">strings</span><span class="p">}</span>
+
+<span class="n">unique_lengths</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[64]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
 <pre>{1, 2, 3, 4, 6}</pre>
 </div>
 
@@ -15831,14 +15807,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#49324;&#51204;-&#51312;&#44148;-&#51228;&#49884;&#48277;">&#49324;&#51204; &#51312;&#44148; &#51228;&#49884;&#48277;<a class="anchor-link" href="#&#49324;&#51204;-&#51312;&#44148;-&#51228;&#49884;&#48277;">&#182;</a></h3>
+<h3 id="&#49324;&#51204;-&#51312;&#44148;&#51228;&#49884;&#48277;">&#49324;&#51204; &#51312;&#44148;&#51228;&#49884;&#48277;<a class="anchor-link" href="#&#49324;&#51204;-&#51312;&#44148;&#51228;&#49884;&#48277;">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>조건 제시법을 이용하여 사전을 생성하는 과정도 유사하다.
+<p>조건제시법을 이용하여 사전을 생성하는 과정도 유사하다.
 아래 코드는 앞서 사용된 문자열을 키로, 문자열의 길이를 값으로 하는 사전을 생성한다.</p>
 
 </div>
@@ -15846,7 +15822,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">len_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">val</span> <span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">strings</span><span class="p">}</span>
@@ -15864,7 +15840,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[64]:</div>
+    <div class="prompt output_prompt">Out[65]:</div>
 
 
 
@@ -15889,7 +15865,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">loc_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">val</span> <span class="p">:</span> <span class="n">index</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">strings</span><span class="p">)}</span>
@@ -15907,7 +15883,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[65]:</div>
+    <div class="prompt output_prompt">Out[66]:</div>
 
 
 
@@ -15925,7 +15901,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#51473;&#52393;-&#51312;&#44148;-&#51228;&#49884;&#48277;">&#51473;&#52393; &#51312;&#44148; &#51228;&#49884;&#48277;<a class="anchor-link" href="#&#51473;&#52393;-&#51312;&#44148;-&#51228;&#49884;&#48277;">&#182;</a></h3>
+<h3 id="&#51473;&#52393;-&#51312;&#44148;&#51228;&#49884;&#48277;">&#51473;&#52393; &#51312;&#44148;&#51228;&#49884;&#48277;<a class="anchor-link" href="#&#51473;&#52393;-&#51312;&#44148;&#51228;&#49884;&#48277;">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -15939,15 +15915,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>아래 리스트는 중첩 리스트이다.
-리스트의 각 항목이 이름 문자열로 이루어진 리스트이기 때문이다.</p>
+<p>아래 리스트는 중첩 리스트이다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">all_data</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Emily&#39;</span><span class="p">,</span> <span class="s1">&#39;Michael&#39;</span><span class="p">,</span> <span class="s1">&#39;Mary&#39;</span><span class="p">,</span> <span class="s1">&#39;Steven&#39;</span><span class="p">],</span>
@@ -15971,7 +15946,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">all_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">]</span>
@@ -15987,7 +15962,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[67]:</div>
+    <div class="prompt output_prompt">Out[68]:</div>
 
 
 
@@ -16012,7 +15987,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">all_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">]</span>
@@ -16028,7 +16003,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[68]:</div>
+    <div class="prompt output_prompt">Out[69]:</div>
 
 
 
@@ -16057,7 +16032,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
@@ -16065,50 +16040,6 @@ div#notebook {
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">all_data</span><span class="p">:</span>
     <span class="n">result</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">item</span> <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">])</span>
     
-<span class="n">result</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[69]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&#39;John&#39;, &#39;Steven&#39;, &#39;Juan&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>이와 같이 <code>for</code> 반복문 안에 리스트 조건 제시법이 사용된 경우 
-조건 제시법을 이중으로 사용할 수 있다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">all_data</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">item</span> <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">]</span>
-
 <span class="n">result</span>
 </pre></div>
 
@@ -16140,6 +16071,50 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>이와 같이 <code>for</code> 반복문 안에 리스트 조건제시법이 사용된 경우 
+이중 조건제시법을 사용할 수 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">all_data</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">item</span> <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">result</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[71]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;John&#39;, &#39;Steven&#39;, &#39;Juan&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="&#50696;&#51228;">&#50696;&#51228;<a class="anchor-link" href="#&#50696;&#51228;">&#182;</a></h4>
 </div>
 </div>
@@ -16149,7 +16124,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>중첩 리스트, 중첩 튜플, 또는 아래와 같이 튜플과 리스트가 중첩으로 사용된 경우
 모든 중첩을 제거하고 사용된 항목으로만 이루어진 리스트 또는 튜플을 생성할 때
-중첩 조건 제시법이 매우 유용하다.</p>
+중첩 조건제시법이 매우 유용하다.</p>
 <p><strong>참고:</strong> 이렇게 중첩 사용된 모음 자료형을 1차원 리스트로 단순화 시키는 작업을 영어로 <strong>flatten</strong>이라 한다.</p>
 
 </div>
@@ -16157,7 +16132,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">some_tuples</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)]</span>
@@ -16170,7 +16145,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">flattened</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">tup</span> <span class="ow">in</span> <span class="n">some_tuples</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tup</span><span class="p">]</span>
@@ -16188,7 +16163,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[72]:</div>
+    <div class="prompt output_prompt">Out[73]:</div>
 
 
 
@@ -16206,14 +16181,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>위 조건 제시법이 작동하는 과정을 아래 <code>for</code> 반복문이 설명한다.</p>
+<p>위 조건제시법이 작동하는 과정을 아래 <code>for</code> 반복문이 설명한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">flattened</span> <span class="o">=</span> <span class="p">[]</span>
@@ -16245,7 +16220,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">[[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tup</span><span class="p">]</span> <span class="k">for</span> <span class="n">tup</span> <span class="ow">in</span> <span class="n">some_tuples</span><span class="p">]</span>
@@ -16261,7 +16236,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[74]:</div>
+    <div class="prompt output_prompt">Out[75]:</div>
 
 
 
