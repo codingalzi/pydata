@@ -33,12 +33,21 @@
     - 4편: 이터러블/이터레이터/제너레이터, 오류와 예외처리, 파일 &nbsp;
         [[html]](./notebooks/pydata03-python-basics-4.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata03-python-basics-4.ipynb)
-1. 넘파이(numpy) 기본: 어레이와 연산
-    - 1편: 넘파이 어레이 정의, 어레이 연산 &nbsp;
+1. 넘파이(numpy)
+    - 1편: 넘파이 어레이 소개, 어레이 기초 연산 &nbsp;
         [[html]](./notebooks/pydata04-numpy-basics-1.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata04-numpy-basics-1.ipynb)
+    - 2편: 어레이 인덱싱, 슬라이싱, 전치 어레이 &nbsp;
+        [[html]](./notebooks/pydata04-numpy-basics-2.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata04-numpy-basics-2.ipynb)
+    - 3편: 어레이 활용: 정렬, 확률과 통계, 선형대수, 난수 생성 &nbsp;
+        [[html]](./notebooks/pydata04-numpy-basics-3.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata04-numpy-basics-3.pynb)
     (준비중)
-    - 2편 (준비중)
+    - 4편: 고급 넘파이 기능 &nbsp;
+        [[html]](./notebooks/pydata04-numpy-basics-4.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata04-numpy-basics-3.pynb)
+    (준비중)
 1. 고급 numpy &nbsp;
     (준비중)
 1. ...
