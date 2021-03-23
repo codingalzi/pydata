@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>pydata04-numpy-basics-3</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>pydata04-numpy-basics-4</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14259,7 +14259,7 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="4&#51109;-&#45336;&#54028;&#51060;-3&#54200;">4&#51109; &#45336;&#54028;&#51060; 3&#54200;<a class="anchor-link" href="#4&#51109;-&#45336;&#54028;&#51060;-3&#54200;">&#182;</a></h1>
+<h1 id="4&#51109;-&#45336;&#54028;&#51060;-4&#54200;">4&#51109; &#45336;&#54028;&#51060; 4&#54200;<a class="anchor-link" href="#4&#51109;-&#45336;&#54028;&#51060;-4&#54200;">&#182;</a></h1>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14270,7 +14270,7 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>어레이 활용: 부울 인덱싱, 전치 어레이, 정렬, 확률과 통계</li>
+<li>어레이 ...</li>
 </ul>
 
 </div>
@@ -14348,1451 +14348,36 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="4.1-&#45336;&#54028;&#51060;-&#45796;&#52264;&#50896;-&#50612;&#47112;&#51060;-&#44061;&#52404;(ndarray)">4.1 &#45336;&#54028;&#51060; &#45796;&#52264;&#50896; &#50612;&#47112;&#51060; &#44061;&#52404;(<code>ndarray</code>)<a class="anchor-link" href="#4.1-&#45336;&#54028;&#51060;-&#45796;&#52264;&#50896;-&#50612;&#47112;&#51060;-&#44061;&#52404;(ndarray)">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="4.1.5-&#48512;&#50872;-&#51064;&#45937;&#49905;-(p.-150)">4.1.5 &#48512;&#50872; &#51064;&#45937;&#49905; (p. 150)<a class="anchor-link" href="#4.1.5-&#48512;&#50872;-&#51064;&#45937;&#49905;-(p.-150)">&#182;</a></h3>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>부울 인덱싱은 앞서 설명한 인덱싱/슬라이싱 기법이 처리하지 못하는
-인덱싱/슬라이싱을 지원한다.</p>
-<p>설명을 위해 아래 두 개의 어레이를 이용한다.</p>
-<ul>
-<li>중복된 이름을 포함하는 1차원 어레이. 길이는 7.</li>
+<h2 id="4.5-&#49440;&#54805;-&#45824;&#49688;">4.5 &#49440;&#54805; &#45824;&#49688;<a class="anchor-link" href="#4.5-&#49440;&#54805;-&#45824;&#49688;">&#182;</a></h2><ul>
+<li>172쪽</li>
 </ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Joe&#39;</span><span class="p">,</span> <span class="s1">&#39;Will&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Will&#39;</span><span class="p">,</span> <span class="s1">&#39;Joe&#39;</span><span class="p">,</span> <span class="s1">&#39;Joe&#39;</span><span class="p">])</span>
-<span class="n">names</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([&#39;Bob&#39;, &#39;Joe&#39;, &#39;Will&#39;, &#39;Bob&#39;, &#39;Will&#39;, &#39;Joe&#39;, &#39;Joe&#39;], dtype=&#39;&lt;U4&#39;)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>(7, 4) 모양의 2차원 어레이 무작위 생성<ul>
-<li><code>randn()</code> 함수는 표준 정규 분포를 이용하여 임의의 부동소수점으로 이루어진 어레이 생성.</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">data</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[-0.2047,  0.4789, -0.5194, -0.5557],
-       [ 1.9658,  1.3934,  0.0929,  0.2817],
-       [ 0.769 ,  1.2464,  1.0072, -1.2962],
-       [ 0.275 ,  0.2289,  1.3529,  0.8864],
-       [-2.0016, -0.3718,  1.669 , -0.4386],
-       [-0.5397,  0.477 ,  3.2489, -1.0212],
-       [-0.5771,  0.1241,  0.3026,  0.5238]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><code>names</code>에 포함된 이름이 Bob인지 여부를 확인하면 부울 값으로 이루어진 길이가 7인 어레이가 생성된다.
-즉, 항목별 비교 연산이 이루어진다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name_Bob</span> <span class="o">=</span> <span class="n">names</span> <span class="o">==</span> <span class="s1">&#39;Bob&#39;</span>
-<span class="n">name_Bob</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([ True, False, False,  True, False, False, False])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>이제부터 <code>name_Bob</code> 어레이에서 
-<code>True</code>가 위치한 인덱스를 이용하여 <code>data</code> 2차원 어레이를 대상으로 부울 인덱싱이 
-작동하는 방법을 설명한다.</p>
-<p>먼저, <code>data</code> 의 행의 길이가 7임에 주목하라.
-이제 <code>name_Bob</code>에서 <code>True</code>가 위치한 인덱스에 해당하는 항목만 <code>data</code>에서 슬라이싱하려면
-다음과 같이 부울 인덱싱을 사용한다.
-결과는 <code>data</code>에서 0번행과 3번행만 가져온다.
-이유는 <code>name_Bob</code>에서 0번, 3번 인덱스의 항목만 <code>True</code>이기 때문이다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">name_Bob</span><span class="p">]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[-0.2047,  0.4789, -0.5194, -0.5557],
-       [ 0.275 ,  0.2289,  1.3529,  0.8864]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>부울 인덱싱과 일반 인덱싱, 슬라이싱을 혼합할 수 있다.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>행 기준: Bob이 포함된 행의 인덱스를 갖는 행</li>
-<li>열 기준: 2번 열 이후 전체</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">name_Bob</span><span class="p">,</span> <span class="mi">2</span><span class="p">:]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[-0.5194, -0.5557],
-       [ 1.3529,  0.8864]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>행 기준: Bob이 포함된 행의 인덱스를 갖는 행</li>
-<li>열 기준: 3번 열</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">name_Bob</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([-0.5557,  0.8864])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="&#48512;&#50872;-&#51064;&#45937;&#49905;&#44284;-&#48512;&#50872;-&#50672;&#49328;">&#48512;&#50872; &#51064;&#45937;&#49905;&#44284; &#48512;&#50872; &#50672;&#49328;<a class="anchor-link" href="#&#48512;&#50872;-&#51064;&#45937;&#49905;&#44284;-&#48512;&#50872;-&#50672;&#49328;">&#182;</a></h4>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>부울 연산자(<code>~</code>, <code>&amp;</code>, <code>|</code>)를 부울 인덱싱에 직접 활용할 수 있다.
-예를 들어, 이름이 Bob 아닌 이름이 위치한 인덱스에 해당하는 행만 가져오려면
-<code>==</code> 대신에 <code>~=</code>를 이용하거나 <code>==</code>와 <code>~</code> 연산자를 함께 이용한다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">names</span> <span class="o">!=</span> <span class="s1">&#39;Bob&#39;</span><span class="p">]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[ 1.9658,  1.3934,  0.0929,  0.2817],
-       [ 0.769 ,  1.2464,  1.0072, -1.2962],
-       [-2.0016, -0.3718,  1.669 , -0.4386],
-       [-0.5397,  0.477 ,  3.2489, -1.0212],
-       [-0.5771,  0.1241,  0.3026,  0.5238]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="o">~</span><span class="n">name_Bob</span><span class="p">]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[ 1.9658,  1.3934,  0.0929,  0.2817],
-       [ 0.769 ,  1.2464,  1.0072, -1.2962],
-       [-2.0016, -0.3718,  1.669 , -0.4386],
-       [-0.5397,  0.477 ,  3.2489, -1.0212],
-       [-0.5771,  0.1241,  0.3026,  0.5238]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>다음은 Bob 또는 Will 이 위치한 인덱스에 해당하는 행만 가져온다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">names</span> <span class="o">==</span> <span class="s1">&#39;Bob&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">names</span> <span class="o">==</span> <span class="s1">&#39;Will&#39;</span><span class="p">)</span>
-<span class="n">mask</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([ True, False,  True,  True,  True, False, False])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[-0.2047,  0.4789, -0.5194, -0.5557],
-       [ 0.769 ,  1.2464,  1.0072, -1.2962],
-       [ 0.275 ,  0.2289,  1.3529,  0.8864],
-       [-2.0016, -0.3718,  1.669 , -0.4386]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>참고:</strong> 부울 인덱싱에 사용되는 부울 어레이를 <strong>마스크</strong>(mask)라고 부르기도 한다.
-따라서 mask 변수가 종종 부울 인덱싱에 변수로 사용된다.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>부울 인덱싱으로 동일한 모양의 부울 어레이를 사용할 수 있다.
-부울 인덱싱으로 사용된 어레이의 항목이 참인 위치에 있는 항목만 가져온다. 
-결과는 1차원 어레이다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([-0.2047, -0.5194, -0.5557, -1.2962, -2.0016, -0.3718, -0.4386,
-       -0.5397, -1.0212, -0.5771])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>즉, 음수인 항목의 개수는 15개라는 사실을 모양을 이용하여 확인할 수 있다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(10,)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>부울 인덱싱을 이용하여 특정 항목의 값을 변경할 수도 있다.
-예를 들어, 아래 코드는 음수를 모두 0으로 변경한다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">data</span> <span class="o">&lt;</span> <span class="mi">0</span>
-<span class="n">data</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">data</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[0.    , 0.4789, 0.    , 0.    ],
-       [1.9658, 1.3934, 0.0929, 0.2817],
-       [0.769 , 1.2464, 1.0072, 0.    ],
-       [0.275 , 0.2289, 1.3529, 0.8864],
-       [0.    , 0.    , 1.669 , 0.    ],
-       [0.    , 0.477 , 3.2489, 0.    ],
-       [0.    , 0.1241, 0.3026, 0.5238]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>1차원 배열을 이용하여 부울 인덱싱을 사용하면 전체 행 또는 전체 열을 특정 값으로 변경할 수 있다.</p>
-<ul>
-<li><code>names</code>에서 Joe가 사용되지 않은 항목의 인덱스에 해당하는 행에 포함된 항목을 모두 7로 변경하기</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">names</span> <span class="o">!=</span> <span class="s1">&#39;Joe&#39;</span>
-<span class="n">mask</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([ True, False,  True,  True,  True, False, False])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="n">data</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[7.    , 7.    , 7.    , 7.    ],
-       [1.9658, 1.3934, 0.0929, 0.2817],
-       [7.    , 7.    , 7.    , 7.    ],
-       [7.    , 7.    , 7.    , 7.    ],
-       [7.    , 7.    , 7.    , 7.    ],
-       [0.    , 0.477 , 3.2489, 0.    ],
-       [0.    , 0.1241, 0.3026, 0.5238]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>주의사항:</strong> 부울 인덱싱은 뷰를 이용하지 않고 새로운 어레이를 생성한다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data2</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">names</span> <span class="o">==</span> <span class="s1">&#39;Bob&#39;</span><span class="p">]</span>
-<span class="n">data2</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[7., 7., 7., 7.],
-       [7., 7., 7., 7.]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><code>data2</code>의 0번 행을 모두 -1로 변경해도 <code>data</code>는 변하지 않는다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-<span class="n">data2</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[-1., -1., -1., -1.],
-       [ 7.,  7.,  7.,  7.]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[7.    , 7.    , 7.    , 7.    ],
-       [1.9658, 1.3934, 0.0929, 0.2817],
-       [7.    , 7.    , 7.    , 7.    ],
-       [7.    , 7.    , 7.    , 7.    ],
-       [7.    , 7.    , 7.    , 7.    ],
-       [0.    , 0.477 , 3.2489, 0.    ],
-       [0.    , 0.1241, 0.3026, 0.5238]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="4.1.7-&#51204;&#52824;-&#50612;&#47112;&#51060;-(p.-155)">4.1.7 &#51204;&#52824; &#50612;&#47112;&#51060; (p. 155)<a class="anchor-link" href="#4.1.7-&#51204;&#52824;-&#50612;&#47112;&#51060;-(p.-155)">&#182;</a></h3>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>전치 행렬은 주어진 행렬의 행과 열을 서로 교환해서 얻어진다.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-$$
-\begin{bmatrix}
-    1 &amp; 2 \\
-    3 &amp; 4 \\
-    5 &amp; 6
-\end{bmatrix}^{\,T}
-=
-\begin{bmatrix}
-    1 &amp; 3 &amp; 5 \\
-    2 &amp; 4 &amp; 6
-\end{bmatrix}
-$$
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>위 전치 행렬에 사용된 2차원 어레이는 아래처럼 생성할 수 있다.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>참고:</strong> 아래에서는 길이가 6인 1차원 어레이를 (3, 2) 모양의 2차원 어레이로 항목을 재배열하기 위해
-<code>reshape()</code> 함수를 사용한다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="n">arr</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[1, 2],
-       [3, 4],
-       [5, 6]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>전치 어레이는 <code>T</code> 속성이 가리킨다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span><span class="o">.</span><span class="n">T</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[1, 3, 5],
-       [2, 4, 6]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>주의사항:</strong> <code>T</code> 속성이 가리키는 전치 어레이는 뷰 방식을 사용한다.
-따라서 전치 어레이를 변경하면 원래 어레이도 변경된다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-
-<span class="n">arr</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[ 1, -1],
-       [ 3,  4],
-       [ 5,  6]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>전치 어레이는 머신러닝에서 가장 많이 사용되는 개념 중 하나이다.
-대표적으로 행렬의 곱 또는 내적 등을 계산할 때 주로 활용되며,
-예를 들어, 아래 코드는 <code>dot()</code> 함수를 이용한 행렬의 내적 연산을 보여준다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">arr2</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[ 0.0009,  1.3438, -0.7135],
-       [-0.8312, -2.3702, -1.8608],
-       [-0.8608,  0.5601, -1.2659],
-       [ 0.1198, -1.0635,  0.3329],
-       [-2.3594, -0.1995, -1.542 ],
-       [-0.9707, -1.307 ,  0.2863]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">arr2</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">arr2</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[ 7.9553,  3.1013,  6.0357],
-       [ 3.1013, 10.6168,  2.3219],
-       [ 6.0357,  2.3219,  8.1447]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="4.2-&#54637;&#47785;&#48324;-&#54632;&#49688;-&#51201;&#50857;-(p.-158)">4.2 &#54637;&#47785;&#48324; &#54632;&#49688; &#51201;&#50857; (p. 158)<a class="anchor-link" href="#4.2-&#54637;&#47785;&#48324;-&#54632;&#49688;-&#51201;&#50857;-(p.-158)">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>어레이를 함수의 인자로 사용하면 해당 함수는 어레이 항목 각각에 대해 적용된다.</p>
-<p><strong>참고:</strong> 이런 기능을 넘파이 내부에서 지원하는 함수가 <code>ufunc()</code>이며, <strong>유니버설</strong> 함수라 부른다.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>아래 1차원 어레이를 제곱근 함수와 지수 함수의 인자로 사용하면 각 항목의 제곱근과 지수값으로 이루어진
-동일한 모양의 어레이가 생성된다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">arr</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([0.    , 1.    , 1.4142, 1.7321, 2.    , 2.2361, 2.4495, 2.6458,
-       2.8284, 3.    ])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([   1.    ,    2.7183,    7.3891,   20.0855,   54.5982,  148.4132,
-        403.4288, 1096.6332, 2980.958 , 8103.0839])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>여러 개의 어레이를 인자로 받는 함수에 대해서도 동일한 방식으로 작동한다.
-예를 들어, <code>maximum()</code> 함수는 항목별 최댓값으로 이루어진 어레이를 반환한다.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">]])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">6.</span><span class="p">,</span> <span class="mf">23.</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+<span class="n">x</span>
+<span class="n">y</span>
+<span class="n">x</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 
      </div>
 </div>
 </div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([ 0.378 , -0.7539,  0.3313,  1.3497,  0.0699,  0.2467, -0.0119,
-        1.0048])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([ 1.3272, -0.9193, -1.5491,  0.0222,  0.7584, -0.6605,  0.8626,
-       -0.01  ])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([ 1.3272, -0.7539,  0.3313,  1.3497,  0.7584,  0.2467,  0.8626,
-        1.0048])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>특정 함수는 여러 개의 어레이를 반환한다. 
-예를 들어, <code>modf()</code> 함수는 부동소수점 어레이를 인자로 받으면
-정수 부분과 소수 부분으로 구성된 동일한 모양(shape)의 두 개의 어레이(로 이루어진 튜플)를 반환한다.
-따라서 정수들의 나눗셈 결과를 몫과 나머지로 보여주는 것과 동일한 효과를 낸다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="n">arr</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[0.    , 0.3333],
-       [0.6667, 1.    ],
-       [1.3333, 1.6667],
-       [2.    , 2.3333]])</pre>
-</div>
-
-</div>
-
-</div>
-
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">remainder</span><span class="p">,</span> <span class="n">whole_part</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">modf</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15800,351 +14385,13 @@ $$
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">remainder</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[35]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[0.    , 0.3333],
-       [0.6667, 0.    ],
-       [0.3333, 0.6667],
-       [0.    , 0.3333]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">whole_part</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[0., 0.],
-       [0., 1.],
-       [1., 1.],
-       [2., 2.]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>이렇게 항목별 함수 적용을 지원하는 넘파이 함수는 모두 
-<code>out</code> 키워드 인자를 사용하여 계산 결과를 지정된 변수에 저장할 수 있다.
-단, 키워드 인자로 사용될 수 있는 변수는 
-이미 동일한 모양의 어레이를 가리키는 변수로 선언되어 있어야 한다.</p>
-<p>예를 들어, (4, 2) 모양의 2차원 어레이를 <code>arr2</code> 변수가 가리키도록 하자.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr2</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="n">arr2</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[  0.25  ,   3.3511],
-       [  4.2648,  -4.7793],
-       [ -0.1175, -11.5212],
-       [ -3.2623,  -6.0915]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>이제 <code>arr2</code>에 제곱근 함수를 적용한 결과를 <code>arr</code> 변수가 가기키도록 하려면 아래와 같이 한다.</p>
-<p><strong>주의사항:</strong> 제곱근 함수는 음수에 대해서는 경고를 생성하며, 해당 항목은 <code>nan</code>으로 표시한다. 
-nan은 not a number, 즉, 숫자가 아니다의 의미이다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">arr2</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">arr</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>&lt;ipython-input-38-cefa55e4e7f0&gt;:1: RuntimeWarning: invalid value encountered in sqrt
-  np.sqrt(arr2, out=arr)
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[0.5   , 1.8306],
-       [2.0651,    nan],
-       [   nan,    nan],
-       [   nan,    nan]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><code>arr</code> 변수가 위 결과를 가리키고 있음을 확인할 수 있다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[0.5   , 1.8306],
-       [2.0651,    nan],
-       [   nan,    nan],
-       [   nan,    nan]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><code>sqrt()</code> 함수처럼 어레이 인자를 받아서 항목별로 함수를 적용하는 함수가 60개 이상 존재하며,
-그중 상당수가 수학 관련 함수이다. 
-모든 함수들의 리스트는 넘파이의 
-<a href="https://numpy.org/doc/stable/reference/ufuncs.html#available-ufuncs">유니버설 함수 공식문서</a>를
-참조하면 된다.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="4.3-&#50612;&#47112;&#51060;-&#51473;&#49900;-&#54532;&#47196;&#44536;&#47000;&#48141;-(p.-161)">4.3 &#50612;&#47112;&#51060; &#51473;&#49900; &#54532;&#47196;&#44536;&#47000;&#48141; (p. 161)<a class="anchor-link" href="#4.3-&#50612;&#47112;&#51060;-&#51473;&#49900;-&#54532;&#47196;&#44536;&#47000;&#48141;-(p.-161)">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>연산과 함수 호출에 사용되는 넘파이 어레이는 기본적으로 항목 단위로 연산과 함수 호출이 이루어진다.
-넘파이 어레이의 이런 특징을 잘 활용하도록 유도하는 프로그래밍을 
-<strong>어레이 중심 프로그래밍</strong>(array-oriented programming)이라 한다.</p>
-<p>어레이를 중심으로 프로그래밍을 하면 예를 들어 많은 <code>for</code> 반복문을 생략할 수 있으며,
-결과적으로 보다 효율적으로 코드를 구현할 수 있다.
-또한 구현된 프로그램은 리스트를 이용하는 프로그램보다 빠르고 메모리 효율적으로 실행된다.
-여기서는 몇 가지 예제를 이용하여 어레이 중심 프로그래밍을 소개한다.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>예제:</strong> 2차원 격자(meshgrid) 어레이</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>아래 모양의 격자무뉘에 해당하는 2차원 어레이를 생성하라.
-각 점의 좌표는 -1과 1사이의 값을 20개의 구간으로 균등하게 나눈 값들이다. 
-즉, 가로 세로 모두 21개의 점으로 구성된다.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="https://github.com/codingalzi/python-data-analysis/blob/master/notebooks/images/graphs/meshgrid20x20.png?raw=true" style="width:400px;"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>먼저 <code>arange()</code> 함수를 이용하여 -1와 1 사이의 구간을 20개의 구간으로 균등하게 
-나누는 어레이를 생성한다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span> <span class="c1"># 20개의 구간으로 균등하게 나눈다.</span>
-<span class="n">points</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-        0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><code>meshgrid()</code> 함수는 지정된 1차원 어레이 두 개를 이용하여 격자무늬의 좌표를 생성한다.
-즉, 격자에 사용되는 점들의 x 좌표와 y 좌표를 따로따로 모아 두 개의 어레이를 반환한다.</p>
-
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">points</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -16152,246 +14399,13 @@ nan은 not a number, 즉, 숫자가 아니다의 의미이다.</p>
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xs</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[42]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ],
-       [-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ],
-       [-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ],
-       [-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ],
-       [-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ],
-       [-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ],
-       [-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ],
-       [-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ],
-       [-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ],
-       [-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ],
-       [-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ],
-       [-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ],
-       [-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ],
-       [-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ],
-       [-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ],
-       [-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ],
-       [-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ],
-       [-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ],
-       [-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ],
-       [-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ],
-       [-1. , -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, -0. ,
-         0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ys</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[-1. , -1. , -1. , -1. , -1. , -1. , -1. , -1. , -1. , -1. , -1. ,
-        -1. , -1. , -1. , -1. , -1. , -1. , -1. , -1. , -1. , -1. ],
-       [-0.9, -0.9, -0.9, -0.9, -0.9, -0.9, -0.9, -0.9, -0.9, -0.9, -0.9,
-        -0.9, -0.9, -0.9, -0.9, -0.9, -0.9, -0.9, -0.9, -0.9, -0.9],
-       [-0.8, -0.8, -0.8, -0.8, -0.8, -0.8, -0.8, -0.8, -0.8, -0.8, -0.8,
-        -0.8, -0.8, -0.8, -0.8, -0.8, -0.8, -0.8, -0.8, -0.8, -0.8],
-       [-0.7, -0.7, -0.7, -0.7, -0.7, -0.7, -0.7, -0.7, -0.7, -0.7, -0.7,
-        -0.7, -0.7, -0.7, -0.7, -0.7, -0.7, -0.7, -0.7, -0.7, -0.7],
-       [-0.6, -0.6, -0.6, -0.6, -0.6, -0.6, -0.6, -0.6, -0.6, -0.6, -0.6,
-        -0.6, -0.6, -0.6, -0.6, -0.6, -0.6, -0.6, -0.6, -0.6, -0.6],
-       [-0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5,
-        -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5],
-       [-0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.4,
-        -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.4],
-       [-0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3,
-        -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3, -0.3],
-       [-0.2, -0.2, -0.2, -0.2, -0.2, -0.2, -0.2, -0.2, -0.2, -0.2, -0.2,
-        -0.2, -0.2, -0.2, -0.2, -0.2, -0.2, -0.2, -0.2, -0.2, -0.2],
-       [-0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
-        -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1],
-       [-0. , -0. , -0. , -0. , -0. , -0. , -0. , -0. , -0. , -0. , -0. ,
-        -0. , -0. , -0. , -0. , -0. , -0. , -0. , -0. , -0. , -0. ],
-       [ 0.1,  0.1,  0.1,  0.1,  0.1,  0.1,  0.1,  0.1,  0.1,  0.1,  0.1,
-         0.1,  0.1,  0.1,  0.1,  0.1,  0.1,  0.1,  0.1,  0.1,  0.1],
-       [ 0.2,  0.2,  0.2,  0.2,  0.2,  0.2,  0.2,  0.2,  0.2,  0.2,  0.2,
-         0.2,  0.2,  0.2,  0.2,  0.2,  0.2,  0.2,  0.2,  0.2,  0.2],
-       [ 0.3,  0.3,  0.3,  0.3,  0.3,  0.3,  0.3,  0.3,  0.3,  0.3,  0.3,
-         0.3,  0.3,  0.3,  0.3,  0.3,  0.3,  0.3,  0.3,  0.3,  0.3],
-       [ 0.4,  0.4,  0.4,  0.4,  0.4,  0.4,  0.4,  0.4,  0.4,  0.4,  0.4,
-         0.4,  0.4,  0.4,  0.4,  0.4,  0.4,  0.4,  0.4,  0.4,  0.4],
-       [ 0.5,  0.5,  0.5,  0.5,  0.5,  0.5,  0.5,  0.5,  0.5,  0.5,  0.5,
-         0.5,  0.5,  0.5,  0.5,  0.5,  0.5,  0.5,  0.5,  0.5,  0.5],
-       [ 0.6,  0.6,  0.6,  0.6,  0.6,  0.6,  0.6,  0.6,  0.6,  0.6,  0.6,
-         0.6,  0.6,  0.6,  0.6,  0.6,  0.6,  0.6,  0.6,  0.6,  0.6],
-       [ 0.7,  0.7,  0.7,  0.7,  0.7,  0.7,  0.7,  0.7,  0.7,  0.7,  0.7,
-         0.7,  0.7,  0.7,  0.7,  0.7,  0.7,  0.7,  0.7,  0.7,  0.7],
-       [ 0.8,  0.8,  0.8,  0.8,  0.8,  0.8,  0.8,  0.8,  0.8,  0.8,  0.8,
-         0.8,  0.8,  0.8,  0.8,  0.8,  0.8,  0.8,  0.8,  0.8,  0.8],
-       [ 0.9,  0.9,  0.9,  0.9,  0.9,  0.9,  0.9,  0.9,  0.9,  0.9,  0.9,
-         0.9,  0.9,  0.9,  0.9,  0.9,  0.9,  0.9,  0.9,  0.9,  0.9],
-       [ 1. ,  1. ,  1. ,  1. ,  1. ,  1. ,  1. ,  1. ,  1. ,  1. ,  1. ,
-         1. ,  1. ,  1. ,  1. ,  1. ,  1. ,  1. ,  1. ,  1. ,  1. ]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>xs와 ys를 이용하여 산점도를 그리면 원하는 격자무늬가 얻어진다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 도표 크기 지정</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;figure&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-
-<span class="c1"># 산점도 그리기</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span>
-
-<span class="c1"># 그려진 산점도 저장</span>
-<span class="n">save_fig</span><span class="p">(</span><span class="s1">&#39;meshgrid20x20&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>도표 저장하기: meshgrid20x20
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-
-<div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,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
-"
->
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>예제:</strong> 2차원 이미지 그리기</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>xs와 ys 각각의 제곱을 합하여 제곱근을 구하면 21x21 크기의 대칭 어레이가 얻어진다.</p>
-
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">xs</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">ys</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16399,88 +14413,19 @@ nan은 not a number, 즉, 숫자가 아니다의 의미이다.</p>
 </div>
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><code>z</code>를 흑백사진으로 표현하면 다음과 같다.
-20x20 크기의 해상도를 가진 흑백사진의 명암 대비를 쉽게 알아볼 수 있는 사진이 생성된다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 도표 크기 지정(기본값으로 되돌림)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;figure&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-
-<span class="c1"># 흑백사진으로 보여주도록 함.</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Image plot of $\sqrt{x^2 + y^2}$ for a grid of values&quot;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-
-<div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,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
-"
->
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>참고:</strong> 위 두 예제를 넘파이 어레이가 아니라 리스트와 <code>for</code> 반복문을 이용하여 구현하려고
-시도하면 훨씬 많은 일을 해야 함을 어렵지 않게 알 수 있을 것이다.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="4.3.1-&#50612;&#47112;&#51060;-&#49340;&#54637;&#49885;-(p.-163)">4.3.1 &#50612;&#47112;&#51060; &#49340;&#54637;&#49885; (p. 163)<a class="anchor-link" href="#4.3.1-&#50612;&#47112;&#51060;-&#49340;&#54637;&#49885;-(p.-163)">&#182;</a></h3>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>부울 값으로 이루어진 어레이를 기준으로 <code>if</code> 조건식을 지정할 수 있다.
-먼저, 아래 세 개의 어레이가 주어졌으며, 세 어레이의 모양이 모두 동일하다.</p>
-
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xarr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">])</span>
-<span class="n">yarr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">])</span>
-<span class="n">cond</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">inv</span><span class="p">,</span> <span class="n">qr</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">mat</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">inv</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
+<span class="n">mat</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">inv</span><span class="p">(</span><span class="n">mat</span><span class="p">))</span>
+<span class="n">q</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">qr</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
+<span class="n">r</span>
 </pre></div>
 
      </div>
@@ -16491,479 +14436,19 @@ nan은 not a number, 즉, 숫자가 아니다의 의미이다.</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>아래 리스트 조건제시법으로 생성되는 리스트와 동일한 어레이를 매우 간단하게 만들 수 있다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[(</span><span class="n">x</span> <span class="k">if</span> <span class="n">c</span> <span class="k">else</span> <span class="n">y</span><span class="p">)</span>
-          <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">xarr</span><span class="p">,</span> <span class="n">yarr</span><span class="p">,</span> <span class="n">cond</span><span class="p">)]</span>
-<span class="n">result</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[48]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[1.1, 2.2, 1.3, 1.4, 2.5]</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>어레이의 경우 <code>where()</code> 함수를 이용하여 어레이 삼항식을 사용하는 게 훨씬 간편하다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span> <span class="n">xarr</span><span class="p">,</span> <span class="n">yarr</span><span class="p">)</span>
-<span class="n">result</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[49]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([1.1, 2.2, 1.3, 1.4, 2.5])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>예제</strong></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>어레이 삼항식을 이용하여 기존 어레이의 항목이 양수면 2를, 음수면 -2를 사용하는 어레이를 생성해 보자.</p>
-<p>먼저 무작위 수를 항목으로 사용하는 (4, 4) 모양의 어레이를 생성한다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">arr</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[50]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[-1.3326,  1.0746,  0.7236,  0.69  ],
-       [ 1.0015, -0.5031, -0.6223, -0.9212],
-       [-0.7262,  0.2229,  0.0513, -1.1577],
-       [ 0.8167,  0.4336,  1.0107,  1.8249]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>주의:</strong> <code>zeros()</code>, <code>empty()</code> 함수 등과는 인자 형식이 (4, 4) 아니라
-괄호를 생략한 4, 4 형식으로 인자를 지정한다.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>어레이 비교 연산을 이용하여 동일 모양의 부울 어레이를 생성하자.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">&gt;</span> <span class="mi">0</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[51]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[False,  True,  True,  True],
-       [ True, False, False, False],
-       [False,  True,  True, False],
-       [ True,  True,  True,  True]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><code>where()</code> 함수의 둘째, 셋째 인자는 어레이 대신에 특정 스칼라 자료형의 값을 사용할 수 있다.<br>
-이 점을 이용하여 <code>arr</code> 어레이의 양수 항목에 해당하는 위치는 2, 
-음수 항목에 해당하는 위치는 -2로 채운 어레이는 다음과 같이 생성한다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">arr</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[52]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[-2,  2,  2,  2],
-       [ 2, -2, -2, -2],
-       [-2,  2,  2, -2],
-       [ 2,  2,  2,  2]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>예제</strong></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>아래 코드는 양수에 대해서만 2를, 나머지 경우는 기존의 항목을 그대로 사용하는 코드이다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">arr</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[53]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[-1.3326,  2.    ,  2.    ,  2.    ],
-       [ 2.    , -0.5031, -0.6223, -0.9212],
-       [-0.7262,  2.    ,  2.    , -1.1577],
-       [ 2.    ,  2.    ,  2.    ,  2.    ]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="4.3.2-&#49688;&#54617;/&#53685;&#44228;-&#50857;&#46020;-&#47700;&#49436;&#46300;-(p.-165)">4.3.2 &#49688;&#54617;/&#53685;&#44228; &#50857;&#46020; &#47700;&#49436;&#46300; (p. 165)<a class="anchor-link" href="#4.3.2-&#49688;&#54617;/&#53685;&#44228;-&#50857;&#46020;-&#47700;&#49436;&#46300;-(p.-165)">&#182;</a></h3>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[54]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">arr</span>
-<span class="n">arr</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-<span class="n">arr</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[54]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>2.2037341867973557</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">arr</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([-0.2274,  3.039 , -2.1766,  1.5688])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[56]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
-<span class="n">arr</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[56]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([ 0,  1,  3,  6, 10, 15, 21, 28])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[57]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
-<span class="n">arr</span>
-<span class="n">arr</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">arr</span><span class="o">.</span><span class="n">cumprod</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[57]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[  0,   0,   0],
-       [  3,  12,  60],
-       [  6,  42, 336]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="4.3.3-&#48512;&#50872;-&#50612;&#47112;&#51060;-&#47700;&#49436;&#46300;:-all(),-any()">4.3.3 &#48512;&#50872; &#50612;&#47112;&#51060; &#47700;&#49436;&#46300;: <code>all()</code>, <code>any()</code><a class="anchor-link" href="#4.3.3-&#48512;&#50872;-&#50612;&#47112;&#51060;-&#47700;&#49436;&#46300;:-all(),-any()">&#182;</a></h3><ul>
-<li>167쪽</li>
+<h2 id="4.6-&#45212;&#49688;-&#49373;&#49457;">4.6 &#45212;&#49688; &#49373;&#49457;<a class="anchor-link" href="#4.6-&#45212;&#49688;-&#49373;&#49457;">&#182;</a></h2><ul>
+<li>174쪽</li>
 </ul>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[58]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="p">(</span><span class="n">arr</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="c1"># Number of positive values</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">samples</span>
 </pre></div>
 
      </div>
@@ -16971,38 +14456,16 @@ nan은 not a number, 즉, 숫자가 아니다의 의미이다.</p>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[58]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>44</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[59]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bools</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
-<span class="n">bools</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
-<span class="n">bools</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">normalvariate</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000000</span>
+<span class="o">%</span><span class="k">timeit</span> samples = [normalvariate(0, 1) for _ in range(N)]
+<span class="o">%</span><span class="k">timeit</span> np.random.normal(size=N)
 </pre></div>
 
      </div>
@@ -17010,47 +14473,57 @@ nan은 not a number, 즉, 숫자가 아니다의 의미이다.</p>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
+</pre></div>
 
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[59]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>False</pre>
+     </div>
+</div>
+</div>
 </div>
 
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
+<span class="n">rng</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
 
+     </div>
 </div>
-
+</div>
 </div>
 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="4.3.4-&#51221;&#47148;">4.3.4 &#51221;&#47148;<a class="anchor-link" href="#4.3.4-&#51221;&#47148;">&#182;</a></h3><ul>
-<li>168쪽</li>
+<h2 id="4.7-&#50696;&#51228;:-&#44228;&#45800;-&#50724;&#47476;&#44592;(Random-Walks)">4.7 &#50696;&#51228;: &#44228;&#45800; &#50724;&#47476;&#44592;(Random Walks)<a class="anchor-link" href="#4.7-&#50696;&#51228;:-&#44228;&#45800;-&#50724;&#47476;&#44592;(Random-Walks)">&#182;</a></h2><ul>
+<li>176쪽</li>
 </ul>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[60]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-<span class="n">arr</span>
-<span class="n">arr</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-<span class="n">arr</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">position</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">walk</span> <span class="o">=</span> <span class="p">[</span><span class="n">position</span><span class="p">]</span>
+<span class="n">steps</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">steps</span><span class="p">):</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">position</span> <span class="o">+=</span> <span class="n">step</span>
+    <span class="n">walk</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -17058,39 +14531,13 @@ nan은 not a number, 즉, 숫자가 아니다의 의미이다.</p>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[60]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([-2.6444, -0.7519, -0.153 , -0.1326,  0.6095,  1.4573])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[61]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">arr</span>
-<span class="n">arr</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">arr</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -17098,42 +14545,13 @@ nan은 not a number, 즉, 숫자가 아니다의 의미이다.</p>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[61]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[-0.4938, -0.1357,  1.24  ],
-       [-0.8469,  0.6033,  1.43  ],
-       [-0.4457, -0.2555,  1.2636],
-       [-1.8245, -0.9616,  0.4684],
-       [ 0.6254,  1.0229,  1.1074]])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[62]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">large_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-<span class="n">large_arr</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-<span class="n">large_arr</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="mf">0.05</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">large_arr</span><span class="p">))]</span> <span class="c1"># 5% quantile</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">walk</span><span class="p">[:</span><span class="mi">100</span><span class="p">])</span>
 </pre></div>
 
      </div>
@@ -17141,47 +14559,86 @@ nan은 not a number, 즉, 숫자가 아니다의 의미이다.</p>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
+</pre></div>
 
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[62]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>-1.551714991950571</pre>
+     </div>
+</div>
+</div>
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nsteps</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">draws</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">nsteps</span><span class="p">)</span>
+<span class="n">steps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">draws</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">walk</span> <span class="o">=</span> <span class="n">steps</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">walk</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">walk</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">walk</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
 </div>
 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="4.3.5-&#51665;&#54633;-&#44288;&#47144;-&#54632;&#49688;">4.3.5 &#51665;&#54633; &#44288;&#47144; &#54632;&#49688;<a class="anchor-link" href="#4.3.5-&#51665;&#54633;-&#44288;&#47144;-&#54632;&#49688;">&#182;</a></h3><ul>
-<li>169</li>
+<h3 id="4.7.1-&#54620;-&#48264;&#50640;-&#50668;&#47084;-&#44228;&#45800;-&#50724;&#47476;&#44592;">4.7.1 &#54620; &#48264;&#50640; &#50668;&#47084; &#44228;&#45800; &#50724;&#47476;&#44592;<a class="anchor-link" href="#4.7.1-&#54620;-&#48264;&#50640;-&#50668;&#47084;-&#44228;&#45800;-&#50724;&#47476;&#44592;">&#182;</a></h3><ul>
+<li>178쪽</li>
 </ul>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[63]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Joe&#39;</span><span class="p">,</span> <span class="s1">&#39;Will&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Will&#39;</span><span class="p">,</span> <span class="s1">&#39;Joe&#39;</span><span class="p">,</span> <span class="s1">&#39;Joe&#39;</span><span class="p">])</span>
-<span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
-<span class="n">ints</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
-<span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">ints</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nwalks</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="n">nsteps</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">draws</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">nwalks</span><span class="p">,</span> <span class="n">nsteps</span><span class="p">))</span> <span class="c1"># 0 or 1</span>
+<span class="n">steps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">draws</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">walks</span> <span class="o">=</span> <span class="n">steps</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">walks</span>
 </pre></div>
 
      </div>
@@ -17189,36 +14646,14 @@ nan은 not a number, 즉, 숫자가 아니다의 의미이다.</p>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[63]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([1, 2, 3, 4])</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[64]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">names</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">walks</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">walks</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -17226,37 +14661,15 @@ nan은 not a number, 즉, 숫자가 아니다의 의미이다.</p>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[64]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&#39;Bob&#39;, &#39;Joe&#39;, &#39;Will&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[65]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
-<span class="n">np</span><span class="o">.</span><span class="n">in1d</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hits30</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">walks</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">hits30</span>
+<span class="n">hits30</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="c1"># Number that hit 30 or -30</span>
 </pre></div>
 
      </div>
@@ -17264,27 +14677,48 @@ nan은 not a number, 즉, 숫자가 아니다의 의미이다.</p>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">crossing_times</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">walks</span><span class="p">[</span><span class="n">hits30</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">crossing_times</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
 
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[65]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([ True, False, False,  True,  True, False,  True])</pre>
+     </div>
+</div>
+</div>
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">steps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>
+                         <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">nwalks</span><span class="p">,</span> <span class="n">nsteps</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
 </div>
 
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 
+     </div>
+</div>
+</div>
 </div>
 
 </div>
