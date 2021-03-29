@@ -43,7 +43,6 @@
     - 3편: 어레이 활용: 정렬, 확률과 통계, 선형대수, 난수 생성 &nbsp;
         [[html]](./notebooks/pydata04-numpy-basics-3.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata04-numpy-basics-3.ipynb)
-    (준비중)
     - 4편: 고급 넘파이 기능 &nbsp;
         [[html]](./notebooks/pydata04-numpy-basics-4.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata04-numpy-basics-4.ipynb)
