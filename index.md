@@ -85,21 +85,22 @@
 
 #### 오프라인
 
-추천 활용법: [프로젝트 리포지토리](https://github.com/codingalzi/python-data-analysis) 
-    <a href="https://github.com/codingalzi/python-data-analysis"><img src="view-on-github.png" alt="View On GitHub" style="height:25px;"/></a> 를 복제한 후에 아나콘다의 주피터 노트북 활용.
+추천 활용법: [프로젝트 리포지토리](https://github.com/codingalzi/python-data-analysis)를 
+복제한 후에 아나콘다의 주피터 노트북 활용.
 
 * [오프라인 프로그래밍 환경설정 안내](INSTALL.md) 참조
-    * [아나콘다 패키지 설치](https://youtu.be/cMB6-AxatPU?list=PLRYL8FHwJMhD_Wi22JLm2VURrjt_iVX7X&t=154)
-    * [주피터 노트북 사용법](https://www.youtube.com/watch?v=4_-IIfbdR5M&list=PLRYL8FHwJMhD_Wi22JLm2VURrjt_iVX7X&index=2)
+    - [아나콘다 패키지 설치](https://youtu.be/cMB6-AxatPU?list=PLRYL8FHwJMhD_Wi22JLm2VURrjt_iVX7X&t=154)
+    - [주피터 노트북 사용법](https://www.youtube.com/watch?v=4_-IIfbdR5M&list=PLRYL8FHwJMhD_Wi22JLm2VURrjt_iVX7X&index=2)
 
 
 ### 참고 자료
 
-* 판다스(pandas) 실전 활용법 소개 동영상 모음집
-    * [Data analysis in Python with Pandas](https://www.youtube.com/playlist?list=PL5-da3qGB5ICCsgW1MxlZ0Hq8LL5U3u9y)
-        * 자동번역 한글자막 수준 매우 우수: 설정 => 자막 => 자동 번역 => 한국어
-        * [강의노트](https://nbviewer.jupyter.org/github/justmarkham/pandas-videos/blob/master/pandas.ipynb) 제공됨.
-        
 * 넘파이(numpy) 연습문제
     - [NumPy Exercises, Practice](https://www.w3resource.com/python-exercises/numpy/index.php)
     - [101 NumPy Exercises for Data Analysis](https://www.machinelearningplus.com/python/101-numpy-exercises-python/)
+
+* 판다스(pandas) 실전 활용법 소개 동영상 모음집
+    - [유튜브: Data analysis in Python with Pandas](https://www.youtube.com/playlist?list=PL5-da3qGB5ICCsgW1MxlZ0Hq8LL5U3u9y), 
+    자동번역 한글자막 수준 매우 우수: 설정 => 자막 => 자동 번역 => 한국어
+    - [코드](https://nbviewer.jupyter.org/github/justmarkham/pandas-videos/blob/master/pandas.ipynb)
+
