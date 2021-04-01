@@ -99,3 +99,7 @@
     * [Data analysis in Python with Pandas](https://www.youtube.com/playlist?list=PL5-da3qGB5ICCsgW1MxlZ0Hq8LL5U3u9y)
         * 자동번역 한글자막 수준 매우 우수: 설정 => 자막 => 자동 번역 => 한국어
         * [강의노트](https://nbviewer.jupyter.org/github/justmarkham/pandas-videos/blob/master/pandas.ipynb) 제공됨.
+        
+* 넘파이(numpy) 연습문제
+    - [NumPy Exercises, Practice](https://www.w3resource.com/python-exercises/numpy/index.php)
+    - [101 NumPy Exercises for Data Analysis](https://www.machinelearningplus.com/python/101-numpy-exercises-python/)
