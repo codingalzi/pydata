@@ -46,8 +46,14 @@
     - 4편: 고급 넘파이 기능 &nbsp;
         [[html]](./notebooks/pydata04-numpy-basics-4.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata04-numpy-basics-4.ipynb)
-1. 팬다스(pandas) &nbsp;
-    (준비중)
+1. 팬다스(pandas) 
+	- 1편 (준비중) &nbsp;
+        [[html]](./notebooks/pydata05-pandas-basics-1.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata05-pandas-basics-1.ipynb)
+	- 2편 (준비중) &nbsp;
+        [[html]](./notebooks/pydata05-pandas-basics-2.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata05-pandas-basics-2.ipynb)
+1. ...
 1. ...
 
 **링크 활용법**
