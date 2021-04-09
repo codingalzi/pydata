@@ -6,5 +6,5 @@
 바탕으로 파이썬 언어를 이용한 데이터 분석 기초 강의노트 모음집을 제공합니다.
 
 학습 내용 및 프로그래밍 환경, 주피터 노트북 등 학습환경과 관련된 자세한 사항은 
-[강의노트 홈페이지](https://codingalzi.github.io/python-data-analysis/)에서 
+[강의노트 홈페이지](https://codingalzi.github.io/pydata/)에서 
 확인할 수 있습니다.

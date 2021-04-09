@@ -9,51 +9,50 @@
 
 ### 강의소개
 
-- [강의 목표 및 주요 내용](./notebooks/pydata00-intro.html)
+- [강의 목표 및 주요 내용](./notebooks/pydata01-intro.html)
 
 ### 목차
 
 1. 파이썬 프로그래밍 기초 1부 
     - 1편: 기초 문법 &nbsp;
         [[html]](./notebooks/pydata02-python-basics-1.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata02-python-basics-1.ipynb)
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata02-python-basics-1.ipynb)
     - 2편: 스칼라 자료형, 제어문(if 조건문, for 반복문, while 반복문) &nbsp;
         [[html]](./notebooks/pydata02-python-basics-2.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata02-python-basics-2.ipynb)
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata02-python-basics-2.ipynb)
 1. 파이썬 프로그래밍 기초 2부
     - 1편: 모음 자료형 1편(튜플, 리스트), `range()` 함수 &nbsp;
         [[html]](./notebooks/pydata03-python-basics-1.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata03-python-basics-1.ipynb)
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata03-python-basics-1.ipynb)
     - 2편: 모음 자료형 2편(사전, 집합), 조건 제시법(comprehension) &nbsp;
         [[html]](./notebooks/pydata03-python-basics-2.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata03-python-basics-2.ipynb)
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata03-python-basics-2.ipynb)
     - 3편: 함수 &nbsp;
         [[html]](./notebooks/pydata03-python-basics-3.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata03-python-basics-3.ipynb)
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata03-python-basics-3.ipynb)
     - 4편: 이터러블/이터레이터/제너레이터, 오류와 예외처리, 파일 &nbsp;
         [[html]](./notebooks/pydata03-python-basics-4.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata03-python-basics-4.ipynb)
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata03-python-basics-4.ipynb)
 1. 넘파이(numpy)
     - 1편: 넘파이 어레이 소개, 어레이 기초 연산 &nbsp;
         [[html]](./notebooks/pydata04-numpy-basics-1.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata04-numpy-basics-1.ipynb)
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata04-numpy-basics-1.ipynb)
     - 2편: 어레이 인덱싱, 슬라이싱, 전치 어레이 &nbsp;
         [[html]](./notebooks/pydata04-numpy-basics-2.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata04-numpy-basics-2.ipynb)
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata04-numpy-basics-2.ipynb)
     - 3편: 어레이 활용: 정렬, 확률과 통계, 선형대수, 난수 생성 &nbsp;
         [[html]](./notebooks/pydata04-numpy-basics-3.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata04-numpy-basics-3.ipynb)
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata04-numpy-basics-3.ipynb)
     - 4편: 고급 넘파이 기능 &nbsp;
         [[html]](./notebooks/pydata04-numpy-basics-4.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata04-numpy-basics-4.ipynb)
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata04-numpy-basics-4.ipynb)
 1. 팬다스(pandas) 
-	- 1편 (준비중) &nbsp;
+    - 1편 (준비중) &nbsp;
         [[html]](./notebooks/pydata05-pandas-basics-1.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata05-pandas-basics-1.ipynb)
-	- 2편 (준비중) &nbsp;
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata05-pandas-basics-1.ipynb)
+    - 2편 (준비중) &nbsp;
         [[html]](./notebooks/pydata05-pandas-basics-2.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/notebooks/pydata05-pandas-basics-2.ipynb)
-1. ...
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata05-pandas-basics-2.ipynb)
 1. ...
 
 **링크 활용법**
@@ -75,8 +74,8 @@
 
 #### 온라인
 
-추천 활용법: [구글 코랩 활용](https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/) 
-<a href="https://colab.research.google.com/github/codingalzi/python-data-analysis/blob/master/"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+추천 활용법: [구글 코랩 활용](https://colab.research.google.com/github/codingalzi/pydata/blob/master/) 
+<a href="https://colab.research.google.com/github/codingalzi/pydata/blob/master/"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 **주의사항: 온라인 상에서 작업한 내용은 저장되지 않으며, 따라서 먼저 자신의 계정으로 사본을 만든 후에 수정 및 실행해야 함.**
 
@@ -91,7 +90,7 @@
 
 #### 오프라인
 
-추천 활용법: [프로젝트 리포지토리](https://github.com/codingalzi/python-data-analysis)를 
+추천 활용법: [프로젝트 리포지토리](https://github.com/codingalzi/pydata)를 
 복제한 후에 아나콘다의 주피터 노트북 활용.
 
 * [오프라인 프로그래밍 환경설정 안내](INSTALL.md) 참조
