@@ -47,12 +47,15 @@
         [[html]](./notebooks/pydata04-numpy-basics-4.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata04-numpy-basics-4.ipynb)
 1. 팬다스(pandas) 
-    - 1편 (준비중) &nbsp;
+    - 1편: 시리즈(Series), 데이터프레임(DataFrame) 소개 &nbsp;
         [[html]](./notebooks/pydata05-pandas-basics-1.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata05-pandas-basics-1.ipynb)
-    - 2편 (준비중) &nbsp;
+    - 2편: 시리즈, 데이터프레임 핵심 기능 (준비중) &nbsp;
         [[html]](./notebooks/pydata05-pandas-basics-2.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata05-pandas-basics-2.ipynb)
+    - 3편: 기초 통계 활용 (준비중) &nbsp;
+        [[html]](./notebooks/pydata05-pandas-basics-3.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata05-pandas-basics-3.ipynb)
 1. ...
 
 **링크 활용법**
