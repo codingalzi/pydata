@@ -57,6 +57,26 @@
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata05-pandas-basics-3.ipynb)
 1. ...
 
+### 실습 과제
+
+1. 실습 과제 1  &nbsp;
+    [[html]](./practices/practices01.html),
+    [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/practices/practices01.ipynb)
+    - 파이썬 기초 문법
+1. 실습 과제 2  &nbsp;
+    [[html]](./practices/practices02.html),
+    [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/practices/practices02.ipynb)
+    - 이미지 크기 조절
+1. 실습 과제 3  &nbsp;
+    [[html]](./practices/practices03.html),
+    [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/practices/practices03.ipynb)
+    - 넘파이 기초 활용
+1. 실습 과제 4(준비중)  &nbsp;
+    [[html]](./practices/practices04.html),
+    [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/practices/practices04.ipynb)
+    - 판다스 기초 활용
+1. ...
+
 **링크 활용법**
 
 * html 버전: 읽기 전용 주피터 노트북
@@ -76,19 +96,13 @@
 
 #### 온라인
 
-추천 활용법: [구글 코랩 활용](https://colab.research.google.com/github/codingalzi/pydata/blob/master/) 
-<a href="https://colab.research.google.com/github/codingalzi/pydata/blob/master/"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+추천 활용법: 장 별로 지정된 구글 코랩 노트북 활용
 
 **주의사항: 온라인 상에서 작업한 내용은 저장되지 않으며, 따라서 먼저 자신의 계정으로 사본을 만든 후에 수정 및 실행해야 함.**
 
 구글 코랩 사용법은 아래 동영상을 참조하세요.
 
 * [구글 코랩 사용법](https://www.youtube.com/watch?v=Jb_n90gHdP0)
-
-주피터 노트북 사용법을 익히면 구글 코랩에 보다 쉽게 적응할 수 있습니다.
-
-* [주피터 노트북 사용법](https://www.youtube.com/watch?v=4_-IIfbdR5M&list=PLRYL8FHwJMhD_Wi22JLm2VURrjt_iVX7X&index=2)
-
 
 #### 오프라인
 
