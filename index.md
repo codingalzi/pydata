@@ -59,22 +59,18 @@
 
 ### 실습 과제
 
-1. 실습 과제 1  &nbsp;
+1. 실습 과제 1: 파이썬 기초 문법 &nbsp;
     [[html]](./practices/practices01.html),
     [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/practices/practices01.ipynb)
-    - 파이썬 기초 문법
-1. 실습 과제 2  &nbsp;
+1. 실습 과제 2:이미지 크기 조절 &nbsp;
     [[html]](./practices/practices02.html),
     [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/practices/practices02.ipynb)
-    - 이미지 크기 조절
-1. 실습 과제 3  &nbsp;
+1. 실습 과제 3: 넘파이 기초 활용 &nbsp;
     [[html]](./practices/practices03.html),
     [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/practices/practices03.ipynb)
-    - 넘파이 기초 활용
-1. 실습 과제 4(준비중)  &nbsp;
+1. 실습 과제 4(준비중):판다스 기초 활용 &nbsp;
     [[html]](./practices/practices04.html),
     [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/practices/practices04.ipynb)
-    - 판다스 기초 활용
 1. ...
 
 **링크 활용법**
