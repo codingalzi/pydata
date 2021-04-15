@@ -14367,7 +14367,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">PREVIOUS_MAX_ROWS</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">max_rows</span> <span class="c1"># 원래 60이 기본.</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">max_rows</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;max_rows&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14378,7 +14378,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="5.-1-&#54032;&#45796;&#49828;-&#51088;&#47308;&#44396;&#51312;-&#49548;&#44060;">5. 1 &#54032;&#45796;&#49828; &#51088;&#47308;&#44396;&#51312; &#49548;&#44060;<a class="anchor-link" href="#5.-1-&#54032;&#45796;&#49828;-&#51088;&#47308;&#44396;&#51312;-&#49548;&#44060;">&#182;</a></h2>
+<h2 id="5.-1-&#54032;&#45796;&#49828;-&#51088;&#47308;&#44396;&#51312;-&#49548;&#44060;-(p.-182)">5. 1 &#54032;&#45796;&#49828; &#51088;&#47308;&#44396;&#51312; &#49548;&#44060; (p. 182)<a class="anchor-link" href="#5.-1-&#54032;&#45796;&#49828;-&#51088;&#47308;&#44396;&#51312;-&#49548;&#44060;-(p.-182)">&#182;</a></h2>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14393,7 +14393,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="5.1.1-&#49884;&#47532;&#51592;(Series)">5.1.1 &#49884;&#47532;&#51592;(<code>Series</code>)<a class="anchor-link" href="#5.1.1-&#49884;&#47532;&#51592;(Series)">&#182;</a></h3>
+<h3 id="5.1.1-&#49884;&#47532;&#51592;(Series)-(p.-182)">5.1.1 &#49884;&#47532;&#51592;(<code>Series</code>) (p. 182)<a class="anchor-link" href="#5.1.1-&#49884;&#47532;&#51592;(Series)-(p.-182)">&#182;</a></h3>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14701,7 +14701,7 @@ dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="&#51064;&#45937;&#49828;-&#48320;&#44221;">&#51064;&#45937;&#49828; &#48320;&#44221;<a class="anchor-link" href="#&#51064;&#45937;&#49828;-&#48320;&#44221;">&#182;</a></h4>
+<h4 id="&#51064;&#45937;&#49828;-&#45824;&#52404;">&#51064;&#45937;&#49828; &#45824;&#52404;<a class="anchor-link" href="#&#51064;&#45937;&#49828;-&#45824;&#52404;">&#182;</a></h4>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -15120,7 +15120,12 @@ dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><code>in</code> 함수는 인덱스 사용 여부를 사전 자료형의 키(key) 사용 여부와 동일한 방식으로 판단한다.</p>
+<h4 id="in-&#50672;&#49328;&#51088;"><code>in</code> &#50672;&#49328;&#51088;<a class="anchor-link" href="#in-&#50672;&#49328;&#51088;">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><code>in</code>연산자는 인덱스 사용 여부를 사전 자료형의 키(key) 사용 여부와 동일한 방식으로 판단한다.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15780,7 +15785,7 @@ Name: population, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="5.1.2-&#45936;&#51060;&#53552;&#54532;&#47112;&#51076;(DataFrame)">5.1.2 &#45936;&#51060;&#53552;&#54532;&#47112;&#51076;(<code>DataFrame</code>)<a class="anchor-link" href="#5.1.2-&#45936;&#51060;&#53552;&#54532;&#47112;&#51076;(DataFrame)">&#182;</a></h3>
+<h3 id="5.1.2-&#45936;&#51060;&#53552;&#54532;&#47112;&#51076;(DataFrame)-(p.-187)">5.1.2 &#45936;&#51060;&#53552;&#54532;&#47112;&#51076;(<code>DataFrame</code>) (p. 187)<a class="anchor-link" href="#5.1.2-&#45936;&#51060;&#53552;&#54532;&#47112;&#51076;(DataFrame)-(p.-187)">&#182;</a></h3>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -16157,7 +16162,8 @@ Name: Banana, dtype: int64</pre>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><code>pd.concat()</code> 함수도 여러 개의 시리즈를 묶어 하나의 데이터프레임을 생성한다.
 단, 축을 이용하여 묶는 방식을 지정한다.
-위 그림에서처럼 옆으로 묶으려면 열 단위로 묶는다는 의미에서 <code>axis=1</code>로 지정한다.</p>
+위 그림에서처럼 옆으로 묶으려면 열 단위로 묶는다는 의미에서 <code>axis=1</code>로 지정한다.
+각 열의 이름은 해당 시리즈의 <code>name</code>이 가리키는 값으로 지정된다.</p>
 <p><strong>참고:</strong> concatenate 영어 단어는 이어붙인다의 뜻을 갖는다.</p>
 
 </div>
@@ -17037,13 +17043,159 @@ Name: Banana, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><code>columns</code> 속성을 확인하면 다음과 같다.</p>
+<p>또는 사전에 항목을 추가하듯이 진행할 수도 있다.</p>
+<p><strong>주의사항:</strong> <code>frame2</code>와의 충돌을 피하기 위해 복사해서 사용한다.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">frame2_</span> <span class="o">=</span> <span class="n">frame2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">frame2_</span><span class="p">[</span><span class="s2">&quot;debt2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>   <span class="c1"># 구간 [0, 1]을 8개의 구간으로 쪼개기</span>
+
+<span class="n">frame2_</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[48]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>state</th>
+      <th>pop</th>
+      <th>debt</th>
+      <th>debt2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2000</td>
+      <td>Ohio</td>
+      <td>1.5</td>
+      <td>NaN</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2001</td>
+      <td>Ohio</td>
+      <td>1.7</td>
+      <td>NaN</td>
+      <td>0.125</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2002</td>
+      <td>Ohio</td>
+      <td>3.6</td>
+      <td>NaN</td>
+      <td>0.250</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2001</td>
+      <td>Nevada</td>
+      <td>2.4</td>
+      <td>NaN</td>
+      <td>0.375</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2002</td>
+      <td>Nevada</td>
+      <td>2.9</td>
+      <td>NaN</td>
+      <td>0.500</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2003</td>
+      <td>Nevada</td>
+      <td>3.2</td>
+      <td>NaN</td>
+      <td>0.625</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2002</td>
+      <td>NY</td>
+      <td>8.3</td>
+      <td>NaN</td>
+      <td>0.750</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2003</td>
+      <td>NY</td>
+      <td>8.4</td>
+      <td>NaN</td>
+      <td>0.875</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2004</td>
+      <td>NY</td>
+      <td>8.5</td>
+      <td>NaN</td>
+      <td>1.000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><code>columns</code> 속성을 확인하면 다음과 같다.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">frame2</span><span class="o">.</span><span class="n">columns</span>
@@ -17062,7 +17214,7 @@ Name: Banana, dtype: int64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[48]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[49]:</div>
 
 
 
@@ -17091,7 +17243,7 @@ Name: Banana, dtype: int64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">frame2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">,</span>
@@ -17112,7 +17264,7 @@ Name: Banana, dtype: int64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[49]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[50]:</div>
 
 
 
@@ -17215,7 +17367,7 @@ Name: Banana, dtype: int64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">frame2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;state&#39;</span><span class="p">,</span> <span class="s1">&#39;pop&#39;</span><span class="p">,</span> <span class="s1">&#39;debt&#39;</span><span class="p">],</span>
@@ -17237,7 +17389,7 @@ Name: Banana, dtype: int64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[50]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[51]:</div>
 
 
 
@@ -17357,7 +17509,7 @@ Name: Banana, dtype: int64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">frame2</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span>
@@ -17376,7 +17528,7 @@ Name: Banana, dtype: int64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[51]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[52]:</div>
 
 
 
@@ -17410,7 +17562,7 @@ Name: state, dtype: object</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">frame2</span><span class="o">.</span><span class="n">year</span>
@@ -17429,7 +17581,7 @@ Name: state, dtype: object</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[52]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[53]:</div>
 
 
 
@@ -17456,18 +17608,17 @@ Name: year, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>주의사항:</strong> 대괄호를 사용하는 인덱싱은 문자열을 사용한다.
+<p><strong>주의사항:</strong> 대괄호를 사용하는 인덱싱은 임의의 문자열을 사용한다.
 반면에 속성 형식은 변수를 사용하듯이 처리한다. 
 따라서 속성 형식에 사용될 수 있는 열의 이름은 일반 변수의 이름을 짓는 형식을 따라야 한다.</p>
-<p>예를 들어, Ohio 주인지 여부를 판정하는 'Ohio state' 라는 열을 추가해보자.
-새로운 열을 추가하려면 사전의 경우처럼 대괄호를 이용하여 새로운 열의 이름과 값을 지정하면 된다.
-아래 코드는 Ohio 주이면 <code>True</code>, 아니면 <code>False</code>를 값으로 사용한다.</p>
+<p>예를 들어, Ohio 주(state)인지 여부를 판정하는 'Ohio state' 라는 열을 추가해보자.
+아래 코드는 새로운 열을 추가하기 위해 사전의 경우처럼 대괄호를 이용하여 새로운 열의 이름과 값을 지정한다.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[54]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">frame2</span><span class="p">[</span><span class="s1">&#39;Ohio state&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">frame2</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">&#39;Ohio&#39;</span>
@@ -17487,7 +17638,7 @@ Name: year, dtype: int64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[53]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[54]:</div>
 
 
 
@@ -17610,7 +17761,7 @@ Name: year, dtype: int64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[54]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">frame2</span><span class="p">[</span><span class="s1">&#39;Ohio state&#39;</span><span class="p">]</span>
@@ -17629,7 +17780,7 @@ Name: year, dtype: int64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[54]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
 
 
 
@@ -17676,7 +17827,7 @@ Name: Ohio state, dtype: bool</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[56]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">del</span> <span class="n">frame2</span><span class="p">[</span><span class="s1">&#39;Ohio state&#39;</span><span class="p">]</span>
@@ -17696,7 +17847,7 @@ Name: Ohio state, dtype: bool</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[56]:</div>
 
 
 
@@ -17803,7 +17954,7 @@ Name: Ohio state, dtype: bool</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[56]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[57]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">frame2</span><span class="o">.</span><span class="n">columns</span>
@@ -17822,7 +17973,7 @@ Name: Ohio state, dtype: bool</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[56]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[57]:</div>
 
 
 
@@ -17858,7 +18009,7 @@ Name: Ohio state, dtype: bool</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[57]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[58]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">frame2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;three&#39;</span><span class="p">]</span>
@@ -17877,7 +18028,7 @@ Name: Ohio state, dtype: bool</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[57]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[58]:</div>
 
 
 
@@ -17905,7 +18056,7 @@ Name: three, dtype: object</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[58]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[59]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">frame2</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">]]</span>
@@ -17924,7 +18075,7 @@ Name: three, dtype: object</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[58]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[59]:</div>
 
 
 
@@ -17996,12 +18147,13 @@ Name: three, dtype: object</pre>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>열 인덱싱을 이용하여 항목의 값을 지정할 수 있다. 
 아래 코드는 <code>'debt'</code> 열의 값을 16.5로 일정하게 지정한다.</p>
+<p><strong>참고:</strong> 브로드캐스팅이 기본적으로 작동한다.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[59]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[60]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">frame2</span><span class="p">[</span><span class="s1">&#39;debt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">16.5</span>
@@ -18021,7 +18173,7 @@ Name: three, dtype: object</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[59]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[60]:</div>
 
 
 
@@ -18135,7 +18287,7 @@ Name: three, dtype: object</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[60]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[61]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">frame2</span><span class="p">[</span><span class="s1">&#39;debt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">9.</span><span class="p">)</span>
@@ -18155,7 +18307,7 @@ Name: three, dtype: object</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[60]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[61]:</div>
 
 
 
@@ -18270,7 +18422,7 @@ Name: three, dtype: object</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[61]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[62]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">val</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.7</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">,</span> <span class="s1">&#39;five&#39;</span><span class="p">,</span> <span class="s1">&#39;eleven&#39;</span><span class="p">])</span>
@@ -18290,7 +18442,7 @@ Name: three, dtype: object</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[61]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[62]:</div>
 
 
 
@@ -18323,7 +18475,7 @@ dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[62]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[63]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">frame2</span><span class="p">[</span><span class="s1">&#39;debt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
@@ -18343,7 +18495,7 @@ dtype: float64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[62]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[63]:</div>
 
 
 
@@ -18459,43 +18611,19 @@ dtype: float64</pre>
 그러면 최상위 키는 열의 이름으로, 내부에 사용된 키는 행 인덱스로 사용된다.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[63]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[64]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pop</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nevada&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">2001</span><span class="p">:</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mi">2002</span><span class="p">:</span> <span class="mf">2.9</span><span class="p">},</span>
        <span class="s1">&#39;Ohio&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">2000</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">2001</span><span class="p">:</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mi">2002</span><span class="p">:</span> <span class="mf">3.6</span><span class="p">}}</span>
-<span class="n">pop</span>
 </pre></div>
 
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[63]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;Nevada&#39;: {2001: 2.4, 2002: 2.9}, &#39;Ohio&#39;: {2000: 1.5, 2001: 1.7, 2002: 3.6}}</pre>
-</div>
-
-</div>
-
-</div>
-
 </div>
 
 </div>
@@ -18509,7 +18637,7 @@ dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[64]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[65]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">frame3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pop</span><span class="p">)</span>
@@ -18529,7 +18657,7 @@ dtype: float64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[64]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[65]:</div>
 
 
 
@@ -18594,7 +18722,7 @@ dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[65]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[66]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nevada</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="mi">2001</span><span class="p">:</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mi">2002</span><span class="p">:</span> <span class="mf">2.9</span><span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Nevada&quot;</span><span class="p">)</span>
@@ -18614,7 +18742,7 @@ dtype: float64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[65]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[66]:</div>
 
 
 
@@ -18634,7 +18762,7 @@ Name: Nevada, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[66]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[67]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ohio</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="mi">2000</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">2001</span><span class="p">:</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mi">2002</span><span class="p">:</span> <span class="mf">3.6</span><span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Ohio&quot;</span><span class="p">)</span>
@@ -18654,7 +18782,7 @@ Name: Nevada, dtype: float64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[66]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[67]:</div>
 
 
 
@@ -18683,97 +18811,10 @@ Name: Ohio, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[67]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">nevada</span><span class="p">,</span> <span class="n">ohio</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[67]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Nevada</th>
-      <th>Ohio</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2000</th>
-      <td>NaN</td>
-      <td>1.5</td>
-    </tr>
-    <tr>
-      <th>2001</th>
-      <td>2.4</td>
-      <td>1.7</td>
-    </tr>
-    <tr>
-      <th>2002</th>
-      <td>2.9</td>
-      <td>3.6</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="&#51204;&#52824;-&#45936;&#51060;&#53552;&#54532;&#47112;&#51076;">&#51204;&#52824; &#45936;&#51060;&#53552;&#54532;&#47112;&#51076;<a class="anchor-link" href="#&#51204;&#52824;-&#45936;&#51060;&#53552;&#54532;&#47112;&#51076;">&#182;</a></h4>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>2차원 행렬의 전치 행렬처럼 전치 데이터프레임은 행과 열의 위치를 바꾼 결과이다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[68]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">frame3</span><span class="o">.</span><span class="n">T</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">nevada</span><span class="p">,</span> <span class="n">ohio</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -18812,23 +18853,25 @@ Name: Ohio, dtype: float64</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>2001</th>
-      <th>2002</th>
-      <th>2000</th>
+      <th>Nevada</th>
+      <th>Ohio</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Nevada</th>
-      <td>2.4</td>
-      <td>2.9</td>
+      <th>2000</th>
       <td>NaN</td>
+      <td>1.5</td>
     </tr>
     <tr>
-      <th>Ohio</th>
+      <th>2001</th>
+      <td>2.4</td>
       <td>1.7</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>2.9</td>
       <td>3.6</td>
-      <td>1.5</td>
     </tr>
   </tbody>
 </table>
@@ -18844,7 +18887,9 @@ Name: Ohio, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>행의 인덱스를 별도로 지정하면 지정된 인덱스가 사용된다.</p>
+<p>중첩 사전의 키값으로 시리즈를 사용할 수도 있다.</p>
+<p><strong>참고:</strong> 데이터프레임을 생성함에 있어서의 핵심은 2차원 행렬 모양을 갖느냐이기에
+각 열에 해당하는 값이 리스트, 어레이, 시리즈 등이 사용될 수 있다.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -18853,7 +18898,9 @@ Name: Ohio, dtype: float64</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[69]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pop</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">2001</span><span class="p">,</span> <span class="mi">2002</span><span class="p">,</span> <span class="mi">2003</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pdata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ohio&#39;</span><span class="p">:</span> <span class="n">frame3</span><span class="p">[</span><span class="s1">&#39;Ohio&#39;</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+         <span class="s1">&#39;Nevada&#39;</span><span class="p">:</span> <span class="n">frame3</span><span class="p">[</span><span class="s1">&#39;Nevada&#39;</span><span class="p">][:</span><span class="mi">2</span><span class="p">]}</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pdata</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -18892,25 +18939,20 @@ Name: Ohio, dtype: float64</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Nevada</th>
       <th>Ohio</th>
+      <th>Nevada</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>2001</th>
-      <td>2.4</td>
       <td>1.7</td>
+      <td>2.4</td>
     </tr>
     <tr>
       <th>2002</th>
-      <td>2.9</td>
       <td>3.6</td>
-    </tr>
-    <tr>
-      <th>2003</th>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>2.9</td>
     </tr>
   </tbody>
 </table>
@@ -18926,9 +18968,13 @@ Name: Ohio, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>중첩 사전의 키값으로 시리즈를 사용할 수도 있다.</p>
-<p><strong>참고:</strong> 데이터프레임을 생성함에 있어서의 핵심은 2차원 행렬 모양을 갖느냐이기에
-각 열에 해당하는 값이 리스트, 어레이, 시리즈 등이 사용될 수 있다.</p>
+<h4 id="&#51204;&#52824;-&#45936;&#51060;&#53552;&#54532;&#47112;&#51076;">&#51204;&#52824; &#45936;&#51060;&#53552;&#54532;&#47112;&#51076;<a class="anchor-link" href="#&#51204;&#52824;-&#45936;&#51060;&#53552;&#54532;&#47112;&#51076;">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>2차원 행렬의 전치 행렬처럼 전치 데이터프레임은 행과 열의 위치를 바꾼 결과이다.
+당연히 행과 열에 사용된 이름이 적절하게 전치된다.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -18937,9 +18983,7 @@ Name: Ohio, dtype: float64</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[70]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pdata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ohio&#39;</span><span class="p">:</span> <span class="n">frame3</span><span class="p">[</span><span class="s1">&#39;Ohio&#39;</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
-         <span class="s1">&#39;Nevada&#39;</span><span class="p">:</span> <span class="n">frame3</span><span class="p">[</span><span class="s1">&#39;Nevada&#39;</span><span class="p">][:</span><span class="mi">2</span><span class="p">]}</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pdata</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">frame3</span><span class="o">.</span><span class="n">T</span>
 </pre></div>
 
      </div>
@@ -18978,20 +19022,23 @@ Name: Ohio, dtype: float64</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Ohio</th>
-      <th>Nevada</th>
+      <th>2001</th>
+      <th>2002</th>
+      <th>2000</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>2001</th>
-      <td>1.7</td>
+      <th>Nevada</th>
       <td>2.4</td>
+      <td>2.9</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>2002</th>
+      <th>Ohio</th>
+      <td>1.7</td>
       <td>3.6</td>
-      <td>2.9</td>
+      <td>1.5</td>
     </tr>
   </tbody>
 </table>
@@ -19012,7 +19059,7 @@ Name: Ohio, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>시리지의 경우와 동일한 방식으로 행과 열의 이름을 지정할 수 있으며,
+<p>시리즈의 경우와 동일한 방식으로 행과 열의 이름을 지정할 수 있으며,
 항목들로 이루어진 2차원 어레이는 <code>values</code> 속성이 가리킨다.</p>
 
 </div>
@@ -19186,7 +19233,12 @@ Name: Ohio, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="5.1.3-&#51064;&#45937;&#49828;-&#44061;&#52404;">5.1.3 &#51064;&#45937;&#49828; &#44061;&#52404;<a class="anchor-link" href="#5.1.3-&#51064;&#45937;&#49828;-&#44061;&#52404;">&#182;</a></h3>
+<h3 id="5.1.3-&#51064;&#45937;&#49828;-&#44061;&#52404;-(p.-195)">5.1.3 &#51064;&#45937;&#49828; &#44061;&#52404; (p. 195)<a class="anchor-link" href="#5.1.3-&#51064;&#45937;&#49828;-&#44061;&#52404;-(p.-195)">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="index-&#49549;&#49457;"><code>index</code> &#49549;&#49457;<a class="anchor-link" href="#index-&#49549;&#49457;">&#182;</a></h4>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -19201,8 +19253,7 @@ Name: Ohio, dtype: float64</pre>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">obj</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])</span>
-<span class="n">index</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">index</span>
-<span class="n">index</span>
+<span class="n">obj</span>
 </pre></div>
 
      </div>
@@ -19219,6 +19270,47 @@ Name: Ohio, dtype: float64</pre>
 
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[74]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>a    0
+b    1
+c    2
+dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[75]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">index</span>
+<span class="n">index</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[75]:</div>
 
 
 
@@ -19243,47 +19335,10 @@ Name: Ohio, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[75]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[75]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#39;b&#39;</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[76]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -19305,6 +19360,43 @@ Name: Ohio, dtype: float64</pre>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&#39;b&#39;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[77]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[77]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
 <pre>Index([&#39;b&#39;, &#39;c&#39;], dtype=&#39;object&#39;)</pre>
 </div>
 
@@ -19317,7 +19409,7 @@ Name: Ohio, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>하지만 항목을 변경할 수 없다.
+<p>하지만 항목을 변경할 수는 없다.
 아래처럼 인덱싱을 이용하여 항목을 변경하려 하면 <code>TypeError</code>가 발생한다.</p>
 <div class="highlight"><pre><span></span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;d&#39;</span>
 </pre></div>
@@ -19331,13 +19423,13 @@ Name: Ohio, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>열(columns)에 사용된 이름은 <code>columns</code> 속성에 저장된다.</p>
+<p>열(columns)에 사용된 이름은 <code>Index</code> 객체로 <code>columns</code> 속성에 저장된다.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[77]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[78]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">frame3</span>
@@ -19356,7 +19448,7 @@ Name: Ohio, dtype: float64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[77]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[78]:</div>
 
 
 
@@ -19418,7 +19510,7 @@ Name: Ohio, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[78]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[79]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">frame3</span><span class="o">.</span><span class="n">columns</span>
@@ -19437,7 +19529,7 @@ Name: Ohio, dtype: float64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[78]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[79]:</div>
 
 
 
@@ -19466,7 +19558,7 @@ Name: Ohio, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[79]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[80]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;Ohio&#39;</span> <span class="ow">in</span> <span class="n">frame3</span><span class="o">.</span><span class="n">columns</span>
@@ -19485,7 +19577,7 @@ Name: Ohio, dtype: float64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[79]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[80]:</div>
 
 
 
@@ -19503,7 +19595,7 @@ Name: Ohio, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[80]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[81]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2003</span> <span class="ow">in</span> <span class="n">frame3</span><span class="o">.</span><span class="n">index</span>
@@ -19522,7 +19614,7 @@ Name: Ohio, dtype: float64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[80]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[81]:</div>
 
 
 
@@ -19551,7 +19643,7 @@ Name: Ohio, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[81]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[82]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dup_labels</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">([</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">])</span>
@@ -19571,7 +19663,7 @@ Name: Ohio, dtype: float64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[81]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[82]:</div>
 
 
 
@@ -19589,7 +19681,7 @@ Name: Ohio, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[82]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[83]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">frame2</span>
@@ -19608,7 +19700,7 @@ Name: Ohio, dtype: float64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[82]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[83]:</div>
 
 
 
@@ -19715,7 +19807,7 @@ Name: Ohio, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[83]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[84]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">frame2</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">dup_labels</span><span class="p">)</span>
@@ -19734,7 +19826,7 @@ Name: Ohio, dtype: float64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[83]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[84]:</div>
 
 
 
