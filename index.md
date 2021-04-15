@@ -10,7 +10,7 @@
 ### 목차
 
 1. 강의 목표 및 주요 내용 &nbsp; 
-    [html](./notebooks/pydata01-intro.html)
+    [[html]](./notebooks/pydata01-intro.html)
 
 1. 파이썬 프로그래밍 기초 1부 
     - 1편: 기초 문법 &nbsp;
