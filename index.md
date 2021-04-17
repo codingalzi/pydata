@@ -52,7 +52,7 @@
     - 2편: 시리즈, 데이터프레임 핵심 기능 &nbsp;
         [[html]](./notebooks/pydata05-pandas-basics-2.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata05-pandas-basics-2.ipynb)
-    - 3편: 기초 통계 활용 (준비중) &nbsp;
+    - 3편: 기초 통계 활용 &nbsp;
         [[html]](./notebooks/pydata05-pandas-basics-3.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata05-pandas-basics-3.ipynb)
 1. ...
