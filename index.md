@@ -71,7 +71,7 @@
 1. 실습 과제 3: 넘파이 기초 활용 &nbsp;
     [[html]](./practices/practices03.html),
     [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/practices/practices03.ipynb)
-1. 실습 과제 4(준비중):판다스 기초 활용 &nbsp;
+1. 실습 과제 4:판다스 기초 활용 &nbsp;
     [[html]](./practices/practices04.html),
     [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/practices/practices04.ipynb)
 1. ...
