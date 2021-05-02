@@ -58,6 +58,13 @@
     - 3편: 기초 통계 활용 &nbsp;
         [[html]](./notebooks/pydata05-pandas-basics-3.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata05-pandas-basics-3.ipynb)
+1. 선형대수 기초 
+    - 1편: 기초 개념 소개 &nbsp;
+        [[html]](./notebooks/pydata06-linear-algebra-basics-1.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata06-linear-algebra-basics-1.ipynb)
+    - 2편: 파이썬 구현 &nbsp;
+        [[html]](./notebooks/pydata06-linear-algebra-basics-2.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata06-linear-algebra-basics-2.ipynb)
 1. ...
 
 ### 실습 과제
