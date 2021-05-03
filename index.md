@@ -32,9 +32,12 @@
     - 4편: 이터러블/이터레이터/제너레이터, 오류와 예외처리, 파일 &nbsp;
         [[html]](./notebooks/pydata03-python-basics-4.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata03-python-basics-4.ipynb)
-    - 5편: 클래스와 자료영 &nbsp;
+    - 5편: 클래스와 자료형 &nbsp;
         [[html]](./notebooks/pydata03-python-basics-5.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata03-python-basics-5.ipynb)
+    - 6편: 자료형 명시(type annotation) &nbsp;
+        [[html]](./notebooks/pydata03-python-basics-6.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata03-python-basics-6.ipynb)
 1. 넘파이(numpy)
     - 1편: 넘파이 어레이 소개, 어레이 기초 연산 &nbsp;
         [[html]](./notebooks/pydata04-numpy-basics-1.html),
@@ -59,10 +62,10 @@
         [[html]](./notebooks/pydata05-pandas-basics-3.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata05-pandas-basics-3.ipynb)
 1. 선형대수 기초 
-    - 1편: 기초 개념 소개 &nbsp;
+    - 1편: 벡터와 행렬 개념 &nbsp;
         [[html]](./notebooks/pydata06-linear-algebra-basics-1.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata06-linear-algebra-basics-1.ipynb)
-    - 2편: 파이썬 구현 &nbsp;
+    - 2편: 벡터와 행렬의 연산 구현 &nbsp;
         [[html]](./notebooks/pydata06-linear-algebra-basics-2.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata06-linear-algebra-basics-2.ipynb)
 1. ...
