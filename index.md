@@ -80,6 +80,7 @@
 1. 실습 과제 4:판다스 기초 활용 &nbsp;
     [[html]](./practices/practices04.html),
     [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/practices/practices04.ipynb)
+1. 실습 과제 5: 선형대수 기초의 연습문제 풀기
 1. ...
 
 **링크 활용법**
