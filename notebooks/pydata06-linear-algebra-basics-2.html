@@ -57,25 +57,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
   </style>
-<style type="text/css">
-    
-
-<script>
-    MathJax.Hub.Config({
-        "HTML-CSS": {
-            /*preferredFont: "TeX",*/
-            /*availableFonts: ["TeX", "STIX"],*/
-            styles: {
-                scale: 100,
-                ".MathJax_Display": {
-                    "font-size": "100%",
-                }
-            }
-        }
-    });
-</script>
-    
-  </style>
 
 
 
@@ -14833,21 +14814,6 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="&#54665;&#47148;-&#50672;&#49328;">&#54665;&#47148; &#50672;&#49328;<a class="anchor-link" href="#&#54665;&#47148;-&#50672;&#49328;">&#182;</a></h3>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>행렬의 덧셈, 뺄셈, 스칼라 곱셈, 곱셈 등을 벡터에 대한 정의와 유사하게 정의할 수 있다.
-하지만 복잡도가 보다 높으며, 특히 곱셈의 경우 정의 그대로 구현한 곱셈 함수의 효율성이 그렇게 높지 않다.
-따라서 여기서는 직접 구현하지는 않고, 대신에 넘파이의 선형 대수 라이브러리인 <code>linalg</code> 모듈에서
-제공되는 함수들을 이용할 수 있다는 점만 밝힌다.
-나중에 과제를 통해 직접 확인할 수 있다.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="&#54665;&#48289;&#53552;,-&#50676;&#48289;&#53552;-&#44396;&#54616;&#44592;">&#54665;&#48289;&#53552;, &#50676;&#48289;&#53552; &#44396;&#54616;&#44592;<a class="anchor-link" href="#&#54665;&#48289;&#53552;,-&#50676;&#48289;&#53552;-&#44396;&#54616;&#44592;">&#182;</a></h3>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -15061,6 +15027,19 @@ a.anchor-link {
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="&#54665;&#47148;-&#50672;&#49328;">&#54665;&#47148; &#50672;&#49328;<a class="anchor-link" href="#&#54665;&#47148;-&#50672;&#49328;">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>행렬의 덧셈, 뺄셈, 스칼라 곱셈, 곱셈 등을 벡터에 대한 정의와 유사하게 정의할 수 있다.
+이를 위해 <code>make_matrix()</code>, <code>dot()</code> 함수 등을 이용할 수 있으며, 
+자세한 사항은 과제로 남긴다.</p>
+
+</div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
