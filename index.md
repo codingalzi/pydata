@@ -1,10 +1,12 @@
 [&lt;파이썬 라이브러리를 활용한 데이터 분석(2판)&gt;의 소스코드](https://github.com/wesm/pydata-book)를 
-담고 있는 주피터 노트북을 기본 틀로 삼아
+담고 있는 주피터 노트북과
+[&lt;밑바닥부터 시작하는 데이터 과학(2판)&gt;의 소스코드](https://github.com/joelgrus/data-science-from-scratch)를 
+기본 틀로 삼아
 파이썬 언어를 이용한 데이터 분석 기초 강의노트 모음집을 제공합니다.
 
 ### 감사의 글
 
-소중한 소스코드를 공개한 웨스 맥키니(Wes McKinney)에게 
+소중한 소스코드를 공개한 웨스 맥키니(Wes McKinney)와 조엘 그루스(Joel Grus)에게 
 진심어린 감사를 전합니다.
 
 ### 목차
