@@ -64,6 +64,9 @@
 1. 선형대수 기초: 벡터와 행렬 &nbsp;
         [[html]](./notebooks/pydata06-linear-algebra-basics.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata06-linear-algebra-basics.ipynb)
+1. 데이터 시각화 기초: 막대 그래프, 히스토그램, 선 그래프, 산점도 &nbsp;
+        [[html]](./notebooks/pydata07-data-visualization-basics.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata07-data-visualization-basics.ipynb)
 1. ...
 
 ### 실습 과제
