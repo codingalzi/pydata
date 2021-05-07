@@ -57,25 +57,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
   </style>
-<style type="text/css">
-    
-
-<script>
-    MathJax.Hub.Config({
-        "HTML-CSS": {
-            /*preferredFont: "TeX",*/
-            /*availableFonts: ["TeX", "STIX"],*/
-            styles: {
-                scale: 100,
-                ".MathJax_Display": {
-                    "font-size": "100%",
-                }
-            }
-        }
-    });
-</script>
-    
-  </style>
 
 
 
@@ -15069,7 +15050,7 @@ $$
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">transpose</span><span class="p">(</span><span class="n">transpost</span><span class="p">(</span><span class="n">A</span><span class="p">))</span> <span class="o">==</span> <span class="n">A</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">transpose</span><span class="p">(</span><span class="n">transpose</span><span class="p">(</span><span class="n">A</span><span class="p">))</span> <span class="o">==</span> <span class="n">A</span>
 </pre></div>
 
      </div>
@@ -15192,7 +15173,8 @@ $$
 <p>즉, 사용자 $i$와 사용자 $j$ 사이의 친구관계 성립여부는 
 행렬 $F$의 $(i,j)$ 번째 항목이 1이면 친구관계이고, 0이면 아니라는 것을 바로 확인할 수 있다. 
 즉, $F_{ij} = 1$인가를 확인만 하면 된다.</p>
-<p>위 행렬 $F$를 구현하는 (10, 10) 모양의 행렬를 가리키는 변수 <code>friend_matrix</code> 를 선언하라.</p>
+<p>위 행렬 $F$를 구현하는 (10, 10) 모양의 행렬를 가리키는 변수 <code>friend_matrix</code> 를 선언하라.
+단, <code>make_matrix()</code> 함수를 사용해야 한다.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -15202,6 +15184,7 @@ $$
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># None 을 적절한 표현식으로 대체하라.</span>
+<span class="c1"># make_matrix() 함수를 활용한다.</span>
 
 <span class="n">friend_matrix</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
