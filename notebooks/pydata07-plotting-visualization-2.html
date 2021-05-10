@@ -14264,7 +14264,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>참고:</strong> 웨스 맥키니의 &lt;파이썬 라이브러리를 활용한 데이터 분석&gt;의 9장에 사용된 소스코드를 활용한다.</p>
+<p><strong>참고:</strong> 웨스 맥키니의 &lt;파이썬 라이브러리를 활용한 데이터 분석&gt;의 9장 1절에 사용된 소스코드를 활용한다.</p>
 
 </div>
 </div>
@@ -14298,7 +14298,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="7.1-matplotlib.pyplot&#51032;-&#49884;&#44033;&#54868;-&#46020;&#44396;-API">7.1 matplotlib.pyplot&#51032; &#49884;&#44033;&#54868; &#46020;&#44396; API<a class="anchor-link" href="#7.1-matplotlib.pyplot&#51032;-&#49884;&#44033;&#54868;-&#46020;&#44396;-API">&#182;</a></h2>
+<h2 id="matplotlib.pyplot&#51032;-&#49884;&#44033;&#54868;-&#46020;&#44396;-API">matplotlib.pyplot&#51032; &#49884;&#44033;&#54868; &#46020;&#44396; API<a class="anchor-link" href="#matplotlib.pyplot&#51032;-&#49884;&#44033;&#54868;-&#46020;&#44396;-API">&#182;</a></h2>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14309,8 +14309,8 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>간단한 2차원 그래프를 그리는 함수이다.</p>
-<p>가장 간단한 사용법은 아래 코드에서처럼 y축에 해당하는 값만 인자로 넣어줄 때이다.
-그러면 x축에 사용되는 값은 해당 값들의 인덱스가 자동으로 지정된다.</p>
+<p>가장 간단한 사용법은 아래 코드에서처럼 y축 좌표들의 리스트 또는 어레이만 인자로 넣어줄 때이다.
+그러면 x축 좌표는 해당 값들의 인덱스가 사용된다.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14343,7 +14343,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f8a94a0d520&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7fadf0211e20&gt;]</pre>
 </div>
 
 </div>
@@ -14377,7 +14377,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="7.1.1-Figure-&#44061;&#52404;&#50752;-&#49436;&#48652;&#54540;&#47215;(subplot)">7.1.1 <code>Figure</code> &#44061;&#52404;&#50752; &#49436;&#48652;&#54540;&#47215;(subplot)<a class="anchor-link" href="#7.1.1-Figure-&#44061;&#52404;&#50752;-&#49436;&#48652;&#54540;&#47215;(subplot)">&#182;</a></h3>
+<h3 id="Figure-&#44061;&#52404;&#50752;-&#49436;&#48652;&#54540;&#47215;(subplot)"><code>Figure</code> &#44061;&#52404;&#50752; &#49436;&#48652;&#54540;&#47215;(subplot)<a class="anchor-link" href="#Figure-&#44061;&#52404;&#50752;-&#49436;&#48652;&#54540;&#47215;(subplot)">&#182;</a></h3>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14543,21 +14543,73 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>이 방식은 항상 마지막에 선언된 서브플롯에 그래프를 그린다.
-예를 들어 아래 코드는 무작위로 선택된 50개의 정수들의 누적합을 파선 그래프로 그린다.</p>
+예를 들어 아래 코드는 무작위로 선택된 50개의 정수들의 누적합으로 이루어진 데이터를
+파선 그래프로 그린다.</p>
+<p><strong>참고:</strong> 어레이가 주어졌을 때 해당 어레이의 누적합 어레이는 동일한 크기를 가지면서
+인덱스별 항목은 0번 인덱스부터 해당 인덱스의 항목까지의 합으로 지정된다.</p>
+<ul>
+<li><code>cumsum()</code> 메서드: 주어진 어레이에 포함된 항목들의 누적합으로 이루어진 어레이를 반환한다.</li>
+</ul>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randn</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[44]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>array([-1.2241, -3.025 , -1.3902, -0.4012,  0.0567,  0.6119,  1.9186,
+        1.478 ,  1.1767,  1.6755,  0.8515,  2.172 ,  2.68  ,  2.0266,
+        2.2135,  1.8218,  1.5495,  1.5324,  2.2127,  2.8482,  2.091 ,
+        2.8091,  2.5049,  0.8271,  1.254 , -0.3097, -0.6772,  0.3687,
+        1.5887,  1.341 ,  0.9248,  0.808 , -1.0368,  1.0319,  0.255 ,
+        1.6951,  1.5846,  2.812 ,  4.7327,  5.4792,  7.7038,  7.0244,
+        7.7518,  6.8831,  5.6692,  5.1986,  4.2793,  3.4405,  3.8757,
+        3.3179])</pre>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14572,7 +14624,7 @@ a.anchor-link {
 <span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(),</span> <span class="s1">&#39;k--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;k--&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14594,7 +14646,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f8a950276a0&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7fadf0954070&gt;]</pre>
 </div>
 
 </div>
@@ -14880,7 +14932,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="7.1.2-&#49353;&#49345;,-&#47560;&#52964;,-&#49440;-&#49828;&#53440;&#51068;">7.1.2 &#49353;&#49345;, &#47560;&#52964;, &#49440; &#49828;&#53440;&#51068;<a class="anchor-link" href="#7.1.2-&#49353;&#49345;,-&#47560;&#52964;,-&#49440;-&#49828;&#53440;&#51068;">&#182;</a></h3>
+<h3 id="&#49353;&#49345;,-&#47560;&#52964;,-&#49440;-&#49828;&#53440;&#51068;">&#49353;&#49345;, &#47560;&#52964;, &#49440; &#49828;&#53440;&#51068;<a class="anchor-link" href="#&#49353;&#49345;,-&#47560;&#52964;,-&#49440;-&#49828;&#53440;&#51068;">&#182;</a></h3>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14947,7 +14999,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f8a954e14f0&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7fadf0d99400&gt;]</pre>
 </div>
 
 </div>
@@ -15001,7 +15053,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f8a954741f0&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7fadf19b3f40&gt;]</pre>
 </div>
 
 </div>
@@ -15055,7 +15107,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f8a95599c10&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7fadf19ca730&gt;]</pre>
 </div>
 
 </div>
@@ -15141,7 +15193,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f8a95348550&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7fadf0fa6a00&gt;]</pre>
 </div>
 
 </div>
@@ -15194,7 +15246,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f8a955eb2e0&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7fadf18ccb20&gt;]</pre>
 </div>
 
 </div>
@@ -15259,7 +15311,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.legend.Legend at 0x7f8a95e66bb0&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x7fadf18b9130&gt;</pre>
 </div>
 
 </div>
@@ -15287,7 +15339,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="7.1.3-&#45576;&#44552;&#44284;-&#46972;&#48296;">7.1.3 &#45576;&#44552;&#44284; &#46972;&#48296;<a class="anchor-link" href="#7.1.3-&#45576;&#44552;&#44284;-&#46972;&#48296;">&#182;</a></h3>
+<h3 id="&#45576;&#44552;&#44284;-&#46972;&#48296;">&#45576;&#44552;&#44284; &#46972;&#48296;<a class="anchor-link" href="#&#45576;&#44552;&#44284;-&#46972;&#48296;">&#182;</a></h3>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -15472,7 +15524,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="7.1.4-&#49436;&#48652;&#54540;&#47215;&#50640;-&#51452;&#49437;-&#48143;-&#46020;&#54805;-&#52628;&#44032;&#54616;&#44592;">7.1.4 &#49436;&#48652;&#54540;&#47215;&#50640; &#51452;&#49437; &#48143; &#46020;&#54805; &#52628;&#44032;&#54616;&#44592;<a class="anchor-link" href="#7.1.4-&#49436;&#48652;&#54540;&#47215;&#50640;-&#51452;&#49437;-&#48143;-&#46020;&#54805;-&#52628;&#44032;&#54616;&#44592;">&#182;</a></h3>
+<h3 id="&#49436;&#48652;&#54540;&#47215;&#50640;-&#51452;&#49437;-&#48143;-&#46020;&#54805;-&#52628;&#44032;&#54616;&#44592;">&#49436;&#48652;&#54540;&#47215;&#50640; &#51452;&#49437; &#48143; &#46020;&#54805; &#52628;&#44032;&#54616;&#44592;<a class="anchor-link" href="#&#49436;&#48652;&#54540;&#47215;&#50640;-&#51452;&#49437;-&#48143;-&#46020;&#54805;-&#52628;&#44032;&#54616;&#44592;">&#182;</a></h3>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -15482,9 +15534,9 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>설명을 위해 S&amp;P 500 (스탠더드 앤 푸어스) 미국 500대 기업을 포함한 
-주식 시장 지수 데이터로 그래프를 생성하고 2008-2009년 사이에 있었던 
-재정위기 중 중요한 날자를 주석으로 추가한다.</p>
+<p>설명을 위해 S&amp;P 500 (스탠다드 앤 푸어스, Standard and Poor's 500)의 미국 500대 기업을 포함한 
+주식시장지수 데이터로 그래프를 생성하고 2007-2008년 사이에 있었던 
+재정위기와 관련된 중요한 날짜를 주석으로 추가한다.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -15507,7 +15559,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">spx_path</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">spx_path</span><span class="p">)</span>
 <span class="n">data</span>
 </pre></div>
 
@@ -15623,6 +15675,10 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>여기서는 시간 컬럼을 행의 인덱스로 사용한다.</p>
+<ul>
+<li><code>index_col=0</code>: 0번 열(column)을 인덱스로 사용</li>
+<li><code>parse_dates=True</code>: 년월일까지만 구분해서 인덱스로 사용하도록 함. 기본값은 <code>False</code>.</li>
+</ul>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15734,7 +15790,16 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>참고:</strong> <code>parse_dates=True</code> 를 지정하지 않으면 원래 그대로 가져온다.</p>
+<div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">spx_path</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>하나의 열만 존재하는 데이터프레임이기에 시리즈로 변환한다.</p>
+<p><strong>참고:</strong> 반드시 필요한 과정은 아니다. <code>spx</code> 대신 <code>data</code>를 그대로 사용해도 동일하게 작동한다.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -16031,7 +16096,7 @@ Name: SPX, Length: 5472, dtype: float64</pre>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.patches.Polygon at 0x7f8a962a4ca0&gt;</pre>
+<pre>&lt;matplotlib.patches.Polygon at 0x7fadf2341430&gt;</pre>
 </div>
 
 </div>
@@ -16102,7 +16167,7 @@ Name: SPX, Length: 5472, dtype: float64</pre>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.patches.Polygon at 0x7f8a9633bc10&gt;</pre>
+<pre>&lt;matplotlib.patches.Polygon at 0x7fadf267b340&gt;</pre>
 </div>
 
 </div>
@@ -16188,7 +16253,7 @@ Name: SPX, Length: 5472, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="9.1.5-&#44536;&#47000;&#54532;-&#51200;&#51109;&#54616;&#44592;">9.1.5 &#44536;&#47000;&#54532; &#51200;&#51109;&#54616;&#44592;<a class="anchor-link" href="#9.1.5-&#44536;&#47000;&#54532;-&#51200;&#51109;&#54616;&#44592;">&#182;</a></h3>
+<h3 id="&#44536;&#47000;&#54532;-&#51200;&#51109;&#54616;&#44592;">&#44536;&#47000;&#54532; &#51200;&#51109;&#54616;&#44592;<a class="anchor-link" href="#&#44536;&#47000;&#54532;-&#51200;&#51109;&#54616;&#44592;">&#182;</a></h3>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -16252,7 +16317,7 @@ Name: SPX, Length: 5472, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="9.1.6-matplotlib-&#44592;&#48376;-&#49444;&#51221;">9.1.6 matplotlib &#44592;&#48376; &#49444;&#51221;<a class="anchor-link" href="#9.1.6-matplotlib-&#44592;&#48376;-&#49444;&#51221;">&#182;</a></h3>
+<h3 id="matplotlib-&#44592;&#48376;-&#49444;&#51221;">matplotlib &#44592;&#48376; &#49444;&#51221;<a class="anchor-link" href="#matplotlib-&#44592;&#48376;-&#49444;&#51221;">&#182;</a></h3>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -16320,7 +16385,7 @@ Name: SPX, Length: 5472, dtype: float64</pre>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.patches.Polygon at 0x7f8a969ce100&gt;</pre>
+<pre>&lt;matplotlib.patches.Polygon at 0x7fadf3623a60&gt;</pre>
 </div>
 
 </div>
