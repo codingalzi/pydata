@@ -76,15 +76,13 @@
     - 3편: 판다스와 Seaborn의 시각화 도구 API &nbsp;
         [[html]](./notebooks/pydata07-plotting-visualization-3.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata07-plotting-visualization-3.ipynb)
-1. 머신러닝 소개
+1. 머신러닝 맛보기
     - 1편: 머신러닝 한 눈에 보기 &nbsp;
-        [[html]](./notebooks/pydata08-machine-learning-intro-1.html),
-        [&#x1F4BB;](./notebooks/pydata08-machine-learning-intro-1-slides.pdf),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata08-machine-learning-intro-1.ipynb)
+        [[html]](./notebooks/pydata08-machine-learning-preview-1.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata08-machine-learning-preview-1.ipynb)
     - 2편: 선형회귀, 경사하강법 &nbsp;
-        [[html]](./notebooks/pydata08-machine-learning-intro-2.html),
-        [&#x1F4BB;](./notebooks/pydata08-machine-learning-intro-2-slides.pdf),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata08-machine-learning-intro-2.ipynb)
+        [[html]](./notebooks/pydata08-machine-learning-preview-2.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata08-machine-learning-preview-2.ipynb)
 1. ...
 
 ### 실습 과제
