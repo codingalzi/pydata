@@ -57,6 +57,25 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
   </style>
+<style type="text/css">
+    
+
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            /*preferredFont: "TeX",*/
+            /*availableFonts: ["TeX", "STIX"],*/
+            styles: {
+                scale: 100,
+                ".MathJax_Display": {
+                    "font-size": "100%",
+                }
+            }
+        }
+    });
+</script>
+    
+  </style>
 
 
 
@@ -14278,10 +14297,10 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>머신러닝은 특정 값을 예측하는 모델(일종의 함수)을 구현하는 컴퓨터 프로그래밍 분야이며
 주어진 문제에 대한 적절한 모델을 찾는 일이 핵심 과제이다.
-머신러닝은 현재 데이터 분석의 주요 활용분야가 자리잡았으며 지금까지 살펴 본 다양한 개념과 도구들이
+머신러닝은 현재 데이터 분석의 주요 활용분야가 되었으며 지금까지 살펴 본 다양한 개념과 도구들이
 유용하게 활용된다.
-여기서는 머신러닝의 가장 기본 모델인 선형회귀 모델을 직접 구현하면서 머신러닝의 기본 아이디어를 전달한다.
-또한 모든 머신러닝 알고리즘의 핵심인 경사하강법도 함께 설명한다.</p>
+여기서는 머신러닝의 가장 기본 모델인 선형회귀 모델의 개념과 활용을 예제를 이용하여 
+머신러닝의 기본 아이디어를 전달한다.</p>
 
 </div>
 </div>
@@ -14387,40 +14406,47 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>위 경로에 두 파일의 이름을 각각 추가하면 해당 파일들을 다운로드하여 컴퓨터에 저장할 수 있다.
-하지만 여기서는 저장하는 대신에 이어서 설명하는 데이터 적재과정을 동시에 진행하는 것으로 
+<p>위 경로에 두 파일의 이름을 추가하면 해당 파일들을 다운로드하여 컴퓨터에 저장할 수 있다.
+하지만 여기서는 컴퓨터에 저장하는 대신 이어서 설명하는 데이터 적재를 동시에 진행하는 것으로 
 데이터 구하기 단계를 해결한다.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="3&#45800;&#44228;:-&#45936;&#51060;&#53552;-&#51201;&#51116;&#50752;-&#51204;&#52376;&#47532;">3&#45800;&#44228;: &#45936;&#51060;&#53552; &#51201;&#51116;&#50752; &#51204;&#52376;&#47532;<a class="anchor-link" href="#3&#45800;&#44228;:-&#45936;&#51060;&#53552;-&#51201;&#51116;&#50752;-&#51204;&#52376;&#47532;">&#182;</a></h3>
+<h3 id="3&#45800;&#44228;:-&#45936;&#51060;&#53552;-&#51201;&#51116;,-&#51221;&#51228;,-&#51204;&#52376;&#47532;">3&#45800;&#44228;: &#45936;&#51060;&#53552; &#51201;&#51116;, &#51221;&#51228;, &#51204;&#52376;&#47532;<a class="anchor-link" href="#3&#45800;&#44228;:-&#45936;&#51060;&#53552;-&#51201;&#51116;,-&#51221;&#51228;,-&#51204;&#52376;&#47532;">&#182;</a></h3>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>일반적으로 저장된 데이터를 바로 모델 훈련(학습)에 사용할 수 없으며, 
-적절한 내용을 담은 데이터셋 자료형으로 변환해야 한다.
-인터넷의 어떤 서버에 존재하거나 컴퓨터에 저장되어 있는 파일을 특정 자료형의 값으로
-불러오는 과정을 <strong>데이터 적재</strong>(data loading)이라 부른다.
-반면에 적재된 데이터를 적절한 내용을 포함하고 적절한 형식을 따르는 값으로
-변환하는 과정은 <strong>데이터 전처리</strong>(data preprocessing)라 한다.</p>
+데이터 적재, 데이터 정제, 데이터 전처리 등의 과정을 거쳐야 비로소 모델 훈련에 활용될 수 있다.</p>
+<ul>
+<li><p><strong>데이터 적재</strong>(data loading): 인터넷에 존재하거나 컴퓨터에 저장되어 있는 파일을 
+  특정 자료형의 값으로 불러오는 과정</p>
+</li>
+<li><p><strong>데이터 정제</strong>(data cleaning): 적재된 데이터셋에 포함된 오류, 부정확한 값, 
+  누락된 값, 상관없는 값 등을 제거, 수정, 보완하는 과정</p>
+</li>
+<li><p><strong>데이터 전처리</strong>(data preprocessing): 정제된 데이터셋에서 출발하여
+  적절한 내용의 데이터를 추가한 후 적절한 형식으로 변환하는 과정</p>
+</li>
+</ul>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="&#49334;&#51032;-&#47564;&#51313;&#46020;-&#45936;&#51060;&#53552;-&#51201;&#51116;&#50752;-&#51204;&#52376;&#47532;">&#49334;&#51032; &#47564;&#51313;&#46020; &#45936;&#51060;&#53552; &#51201;&#51116;&#50752; &#51204;&#52376;&#47532;<a class="anchor-link" href="#&#49334;&#51032;-&#47564;&#51313;&#46020;-&#45936;&#51060;&#53552;-&#51201;&#51116;&#50752;-&#51204;&#52376;&#47532;">&#182;</a></h4>
+<h4 id="&#49334;&#51032;-&#47564;&#51313;&#46020;-&#45936;&#51060;&#53552;-&#51201;&#51116;,-&#51221;&#51228;,-&#51204;&#52376;&#47532;">&#49334;&#51032; &#47564;&#51313;&#46020; &#45936;&#51060;&#53552; &#51201;&#51116;, &#51221;&#51228;, &#51204;&#52376;&#47532;<a class="anchor-link" href="#&#49334;&#51032;-&#47564;&#51313;&#46020;-&#45936;&#51060;&#53552;-&#51201;&#51116;,-&#51221;&#51228;,-&#51204;&#52376;&#47532;">&#182;</a></h4>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>OECD 국가별 삶의 만족도 데이터는 더 나은 삶의 지수(BLI) 데이터 파일에 포함되어 있다. 
+<p>OECD 국가별 삶의 만족도 데이터는 '더 나은 삶의 지수' 데이터 파일에 포함되어 있다. 
 따라서 먼저 해당 csv 파일을 판다스의 데이터프레임 객체(값)으로 불러온 후에 
 삶의 만족도와 관련된 내용을 추출하는 과정을 밟는다.</p>
-<p><code>pandas.read_csv()</code> 함수는 지정한 경로에 저장되어 있는 csv 파일을 다운로드하여 바로 데이터프레임 객체로
-변환한 값을 반환한다.</p>
+<p><code>pandas.read_csv()</code> 함수는 지정한 경로에 저장되어 있는 csv 파일을 다운로드하여 바로 데이터프레임 객체를
+생성한다.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14483,7 +14509,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>이중 처음 5행를 살펴보자.</p>
+<p>처음 5행를 살펴보자.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14794,18 +14820,14 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>따라서 <code>'Indicator'</code> 열에 포함된 측정지표들에 대해 국가별 값(value)만을 추출하자.
-이를 위해 국가명(<code>'Country'</code> 열의 항목)을 행의 인덱스 이름으로, 
-<code>'Indicator'</code>의 항목을 열의 인덱스 이름으로 사용하는
-데이터프레임을 생성한다.
-해당 열과 항목에 해당하는 값은 <code>'Value'</code> 열에 포함된 값을 사용한다.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://stats.oecd.org/Index.aspx?DataSetCode=BLI">'더 나은 삶의 지수'(BLI, Better Life Index) 자료</a>에 저장된 데이터 OECD 회원국, 측정지표, 삶의 만족도 등에 대한 정보는 
-아래 그림에서 확인할 수 있다.</p>
+<p>따라서 OECD 회원국가별로 <code>'Indicator'</code> 열에 포함된 24개 측정지표에 해당하는 값(value)만을 추출하자.
+즉, <a href="https://stats.oecd.org/Index.aspx?DataSetCode=BLI">'더 나은 삶의 지수'(BLI, Better Life Index) 자료</a>(2021년 5월 18일 자)에서
+볼 수 있는 아래 테이블 이미지와 같은 데이터프레임을 생성하고자 한다.</p>
+<ul>
+<li>행: OECD 회원국(<code>Country</code>)</li>
+<li>열: 측정지표(<code>Indicator</code>)</li>
+<li>항목 값: 국가별 지표 수치(<code>Value</code>)</li>
+</ul>
 
 </div>
 </div>
@@ -14816,11 +14838,18 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>이를 위해 국가명(<code>'Country'</code> 열의 항목)을 행의 인덱스 이름으로, 
+<code>'Indicator'</code>의 항목을 열의 인덱스 이름으로 사용하는
+데이터프레임을 생성한다.
+해당 열과 항목에 해당하는 값은 <code>'Value'</code> 열에 포함된 값을 사용한다.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>이 작업을 위한 전제조건으로 새로운 데이터프레임에 사용될 항목별 값을 유일하게 지정할 수 있어야 한다.
-그런데 OECD의 원본 파일에는 각 측정지표의 값을 국가별로 소득 불평등(<code>'INEQUALITY'</code>)과 관련된 5가지 
-기준에 따라 여러 값이 포함되어 있다.
-예를 들어, 삶의 만족도(<code>'Life satisfaction'</code>)와 관련된 값이 아래 기준에 맞추어 5개로 주어져 있다.
-사용된 기준은 다음과 같다.</p>
+그런데 OECD의 원본 파일에는 각 측정지표의 값으로 국가별 소득 불평등(<code>'INEQUALITY'</code>)과 관련된 5가지 
+기준에 따라 다섯 개의 값이 포함되어 있다(위 이미지 좌상단 화살표 참조).</p>
 <table>
 <thead><tr>
 <th style="text-align:left">기준</th>
@@ -15017,7 +15046,7 @@ HGH:	328행
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><code>37 * 24 = 888</code>이 성립함에 주목해야 한다. 
+<p>여기서 <code>37 * 24 = 888</code>이 성립함에 주목해야 한다. 
 왜냐하면 이는 위데이터프레임이 37개 OECD 회원국별로 24개의 지표를 조사한 데이터를 포함한다는 의미이기 때문이다.
 또한 측정된 지표값은 <code>'Value'</code> 열에 포함되어 있다. 
 실제로 해당 열엔 부동소수점이 사용된다.</p>
@@ -15106,10 +15135,11 @@ HGH:	328행
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>이제 <code>pivot()</code> 메서드를 이용하여 <code>'Indicator'</code> 의 항목에 대한 각 국가별 수치만을 추출하기 위해
+<p>이제 데이터프레임 객체의 <code>pivot()</code> 메서드를 이용하여 
+<code>'Indicator'</code> 의 항목에 대한 각 국가별 수치만을 추출하기 위해
 국가명(<code>'Country'</code> 열의 항목)을 행의 인덱스 이름으로, 
 <code>'Indicator'</code>의 항목을 열의 인덱스 이름으로 사용하면서
-해당 열과 항목에 해당하는 값은 <code>'Value'</code> 열에 포함된 값을 사용하는 
+해당 행과 열의 항목에는 <code>'Value'</code> 열에 포함된 값을 사용하는 
 데이터프레임을 아래와 같이 생성할 수 있다.</p>
 <p><code>pivot()</code> 메서드 사용되는 옵션 인자의 의미는 다음과 같다.</p>
 <ul>
@@ -15136,7 +15166,7 @@ HGH:	328행
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>총 37개 국가의 측정지표별 수치는 다음과 같다.</p>
+<p>이제 총 37개 국가의 측정지표별 수치를 확인하면 다음과 같다.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -16135,7 +16165,7 @@ HGH:	328행
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>대한민국의 측정지표별 수치는 다음과 같다.</p>
+<p>참고로 대한민국의 측정지표별 수치는 다음과 같다(위 이미지 중간의 파란띠로 구분된 영역 참조).</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -16252,7 +16282,7 @@ Name: Life satisfaction, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="1&#51064;&#45817;-GDP-&#45936;&#51060;&#53552;-&#51201;&#51116;&#50752;-&#51204;&#52376;&#47532;">1&#51064;&#45817; GDP &#45936;&#51060;&#53552; &#51201;&#51116;&#50752; &#51204;&#52376;&#47532;<a class="anchor-link" href="#1&#51064;&#45817;-GDP-&#45936;&#51060;&#53552;-&#51201;&#51116;&#50752;-&#51204;&#52376;&#47532;">&#182;</a></h4>
+<h4 id="1&#51064;&#45817;-GDP-&#45936;&#51060;&#53552;-&#51201;&#51116;,-&#51221;&#51228;,-&#51204;&#52376;&#47532;">1&#51064;&#45817; GDP &#45936;&#51060;&#53552; &#51201;&#51116;, &#51221;&#51228;, &#51204;&#52376;&#47532;<a class="anchor-link" href="#1&#51064;&#45817;-GDP-&#45936;&#51060;&#53552;-&#51201;&#51116;,-&#51221;&#51228;,-&#51204;&#52376;&#47532;">&#182;</a></h4>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -16271,12 +16301,6 @@ Name: Life satisfaction, dtype: float64</pre>
                              <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span>
                              <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;latin1&#39;</span><span class="p">,</span> 
                              <span class="n">na_values</span><span class="o">=</span><span class="s2">&quot;n/a&quot;</span><span class="p">)</span>
-
-<span class="c1"># &quot;2015&quot; 컬럼 이름을 &quot;GDP per capita&quot; 로 변경 </span>
-<span class="n">gdp_per_capita</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;2015&quot;</span><span class="p">:</span> <span class="s2">&quot;GDP per capita&quot;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
-
-<span class="c1"># 행 인덱스를 국가명으로 지정</span>
-<span class="n">gdp_per_capita</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16287,7 +16311,7 @@ Name: Life satisfaction, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>알파벳 순으로 첫 5개 국가 GDP 정보는 다음과 같다.</p>
+<p>총 190개 국가의 1인당 GDP 정보를 담고 있다.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -16296,7 +16320,7 @@ Name: Life satisfaction, dtype: float64</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gdp_per_capita</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gdp_per_capita</span>
 </pre></div>
 
      </div>
@@ -16313,6 +16337,318 @@ Name: Life satisfaction, dtype: float64</pre>
 
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Country</th>
+      <th>Subject Descriptor</th>
+      <th>Units</th>
+      <th>Scale</th>
+      <th>Country/Series-specific Notes</th>
+      <th>2015</th>
+      <th>Estimates Start After</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>599.994</td>
+      <td>2013.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Albania</td>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>3995.383</td>
+      <td>2010.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Algeria</td>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>4318.135</td>
+      <td>2014.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Angola</td>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>4100.315</td>
+      <td>2014.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Antigua and Barbuda</td>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>14414.302</td>
+      <td>2011.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>185</th>
+      <td>Vietnam</td>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>2088.344</td>
+      <td>2012.0</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>Yemen</td>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>1302.940</td>
+      <td>2008.0</td>
+    </tr>
+    <tr>
+      <th>187</th>
+      <td>Zambia</td>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>1350.151</td>
+      <td>2010.0</td>
+    </tr>
+    <tr>
+      <th>188</th>
+      <td>Zimbabwe</td>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>1064.350</td>
+      <td>2012.0</td>
+    </tr>
+    <tr>
+      <th>189</th>
+      <td>International Monetary Fund, World Economic Ou...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>190 rows × 7 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>국가명을 행 인덱스로 지정한다.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gdp_per_capita</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">gdp_per_capita</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Subject Descriptor</th>
+      <th>Units</th>
+      <th>Scale</th>
+      <th>Country/Series-specific Notes</th>
+      <th>2015</th>
+      <th>Estimates Start After</th>
+    </tr>
+    <tr>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Afghanistan</th>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>599.994</td>
+      <td>2013.0</td>
+    </tr>
+    <tr>
+      <th>Albania</th>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>3995.383</td>
+      <td>2010.0</td>
+    </tr>
+    <tr>
+      <th>Algeria</th>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>4318.135</td>
+      <td>2014.0</td>
+    </tr>
+    <tr>
+      <th>Angola</th>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>4100.315</td>
+      <td>2014.0</td>
+    </tr>
+    <tr>
+      <th>Antigua and Barbuda</th>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>14414.302</td>
+      <td>2011.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>이어서 1인당 GDP 데이터임을 명시하기 위해 열 이름 <code>"2015"</code>를 <code>"GDP per capita"</code>로 변경한다.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gdp_per_capita</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;2015&quot;</span><span class="p">:</span> <span class="s2">&quot;GDP per capita&quot;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+
+<span class="n">gdp_per_capita</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
 
 
 
@@ -16424,18 +16760,18 @@ Name: Life satisfaction, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>참고:</strong> <code>left_index=True</code>와 <code>right_index=True</code>는 두 데이터 객체를 병합할 때 
-공통 인덱스에 해당하는 행(row)만 사용되도록 설정한다.</p>
+<p><strong>참고:</strong> OECD 회원국들만 대상으로 하기 위해 
+<code>left_index=True</code>와 <code>right_index=True</code>로 설정한다.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">full_country_stats</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="n">oecd_bli</span><span class="p">[</span><span class="s1">&#39;Life satisfaction&#39;</span><span class="p">],</span> 
-                              <span class="n">right</span><span class="o">=</span><span class="n">gdp_per_capita</span><span class="p">[</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">],</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">oecd_country_stats</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="n">gdp_per_capita</span><span class="p">[</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">],</span>
+                              <span class="n">right</span><span class="o">=</span><span class="n">oecd_bli</span><span class="p">[</span><span class="s1">&#39;Life satisfaction&#39;</span><span class="p">],</span> 
                               <span class="n">left_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
@@ -16450,120 +16786,15 @@ Name: Life satisfaction, dtype: float64</pre>
 <p>또한 1인당 GDP 기준으로 오름차순으로 국가를 정렬시킨다.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">full_country_stats</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;GDP per capita&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># 1인당 GDP 기준으로 정렬</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>1인당 GDP 기준 상위 3개 국가는 룩셈부르크, 스위스, 노르웨이이다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">full_country_stats</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Life satisfaction</th>
-      <th>GDP per capita</th>
-    </tr>
-    <tr>
-      <th>Country</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Norway</th>
-      <td>7.4</td>
-      <td>74822.106</td>
-    </tr>
-    <tr>
-      <th>Switzerland</th>
-      <td>7.5</td>
-      <td>80675.308</td>
-    </tr>
-    <tr>
-      <th>Luxembourg</th>
-      <td>6.9</td>
-      <td>101994.093</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>1인당 GDP 기준 하위 3개 국가는 브라질, 멕시코, 러시아이다.</p>
-
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">full_country_stats</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">oecd_country_stats</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;GDP per capita&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">oecd_country_stats</span>
 </pre></div>
 
      </div>
@@ -16602,8 +16833,8 @@ Name: Life satisfaction, dtype: float64</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Life satisfaction</th>
       <th>GDP per capita</th>
+      <th>Life satisfaction</th>
     </tr>
     <tr>
       <th>Country</th>
@@ -16614,18 +16845,183 @@ Name: Life satisfaction, dtype: float64</pre>
   <tbody>
     <tr>
       <th>Brazil</th>
-      <td>7.0</td>
       <td>8669.998</td>
+      <td>7.0</td>
     </tr>
     <tr>
       <th>Mexico</th>
-      <td>6.7</td>
       <td>9009.280</td>
+      <td>6.7</td>
     </tr>
     <tr>
       <th>Russia</th>
-      <td>6.0</td>
       <td>9054.914</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>Turkey</th>
+      <td>9437.372</td>
+      <td>5.6</td>
+    </tr>
+    <tr>
+      <th>Hungary</th>
+      <td>12239.894</td>
+      <td>4.9</td>
+    </tr>
+    <tr>
+      <th>Poland</th>
+      <td>12495.334</td>
+      <td>5.8</td>
+    </tr>
+    <tr>
+      <th>Chile</th>
+      <td>13340.905</td>
+      <td>6.7</td>
+    </tr>
+    <tr>
+      <th>Slovak Republic</th>
+      <td>15991.736</td>
+      <td>6.1</td>
+    </tr>
+    <tr>
+      <th>Czech Republic</th>
+      <td>17256.918</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>Estonia</th>
+      <td>17288.083</td>
+      <td>5.6</td>
+    </tr>
+    <tr>
+      <th>Greece</th>
+      <td>18064.288</td>
+      <td>4.8</td>
+    </tr>
+    <tr>
+      <th>Portugal</th>
+      <td>19121.592</td>
+      <td>5.1</td>
+    </tr>
+    <tr>
+      <th>Slovenia</th>
+      <td>20732.482</td>
+      <td>5.7</td>
+    </tr>
+    <tr>
+      <th>Spain</th>
+      <td>25864.721</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>Korea</th>
+      <td>27195.197</td>
+      <td>5.8</td>
+    </tr>
+    <tr>
+      <th>Italy</th>
+      <td>29866.581</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>Japan</th>
+      <td>32485.545</td>
+      <td>5.9</td>
+    </tr>
+    <tr>
+      <th>Israel</th>
+      <td>35343.336</td>
+      <td>7.4</td>
+    </tr>
+    <tr>
+      <th>New Zealand</th>
+      <td>37044.891</td>
+      <td>7.3</td>
+    </tr>
+    <tr>
+      <th>France</th>
+      <td>37675.006</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>Belgium</th>
+      <td>40106.632</td>
+      <td>6.9</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>40996.511</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>Finland</th>
+      <td>41973.988</td>
+      <td>7.4</td>
+    </tr>
+    <tr>
+      <th>Canada</th>
+      <td>43331.961</td>
+      <td>7.3</td>
+    </tr>
+    <tr>
+      <th>Netherlands</th>
+      <td>43603.115</td>
+      <td>7.3</td>
+    </tr>
+    <tr>
+      <th>Austria</th>
+      <td>43724.031</td>
+      <td>6.9</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>43770.688</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>Sweden</th>
+      <td>49866.266</td>
+      <td>7.2</td>
+    </tr>
+    <tr>
+      <th>Iceland</th>
+      <td>50854.583</td>
+      <td>7.5</td>
+    </tr>
+    <tr>
+      <th>Australia</th>
+      <td>50961.865</td>
+      <td>7.3</td>
+    </tr>
+    <tr>
+      <th>Ireland</th>
+      <td>51350.744</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>Denmark</th>
+      <td>52114.165</td>
+      <td>7.5</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>55805.204</td>
+      <td>7.2</td>
+    </tr>
+    <tr>
+      <th>Norway</th>
+      <td>74822.106</td>
+      <td>7.4</td>
+    </tr>
+    <tr>
+      <th>Switzerland</th>
+      <td>80675.308</td>
+      <td>7.5</td>
+    </tr>
+    <tr>
+      <th>Luxembourg</th>
+      <td>101994.093</td>
+      <td>6.9</td>
     </tr>
   </tbody>
 </table>
@@ -16642,7 +17038,7 @@ Name: Life satisfaction, dtype: float64</pre>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>아래 코드는 잠시 뒤에 선형회귀 모델의 적합도를 설명하기 위해 
-고의로 7개의 국가의 데이터를 데이터셋에서 제외킨다. 
+고의로 7개 국가의 데이터를 데이터셋에서 제외킨다. 
 제외된 7개 국가는 제외된 일곱 국가명은 잠시 뒤에 확인할 것이다.</p>
 
 </div>
@@ -16673,18 +17069,18 @@ Name: Life satisfaction, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>7개 국가를 제외한 국가들의 1인당 GDP와 삶의 만족도 데이터</li>
-</ul>
+<p>제외된 7개 국가의 1인당 GGP와 삶의 만족도 데이터는 다음과 같다.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_data</span> <span class="o">=</span> <span class="n">full_country_stats</span><span class="p">[[</span><span class="s2">&quot;GDP per capita&quot;</span><span class="p">,</span> <span class="s1">&#39;Life satisfaction&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">keep_indices</span><span class="p">]</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">missing_data</span> <span class="o">=</span> <span class="n">oecd_country_stats</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">remove_indices</span><span class="p">]</span>
+
+<span class="n">missing_data</span>
 </pre></div>
 
      </div>
@@ -16692,11 +17088,98 @@ Name: Life satisfaction, dtype: float64</pre>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GDP per capita</th>
+      <th>Life satisfaction</th>
+    </tr>
+    <tr>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Brazil</th>
+      <td>8669.998</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>Mexico</th>
+      <td>9009.280</td>
+      <td>6.7</td>
+    </tr>
+    <tr>
+      <th>Chile</th>
+      <td>13340.905</td>
+      <td>6.7</td>
+    </tr>
+    <tr>
+      <th>Czech Republic</th>
+      <td>17256.918</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>Norway</th>
+      <td>74822.106</td>
+      <td>7.4</td>
+    </tr>
+    <tr>
+      <th>Switzerland</th>
+      <td>80675.308</td>
+      <td>7.5</td>
+    </tr>
+    <tr>
+      <th>Luxembourg</th>
+      <td>101994.093</td>
+      <td>6.9</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>제외된 7개 국가의 1인당 GGP와 삶의 만족도 데이터</li>
+<li>7개 국가를 제외한 국가들의 1인당 GDP와 삶의 만족도 데이터는 다음과 같다.</li>
 </ul>
 
 </div>
@@ -16706,7 +17189,7 @@ Name: Life satisfaction, dtype: float64</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">missing_data</span> <span class="o">=</span> <span class="n">full_country_stats</span><span class="p">[[</span><span class="s2">&quot;GDP per capita&quot;</span><span class="p">,</span> <span class="s1">&#39;Life satisfaction&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">remove_indices</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_data</span> <span class="o">=</span> <span class="n">oecd_country_stats</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">keep_indices</span><span class="p">]</span> 
 </pre></div>
 
      </div>
@@ -16974,7 +17457,7 @@ Name: Life satisfaction, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="&#49440;&#54805;&#54924;&#44480;-&#47784;&#45944;-&#54984;&#47144;/&#54617;&#49845;">&#49440;&#54805;&#54924;&#44480; &#47784;&#45944; &#54984;&#47144;/&#54617;&#49845;<a class="anchor-link" href="#&#49440;&#54805;&#54924;&#44480;-&#47784;&#45944;-&#54984;&#47144;/&#54617;&#49845;">&#182;</a></h4>
+<h4 id="&#49440;&#54805;&#54924;&#44480;-&#47784;&#45944;">&#49440;&#54805;&#54924;&#44480; &#47784;&#45944;<a class="anchor-link" href="#&#49440;&#54805;&#54924;&#44480;-&#47784;&#45944;">&#182;</a></h4>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -16982,25 +17465,25 @@ Name: Life satisfaction, dtype: float64</pre>
 <p>위 그림에서처럼 y축의 값이 x축의 값에 선형적으로 의존하는 관계를 <strong>선형관계</strong>라 하며,
 그런 선형관계를 함수로 구현하는 모델을 <strong>선형회귀 모델</strong>(linear regression model)이라 한다.
 여기서는 선형회귀 모델이 하나의 인자만을 사용하는 1차 함수 형식으로 구현되며,
-따라서 직선의 절편(Y축과 만나는 점)과 기울기 두 개의 값을 알면 선형회귀 모델을 바로 구현할 수 있다.
-이처럼 모델 구현에 필요한 값들을 <strong>모델 파라미터</strong>(model parameters)라 하며,
+따라서 직선의 절편(y축과 만나는 점)과 기울기 두 개의 값을 알면 선형회귀 모델을 바로 구현할 수 있다.
+이처럼 모델 설정에 사용되는 값들을 <strong>모델 파라미터</strong>(model parameters)라 하며,
 바로 이 값들을 찾아내는 것이 주요 과제이다.</p>
 <p>정리하면 다음과 같다. '1인당 GDP'와 '삶의 만족도' 사이의 선형관계를 최대한 잘 
 반영하는 선형회귀 모델은 아래 식을 만족시키는 적절한 절편 $\theta_0$와 기울기 $\theta_1$에 의해 결정된다.</p>
 $$
-\text{삶의만족도} = \theta_0 + \theta_1 \times \text{1인당GDP}
+\text{'삶의만족도'} = \theta_0 + \theta_1 \cdot \text{'1인당GDP'}
 $$
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="&#49324;&#51060;&#53431;&#47088;-&#46972;&#51060;&#48652;&#47084;&#47532;-&#54876;&#50857;-&#47784;&#45944;-&#54984;&#47144;">&#49324;&#51060;&#53431;&#47088; &#46972;&#51060;&#48652;&#47084;&#47532; &#54876;&#50857; &#47784;&#45944; &#54984;&#47144;<a class="anchor-link" href="#&#49324;&#51060;&#53431;&#47088;-&#46972;&#51060;&#48652;&#47084;&#47532;-&#54876;&#50857;-&#47784;&#45944;-&#54984;&#47144;">&#182;</a></h4>
+<h4 id="&#49324;&#51060;&#53431;&#47088;-&#46972;&#51060;&#48652;&#47084;&#47532;-&#54876;&#50857;-&#49440;&#54805;&#54924;&#44480;-&#47784;&#45944;-&#54984;&#47144;">&#49324;&#51060;&#53431;&#47088; &#46972;&#51060;&#48652;&#47084;&#47532; &#54876;&#50857; &#49440;&#54805;&#54924;&#44480; &#47784;&#45944; &#54984;&#47144;<a class="anchor-link" href="#&#49324;&#51060;&#53431;&#47088;-&#46972;&#51060;&#48652;&#47084;&#47532;-&#54876;&#50857;-&#49440;&#54805;&#54924;&#44480;-&#47784;&#45944;-&#54984;&#47144;">&#182;</a></h4>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>사이킷런(scikit-learn) 라이브러리는 머신러닝에서 사용되는 다양한 모델을 제공한다.
-선형회귀의 경우 <code>LinearRegression</code> 클래스의 객체를 생성하여 훈련하면 
+<p>사이킷런(scikit-learn) 라이브러리는 머신러닝에서 사용되는 다양한 모델의 기본틀을 제공한다.
+선형회귀의 경우 <code>LinearRegression</code> 클래스의 객체를 생성하여 훈련시키면 
 최적의 절편과 기울기를 계산해준다. 
 모델을 지정하고 훈련시키는 과정은 다음과 같다.</p>
 
@@ -17009,7 +17492,10 @@ $$
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>모델 지정: 사이킷런(sklearn) 패키지의 <code>linear_model</code> 모듈에 포함된 <code>LinearRegression</code> 클래스 활용</li>
+<li>과정 1: 모델 지정. 
+  사이킷런(sklearn) 패키지의 <code>linear_model</code> 모듈에 포함된 <code>LinearRegression</code> 클래스의 객체 선언.
+  선언된 모델은 임의로 지정된 $\theta_0$와 $\theta_1$의 값을 사용함. 
+  따라서 최적의 모델은 아님.</li>
 </ul>
 
 </div>
@@ -17033,9 +17519,9 @@ $$
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>훈련데이터 세트 지정: 특성과 타깃을 2차원 어레이로 지정해야 한다. <ul>
-<li>특성 데이터: 1인당 GDP</li>
-<li>타깃 데이터: 삶의 만족도</li>
+<li>과정 2: 훈련 세트 지정. 특성과 타깃을 2차원 어레이로 지정해야 함.<ul>
+<li>특성 데이터: x축에 해당하는 값이며 여기서는 1인당 GDP 사용.</li>
+<li>타깃 데이터: y축에 해당하는 값이며 여기서는 삶의 만족도 사용.</li>
 </ul>
 </li>
 </ul>
@@ -17060,7 +17546,8 @@ $$
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>모델 훈련: <code>fit()</code> 메서드를 호출하면 되며, 훈련된 선형회귀 모델이 반환된다.</li>
+<li>과정 3: 모델 훈련. 최적의 $\theta_0$와 $\theta_1$를 찾아가는 과정.
+  <code>LinearRegression</code> 모델의 경우 <code>fit()</code> 메서드를 지정된 훈련 세트와 함께 호출하면 됨.</li>
 </ul>
 
 </div>
@@ -17117,10 +17604,10 @@ $$
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 예측된 최적의 직선에 대한 정보: 절편과 기울기</span>
-<span class="n">t0</span><span class="p">,</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">lin1</span><span class="o">.</span><span class="n">intercept_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lin1</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">t0</span><span class="p">,</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">lin1</span><span class="o">.</span><span class="n">intercept_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lin1</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="n">t0</span><span class="p">,</span> <span class="n">t1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;절편:</span><span class="se">\t</span><span class="s2"> </span><span class="si">{</span><span class="n">t0</span><span class="si">}</span><span class="s2">t1&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;기울기:</span><span class="se">\t</span><span class="s2"> </span><span class="si">{</span><span class="n">t1</span><span class="si">}</span><span class="s2">t1&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -17136,15 +17623,14 @@ $$
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[34]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(4.853052800266436, 4.911544589158483e-05)</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>절편:	 4.853052800266436t1
+기울기:	 4.911544589158483e-05t1
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -17217,7 +17703,8 @@ $$
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>훈련된 모델을 이용하여 한 국가의 삶의 만족도를 1인당 GDP를 이용하여 예측한다. 
-예를 들어, 키프러스(Cyprus) 1인당 GDP만 다음과 같이 알려져 있을 때 키프러스 국민의 삶의 만족도를 예측한다.</p>
+예를 들어, 키프러스(Cyprus)의 1인당 GDP만 다음과 같이 알려져 있을 때 
+키프러스 국민의 삶의 만족도를 예측한다.</p>
 <ul>
 <li>키프러스 1인당 GDP: 22587</li>
 </ul>
@@ -17230,7 +17717,8 @@ $$
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cyprus_gdp_per_capita</span> <span class="o">=</span> <span class="n">gdp_per_capita</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Cyprus&quot;</span><span class="p">][</span><span class="s2">&quot;GDP per capita&quot;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cyprus_gdp_per_capita</span><span class="p">)</span>
+
+<span class="n">cyprus_gdp_per_capita</span>
 </pre></div>
 
      </div>
@@ -17246,13 +17734,15 @@ $$
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>22587.49
-</pre>
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>22587.49</pre>
 </div>
+
 </div>
 
 </div>
@@ -17271,7 +17761,8 @@ $$
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cyprus_predicted_life_satisfaction</span> <span class="o">=</span> <span class="n">lin1</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="n">cyprus_gdp_per_capita</span><span class="p">]])[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cyprus_predicted_life_satisfaction</span> <span class="o">=</span> <span class="n">lin1</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="n">cyprus_gdp_per_capita</span><span class="p">]])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
 <span class="n">cyprus_predicted_life_satisfaction</span>
 </pre></div>
 
@@ -17371,6 +17862,14 @@ $$
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="&#47672;&#49888;&#47084;&#45789;&#51032;-&#51452;&#50836;-&#46020;&#51204;-&#44284;&#51228;">&#47672;&#49888;&#47084;&#45789;&#51032; &#51452;&#50836; &#46020;&#51204; &#44284;&#51228;<a class="anchor-link" href="#&#47672;&#49888;&#47084;&#45789;&#51032;-&#51452;&#50836;-&#46020;&#51204;-&#44284;&#51228;">&#182;</a></h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>머신러닝 알고리즘을 훈련시키다보면 다양한 도전 과제에 부딛친다. 
+여기서는 대표성 없는 데이터가 훈련 세트에 포함될 때 발생할 수 있는 어려움을
+앞서 살펴본 선형회귀 모델을 이용하여 설명한다.</p>
+
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -17559,8 +18058,8 @@ $$
 
 <span class="c1"># 7개 국가 포함 선형회귀 모델 훈련 및 예측</span>
 <span class="n">lin_reg_full</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
-<span class="n">Xfull</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">full_country_stats</span><span class="p">[</span><span class="s2">&quot;GDP per capita&quot;</span><span class="p">]]</span>
-<span class="n">yfull</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">full_country_stats</span><span class="p">[</span><span class="s2">&quot;Life satisfaction&quot;</span><span class="p">]]</span>
+<span class="n">Xfull</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">oecd_country_stats</span><span class="p">[</span><span class="s2">&quot;GDP per capita&quot;</span><span class="p">]]</span>
+<span class="n">yfull</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">oecd_country_stats</span><span class="p">[</span><span class="s2">&quot;Life satisfaction&quot;</span><span class="p">]]</span>
 <span class="n">lin_reg_full</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xfull</span><span class="p">,</span> <span class="n">yfull</span><span class="p">)</span>
 
 <span class="c1"># 7개 국가 포함 예측 선형 모델 그래프(검정 실선)</span>
@@ -17594,268 +18093,6 @@ $$
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfUAAADcCAYAAABpnDhbAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjMuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8vihELAAAACXBIWXMAAAsTAAALEwEAmpwYAABUr0lEQVR4nO2dd3hUxdeA30khCQmEnoQivUNAOtKLoiJIEwFFEBUFFVGxfSoiYsWCiOWHoiiigoCKoKAgiAURkY6AoBSBUAIJCSkk2fn+mN3NJtkkm7Al5bzPc5/szL135txJsufOmTPnKK01giAIgiAUf/x8LYAgCIIgCO5BlLogCIIglBBEqQuCIAhCCUGUuiAIgiCUEESpC4IgCEIJQZS6IAiCIJQQRKkLgiAIQgnBq0pdKXWPUuoPpVSqUmp+tnN9lFJ7lVJJSql1Sqna3pRNEARBEIo73p6pHwdmAO87ViqlqgDLgCeBSsAfwCIvyyYIgiAIxZoAb3amtV4GoJRqB9R0ODUE2K21/tx6fhpwRinVRGu915syCoIgCEJxpaisqTcHttsKWusLwEFrvSAIgiAILuDVmXoehAGns9XFA+WyX6iUGg+MBwgNDW3bpEkTz0snCIIgCNlISoJTp6BGDQgMhDNn4PBhaN4cgoMhORlSUqBCBVDKff1u2bLljNa6qrNzRUWpJwLls9WVBxKyX6i1ngvMBWjXrp3+448/PC+dIAiCUCpJSDAKOSwMtm+HUaPgf/+Drl3hp59g2DCYOxc6doRz5+D8ebjsMvcq8ewopQ7ndq6omN93A61sBaVUKFDfWi8IgiAIHictDdatg71WT65DhyA8HBZZ3bYjI6FePfD3N+WuXSEmxih0gIoVoXZtzyr0/PD2lrYApVQw4A/4K6WClVIBwBdAC6XUUOv5qcAOcZITBEEQPIXWMHMmfPGFKVss0K8fzJ9vypddBjNmQIcOphwRAV9/DZ07m7JSvlXgzvD2TP0JIBl4FLjZ+vkJrfVpYCjwLHAO6AiM8LJsgiAIQgkkOTnz8113waOPms9KwbvvwqpVphwUZGbqDz1kyn5+8H//By1belfeS8HbW9qmAdNyObcGEK83QRAEodCcPGnM5jaT+NChxkT+yy/Or9++HUJCMstdunhcRI9SVBzlBEEQBKHAbN4MGzbAgw+a8v/9HyxfbrzSlYJBg4yzm4133sl6v6NCLwkUFUc5QRAEQXCK1uYA+P57uPZas1UM4Icf4OGHjdc5wKRJsGxZ5vWjR8PEid6X2VeIUhcEQRCKDFrDwYOQmGjKq1dDlSqwb58pJyfDsWPGpA5mjfz8eShv3RTdqhV062bWw0sjJfKx/f39ad26Na1ataJNmzb8+uuvbmn39ttvZ8+ePQDUqVOHM2fOFKodpRSjR4+2l9PT06latSrXXXddodp75513+Oijjwp1r6eIiYlhxIgR1K9fn2bNmnHttdcyd+7cXJ/RXWN7KfLt37/fLW1PmzaNl19+Od/r6tSpQ8uWLYmOjqZHjx4cPpzr1tNCk9tYOso4depU1qxZ4/a+BcEVEhPh00/h779NeeNGaNDAzMAB6taFIUMyt5ENHGjWwevUMeXwcAgN9brYRZYSqdRDQkLYtm0b27dv5/nnn+exxx7LcU1GRkaB233vvfdo1qzZJcsXGhrKrl27SLa6ZH7//ffUqFGj0O3ddddd3HLLLZcsl7vQWjN48GB69uzJwYMH2bNnD8899xwnT57M9R53ja2n5PMU69atY8eOHfTs2ZMZM2Z4vX+A6dOn07dvX5/0LZQ+kpPh/vthxYrM8qhRZh0coHVrE8ylTRtTbtTIeKg3bOgTcYsdJVKpO3L+/HkqVqwIwPr16+nVqxejRo2ipXWPwqBBg2jbti3Nmzdn7ty5ACxfvpzWrVvTunVrGjduTN26dQHo2bMn7opgd80117By5UoAPv30U0aOHGk/d+HCBcaNG0f79u25/PLL+eqrrwCYNGkS06dPB2D16tV0794di8WSZdZ14MAB+vbta7dSHDx4EK01Dz30EC1atKBly5YsWuTZBHjr1q0jMDCQu+66y17XunVrunXrRmJiIsOGDaNJkybcdNNNaOvCV25j+/HHH9OhQwdat27NnXfeWaiXsYLIN3XqVPvvvkaNGtx66615yrFq1SratGlDq1at6NOnj729PXv20LNnT+rVq8fs2bPzlalz584cO3YMgNOnTzN06FDat29P+/bt+cXqtjtt2jRGjx5N7969adiwIe+++y5g/q4dLSD33HMP820bbYGZM2fSoUMHOnTowIEDB3L0PXbsWJYsWQLA5s2bueKKK2jVqhUdOnQgISFHUEdByJf0dBMyFYw5vU8feOopUw4OhsWLYdcuU65aFXbsMGvhAGXLwh13QM2aOdsV8qdEer8nJyfTunVrUlJSOHHiBD/Y7DjA77//zq5du+yK+v3336dSpUokJyfTvn17hg4dysCBAxk4cCAAw4cPp0ePHm6XccSIEUyfPp3rrruOHTt2MG7cOH766ScAnn32WXr37s37779PXFwcHTp0oG/fvrzwwgu0b9+ebt26MWnSJL755hv8si0c3XTTTTz66KMMHjyYlJQULBYLy5Yts1suzpw5Q/v27enevTtRUVFufy6AXbt20bZtW6fntm7dyu7du6levTpdunThl19+oWvXrk6v/euvv1i0aBG//PILgYGBTJw4kYULF16yVSIv+aZPn8706dOJj4+nW7du3HPPPbnKcc0113DHHXewYcMG6taty9mzZ+3t7N27l3Xr1pGQkEDjxo2ZMGECgYGBucq0atUqBg0aBMB9993H/fffT9euXTly5Aj9+vXjr7/+AmDHjh389ttvXLhwgcsvv5z+/fvn+7zly5fn999/56OPPmLy5MmssE2RsnHx4kVuvPFGFi1aRPv27Tl//jwhJc01WPAIu3cbJW77qmzXzpjHv/zSeKDXrw/VqplzSsHRo1nXvIvTPvCiTolU6jbzO8DGjRu55ZZb2GV9LezQoYNdoQPMnj2bL6zhhI4ePcrff/9N5cqVAXjppZcICQnh7rvvdruM0dHRHDp0iE8//ZRrr702y7nvvvuO5cuX22ffKSkpHDlyhKZNm/Luu+/SvXt3XnvtNerXr5/lvoSEBI4dO8bgwYMBCA4OBuDnn39m5MiR+Pv7ExERQY8ePdi8ebP9xcWbdOjQgZrWV/DWrVtz6NChXJX62rVr2bJlC+3btwfMy1o12zeDB9Fac9NNN3H//ffTtm1b5syZ41SO3377je7du9v/nipVqmRvo3///gQFBREUFES1atU4efKk/bkd6dWrFydPnqRatWp28/uaNWvs/gVgrE22GfP1119PSEgIISEh9OrVi99//50KFSrk+Tw2K9DIkSO5//77c71u3759REVF2Z+zfPns6RgEwbBypZld21Y2H3sMDhwA25/tlCmZjmtgzOmOlFYnNm9QIpW6I507d+bMmTOcPm2SwIU6eFSsX7+eNWvWsHHjRsqWLUvPnj1Jse6TWLt2LZ9//jkbNmzwmGwDBw5kypQprF+/ntjYWHu91pqlS5fSuHHjHPfs3LmTypUr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1lqS+QqC4BYCAgIYP348r732Wo5zhw8fpk+fPkRHR9OnTx+OHDkCmBnkAw88QK9evXjkkUdo2bIlcXFxaK2pXLkyH330EQCjR49mzZo1HDp0iG7dutGmTRvatGnDr7/+aj//1Vdf2fu76aabCpw288SJE1SpUoWgoCAAqlSpwn///ceQIUMA+OqrrwgJCeHixYukpKTY48jbZsGzZ8/m+PHj9OrVi169erF8+XJat25N69atady4MXXr1gVgy5Yt9OjRg7Zt29KvXz9OnDgBQM+ePfm///s/evTokSOk7bvvvkv79u1p1aoVQ4cOtb84jB07lkmTJnHFFVdQr149+2xca80999xDs2bN6N+/vz3OvKfo2bMntlTaZ86coU6dOgC8+uqr9iQ6O3fupEWLFiQlJXHw4EGuvvpq2rZtS7du3ex55ceOHcuECRPo1asX9erV48cff2TcuHE0bdqUsWPHZunzwQcfpE2bNvTp04fTp81mq23bttGpUyeio6MZPHgw586dy1O++fPnc8MNNzBgwACuuuoqkpKSGD58ONHR0dx444107NgRr6YI11oX26Nt27ZaEISSQ2hoqI6Pj9e1a9fWcXFxeubMmfqpp57SWmt93XXX6fnz52uttZ43b56+/vrrtdZajxkzRvfv31+np6drrbW+88479YoVK/TOnTt1u3bt9O2336611rpBgwY6ISFBX7hwQScnJ2uttd6/f7+2fY+sX7/e3mZcXJyuU6eOTktLK5D8CQkJulWrVrphw4Z6woQJev369TotLU3XqVNHa631gw8+qNu1a6d//vlnvX79ej1ixAj7M3z++edaa61r166tT58+naPtG264Qc+ZM0dfvHhRd+7cWZ86dUprrfVnn32mb731Vq211j169NATJkyw3/PUU0/pmTNnaq21PnPmjL3+8ccf17Nnz7b3PWzYMJ2RkaF3796t69evr7XWeunSpbpv3746PT1dHzt2TIeHh9tlvFRCQ0Nz1PXo0UNv3rxZa6316dOnde3atbXWWmdkZOhu3brpZcuW6bZt2+qff/5Za61179699f79+7XWWv/222+6V69e9ue58cYbtcVi0V9++aUuV66c3rFjh87IyNBt2rTRW7du1VprDeiPP/5Ya631008/re+++26ttdYtW7bU69ev11pr/eSTT+r77rsvT/k++OADXaNGDR0bG6u11nrmzJl6/PjxWmutd+7cqf39/e33uQvgD52LXixagYwFQSj1lC9fnltuuYXZs2cTEhJir9+4cSPLli0DzKz64Ycftp+74YYb8Pf3B6Bbt25s2LCB2rVrM2HCBObOncuxY8eoVKkSYWFhxMfHc88997Bt2zb8/f3Zv38/AD169ODuu+/m1KlTLFu2jKFDhxY41ntYWBhbtmzhp59+Yt26ddx444288MILNGjQgL/++ovff/+dBx54gA0bNpCRkUG3bt1cavell14iJCSEu+++m127drFr1y6uvPJKADIyMoiKirJfe+ONNzptY9euXTzxxBPExcWRmJhIv3797OcGDRqEn58fzZo14+TJkwBs2LCBkSNH4u/vT/Xq1endu3eBxsJd+Pn5MX/+fKKjo7nzzjvp0qULiYmJ/Prrr9xwww3261JTU+2fBwwYgFKKli1bEhERQcuWLQFo3rw5hw4donXr1vj5+dnH6uabb2bIkCHEx8cTFxdHjx49ABgzZkyWPnLjyiuvpFKlSoDJynbfffcB0KJFC68n2xGlLghCkWPy5Mm0adOGW2+9NddrHBM/hYaG2j93796dN998kyNHjvDss8/yxRdfsGTJErsCfe2114iIiGD79u1YLBaCg4Pt944ePZqFCxfy2Wef8f777xdKdn9/f3r27EnPnj1p2bIlH374Id26dePbb78lMDCQvn37MnbsWDIyMlxyYlu7di2ff/45GzZsAIx1tXnz5mzc6DyXluNYODJ27Fi+/PJLWrVqxfz581m/fr39nG25wNa+jbySa7mbgIAALBazumvLE2/j77//JiwsjOPHjwNgsVioUKEC27Ztc9qW7Xn8/PyyPJufn1+u6975PWte8jmOueP4+QKX19QFQRC8RaVKlRg+fDjz5s2z111xxRV89pmJJr1w4UK6du3q9N5atWpx5swZ/v77b+rVq0fXrl15+eWX7Uo9Pj6eqKgo/Pz8WLBgARkZGfZ7x44dy6xZswAzqyso+/bt4++//7aXt23bRu3atenevTuzZs2ic+fOVK1aldjYWPbu3eu0j3LlypGQkAAYP4KJEyeyePFiu9WicePGnD592q7U09LS2L17d76yJSQkEBUVRVpaGgsXLsz3+u7du/PZZ5+RkZHBiRMnWLdunUtjUFjq1KnDli1bALJ42cfHx3PfffexYcMG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
 "
 >
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="&#44284;&#45824;&#51201;&#54633;">&#44284;&#45824;&#51201;&#54633;<a class="anchor-link" href="#&#44284;&#45824;&#51201;&#54633;">&#182;</a></h3>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>훈련된 모델이 훈련데이터에는 너무나도 잘 맞지만 새로운 데이터에 대해서는 잘 작동하지 않을 때 해당 모델이 훈련데이터에 <strong>과대적합</strong>되었다고 말한다.</p>
-<p>예를 들어, 
-아래 코드는 고차항 다항회귀를 이용하여 선형이 아니라 60차 다항식의 그래프로 모델을 예측한다.
-결과는 훈련데이터셋에 매우 잘 들어맞지만, 새루운 데이터에 대해 훈련된 모델이 제대로된 예측을 할 수 있을 
-거라고 믿기는 어렵다. 이런 모델은 <strong>일반화가 어렵다</strong>라고 말한다.</p>
-<p><strong>주의사항:</strong> 아래 코드를 지금 당장 이해하려고 시도할 필요는 없다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">full_country_stats</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;GDP per capita&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Life satisfaction&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">110000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
-
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">pipeline</span>
-
-<span class="n">poly</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">include_bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">scaler</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">StandardScaler</span><span class="p">()</span>
-<span class="n">lin_reg2</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
-
-<span class="n">pipeline_reg</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">Pipeline</span><span class="p">([(</span><span class="s1">&#39;poly&#39;</span><span class="p">,</span> <span class="n">poly</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;scal&#39;</span><span class="p">,</span> <span class="n">scaler</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;lin&#39;</span><span class="p">,</span> <span class="n">lin_reg2</span><span class="p">)])</span>
-<span class="n">pipeline_reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xfull</span><span class="p">,</span> <span class="n">yfull</span><span class="p">)</span>
-<span class="n">curve</span> <span class="o">=</span> <span class="n">pipeline_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">curve</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;GDP per capita (USD)&quot;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/Users/gslee/opt/anaconda3/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1544: RuntimeWarning: overflow encountered in multiply
-  sqr = np.multiply(arr, arr, out=arr)
-/Users/gslee/opt/anaconda3/lib/python3.8/site-packages/numpy/core/fromnumeric.py:87: RuntimeWarning: overflow encountered in reduce
-  return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-
-<div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,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
-"
->
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>훈련세트에 잡음이 많이 있거나 데이터셋이 너무 작으면 훈련 과정에서 별로 상관 없는 특성을 이용하려고 시도할 수도 있다. 
-예를 들어, 아래 코드에서 확인할 수 있듯이 OECD에 속하는 국가 중에서 나라 이름에 영어 알파벳 W가 포함된 아래의 나라의 삶의 만족도가 매우 높은 편이다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">full_country_stats</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">full_country_stats</span><span class="o">.</span><span class="n">index</span> <span class="k">if</span> <span class="s2">&quot;W&quot;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">upper</span><span class="p">()]][</span><span class="s2">&quot;Life satisfaction&quot;</span><span class="p">]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Country
-New Zealand    7.3
-Sweden         7.2
-Norway         7.4
-Switzerland    7.5
-Name: Life satisfaction, dtype: float64</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>하지만 그렇다해서 나라명에 영어 알파벳 W가 포함된 모든 나라의 삶의 만족도가 높다고 결론 지을 수는 없다.
-실제로 영어 알파벳 W를 포함한 국가 중에 여러 국가의 1인당 GDP가 아래 코드에서 볼 수 있듯이 매우 낮은데,
-예를 들어, 루완다(Rwanda), 짐바브웨(Zimbabwe) 등의 국가의 삶의 만족도를 그럼에도 불구하고 매우 높다고 말할 수는 없다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gdp_per_capita</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">gdp_per_capita</span><span class="o">.</span><span class="n">index</span> <span class="k">if</span> <span class="s2">&quot;W&quot;</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">upper</span><span class="p">()]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[44]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Subject Descriptor</th>
-      <th>Units</th>
-      <th>Scale</th>
-      <th>Country/Series-specific Notes</th>
-      <th>GDP per capita</th>
-      <th>Estimates Start After</th>
-    </tr>
-    <tr>
-      <th>Country</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Botswana</th>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>6040.957</td>
-      <td>2008.0</td>
-    </tr>
-    <tr>
-      <th>Kuwait</th>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>29363.027</td>
-      <td>2014.0</td>
-    </tr>
-    <tr>
-      <th>Malawi</th>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>354.275</td>
-      <td>2011.0</td>
-    </tr>
-    <tr>
-      <th>New Zealand</th>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>37044.891</td>
-      <td>2015.0</td>
-    </tr>
-    <tr>
-      <th>Norway</th>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>74822.106</td>
-      <td>2015.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 </div>
 
 </div>
