@@ -57,25 +57,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
   </style>
-<style type="text/css">
-    
-
-<script>
-    MathJax.Hub.Config({
-        "HTML-CSS": {
-            /*preferredFont: "TeX",*/
-            /*availableFonts: ["TeX", "STIX"],*/
-            styles: {
-                scale: 100,
-                ".MathJax_Display": {
-                    "font-size": "100%",
-                }
-            }
-        }
-    });
-</script>
-    
-  </style>
 
 
 
@@ -14297,9 +14278,9 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>머신러닝은 특정 값을 예측하는 모델(일종의 함수)을 구현하는 컴퓨터 프로그래밍 분야이며
 주어진 문제에 대한 적절한 모델을 찾는 일이 핵심 과제이다.
-머신러닝은 현재 데이터 분석의 주요 활용분야가 되었으며 지금까지 살펴 본 다양한 개념과 도구들이
+머신러닝은 데이터 분석의 주요 활용분야가 되었으며 지금까지 살펴 본 파이썬 데이터 분석의 다양한 개념과 도구들이
 유용하게 활용된다.
-여기서는 머신러닝의 가장 기본 모델인 선형회귀 모델의 개념과 활용을 예제를 이용하여 
+여기서는 선형회귀 모델의 개념과 활용을 예제를 이용하여 
 머신러닝의 기본 아이디어를 전달한다.</p>
 
 </div>
@@ -14341,14 +14322,14 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>선형회귀 모델을 구현하는 과정을 통해 다섯 단계로 이루어진 머신러닝 문제해결의 전형적인 과정을 살펴본다.</p>
-<ul>
+<p>선형회귀 모델을 구현하는 다섯 단계를 밟아가면서 머신러닝 문제해결의 전형적인 과정을 살펴본다.</p>
+<ol>
 <li>문제 정의</li>
 <li>데이터 구하기</li>
-<li>데이터 적재와 준비</li>
-<li>(선형회귀) 모델 훈련/학습</li>
-<li>학습 모델 활용</li>
-</ul>
+<li>데이터 적재, 정제, 전처리</li>
+<li>모델 선택과 훈련</li>
+<li>학습된 모델 활용</li>
+</ol>
 
 </div>
 </div>
@@ -14360,11 +14341,10 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a href="https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A0%9C%ED%98%91%EB%A0%A5%EA%B0%9C%EB%B0%9C%EA%B8%B0%EA%B5%AC">OECD</a> 
-국가들을 대상으로 
+국가들을 대상으로 2015년도 기준
 1인당 <a href="https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%82%B4%EC%B4%9D%EC%83%9D%EC%82%B0">GDP</a>와
-삶의 만족도 사이의 관계를 선형회귀 모델로 구현하려 한다.</p>
-<p><strong>참고:</strong> 국가별 <a href="https://ko.wikipedia.org/wiki/%EB%AA%85%EB%AA%A9_%EA%B5%AD%EB%82%B4_%EC%B4%9D%EC%83%9D%EC%82%B0%EC%88%9C_%EB%82%98%EB%9D%BC_%EB%AA%A9%EB%A1%9D">명목 GDP 순서</a>에서 
-2020년 기준 대한민국은 세계 10위이다.</p>
+삶의 만족도 사이의 관계를 선형회귀 모델로 구현하려 한다.
+즉, 1인당 GDP가 알려진 국가의 삶의 만족도를 예측하는 모델(함수)을 구현하려 한다.</p>
 
 </div>
 </div>
@@ -14375,11 +14355,19 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>국가별 '삶의 만족도'(life satisfaction)는 OECD가 매년 발표하는 
-<a href="https://stats.oecd.org/Index.aspx?DataSetCode=BLI">'더 나은 삶의 지수'(BLI, Better Life Index) 자료</a>에 
-포함된다.
-반면에 1인당 GDP 자료는  <a href="https://ko.wikipedia.org/wiki/%EA%B5%AD%EC%A0%9C_%ED%86%B5%ED%99%94_%EA%B8%B0%EA%B8%88#:~:text=%EA%B5%AD%EC%A0%9C%20%ED%86%B5%ED%99%94%20%EA%B8%B0%EA%B8%88(%E5%9C%8B%E9%9A%9B%E9%80%9A%E8%B2%A8,%EC%9C%84%EC%9E%84%EB%B0%9B%EC%9D%80%20%EA%B5%AD%EC%A0%9C%20%EA%B8%B0%EA%B5%AC%EC%9D%B4%EB%8B%A4.">국제통화기금(IMF)</a>의 
-<a href="http://goo.gl/j1MSKe">세계 경제전망 데이터베이스</a>에서 제공한다.</p>
+<p>1인당 GDP와 삶의 만족도 사이의 관계를 예측하는 모델을 구현하기위해 소위 <strong>모델 훈련</strong> 과정을 실행해야 한다.
+모델 훈련을 위해 필요한 데이터셋(데이터 집합)을 <strong>훈련 세트</strong>라 부르며,
+훈련 세트는 <strong>입력</strong> 데이터와 <strong>타깃</strong>(target) 데이터로 구분된다.
+그러면 모델 훈련은 바로 준비된 훈련 세트의 입력 데이터와 타깃 데이터 사이의 관계를 가장 적절하게 
+묘사하는 특정 모델(함수)을 학습해가는 과정이다.</p>
+<p>1인당 GDP와 삶의 만족도 사이의 관계를 가장 적절하게 묘사하는 모델(함수)를 훈련시키기 위해
+사용되는 훈련 세트는 여기서는 다음과 같다.</p>
+<ul>
+<li>국가별 1인당 GDP 데이터: <a href="https://ko.wikipedia.org/wiki/%EA%B5%AD%EC%A0%9C_%ED%86%B5%ED%99%94_%EA%B8%B0%EA%B8%88#:~:text=%EA%B5%AD%EC%A0%9C%20%ED%86%B5%ED%99%94%20%EA%B8%B0%EA%B8%88(%E5%9C%8B%E9%9A%9B%E9%80%9A%E8%B2%A8,%EC%9C%84%EC%9E%84%EB%B0%9B%EC%9D%80%20%EA%B5%AD%EC%A0%9C%20%EA%B8%B0%EA%B5%AC%EC%9D%B4%EB%8B%A4.">국제통화기금(IMF)</a>의 
+<a href="http://goo.gl/j1MSKe">세계 경제전망 데이터베이스</a>에 포함됨.</li>
+<li>OECD 회원 국가별 '삶의 만족도'(life satisfaction) 데이터: OECD가 매년 발표하는 
+  <a href="https://stats.oecd.org/Index.aspx?DataSetCode=BLI">'더 나은 삶의 지수'(BLI, Better Life Index) 자료</a>에 포함되어 있음.</li>
+</ul>
 <p>여기서는 2015년 기준 자료를 아래 링크에서 미리 준비된 두 개의 데이터 파일을 다운로드하는 것으로 대체한다.
 다만 실제 자료를 아래와 같이 잘 정리된 데이터 파일로 만드는 과정이 일반적으로 간단하지 않다는 점만을 언급해둔다.</p>
 <ul>
@@ -14406,8 +14394,8 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>위 경로에 두 파일의 이름을 추가하면 해당 파일들을 다운로드하여 컴퓨터에 저장할 수 있다.
-하지만 여기서는 컴퓨터에 저장하는 대신 이어서 설명하는 데이터 적재를 동시에 진행하는 것으로 
+<p>위 경로에 파일의 이름을 추가하면 해당 파일을 다운로드하여 컴퓨터에 저장할 수 있다.
+하지만 컴퓨터에 저장하는 대신 이어서 설명하는 데이터 적재를 동시에 진행하는 것으로 
 데이터 구하기 단계를 해결한다.</p>
 
 </div>
@@ -14419,7 +14407,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>일반적으로 저장된 데이터를 바로 모델 훈련(학습)에 사용할 수 없으며, 
+<p>컴퓨터에 저장된 또는 다운로드된 데이터는 일반적으로 바로 모델 훈련에 사용할 수 없으며, 
 데이터 적재, 데이터 정제, 데이터 전처리 등의 과정을 거쳐야 비로소 모델 훈련에 활용될 수 있다.</p>
 <ul>
 <li><p><strong>데이터 적재</strong>(data loading): 인터넷에 존재하거나 컴퓨터에 저장되어 있는 파일을 
@@ -14437,16 +14425,484 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="1&#51064;&#45817;-GDP-&#45936;&#51060;&#53552;-&#51201;&#51116;,-&#51221;&#51228;,-&#51204;&#52376;&#47532;">1&#51064;&#45817; GDP &#45936;&#51060;&#53552; &#51201;&#51116;, &#51221;&#51228;, &#51204;&#52376;&#47532;<a class="anchor-link" href="#1&#51064;&#45817;-GDP-&#45936;&#51060;&#53552;-&#51201;&#51116;,-&#51221;&#51228;,-&#51204;&#52376;&#47532;">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>아래 코드는 IMF 에서 다운로드한 csv 파일에서 2015년 기준 국가별 1인당 GDP 관련 데이터를 데이터프레임 객체로 불러온다.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gdp_per_capita</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">datapath</span><span class="o">+</span><span class="s2">&quot;gdp_per_capita.csv&quot;</span><span class="p">,</span> 
+                             <span class="n">thousands</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> 
+                             <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span>
+                             <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;latin1&#39;</span><span class="p">,</span> 
+                             <span class="n">na_values</span><span class="o">=</span><span class="s2">&quot;n/a&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>총 190개 국가의 1인당 GDP 정보를 담고 있다.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gdp_per_capita</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Country</th>
+      <th>Subject Descriptor</th>
+      <th>Units</th>
+      <th>Scale</th>
+      <th>Country/Series-specific Notes</th>
+      <th>2015</th>
+      <th>Estimates Start After</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>599.994</td>
+      <td>2013.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Albania</td>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>3995.383</td>
+      <td>2010.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Algeria</td>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>4318.135</td>
+      <td>2014.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Angola</td>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>4100.315</td>
+      <td>2014.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Antigua and Barbuda</td>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>14414.302</td>
+      <td>2011.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>185</th>
+      <td>Vietnam</td>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>2088.344</td>
+      <td>2012.0</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>Yemen</td>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>1302.940</td>
+      <td>2008.0</td>
+    </tr>
+    <tr>
+      <th>187</th>
+      <td>Zambia</td>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>1350.151</td>
+      <td>2010.0</td>
+    </tr>
+    <tr>
+      <th>188</th>
+      <td>Zimbabwe</td>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>1064.350</td>
+      <td>2012.0</td>
+    </tr>
+    <tr>
+      <th>189</th>
+      <td>International Monetary Fund, World Economic Ou...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>190 rows × 7 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>국가명을 행 인덱스로 지정한다.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gdp_per_capita</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">gdp_per_capita</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Subject Descriptor</th>
+      <th>Units</th>
+      <th>Scale</th>
+      <th>Country/Series-specific Notes</th>
+      <th>2015</th>
+      <th>Estimates Start After</th>
+    </tr>
+    <tr>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Afghanistan</th>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>599.994</td>
+      <td>2013.0</td>
+    </tr>
+    <tr>
+      <th>Albania</th>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>3995.383</td>
+      <td>2010.0</td>
+    </tr>
+    <tr>
+      <th>Algeria</th>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>4318.135</td>
+      <td>2014.0</td>
+    </tr>
+    <tr>
+      <th>Angola</th>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>4100.315</td>
+      <td>2014.0</td>
+    </tr>
+    <tr>
+      <th>Antigua and Barbuda</th>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>14414.302</td>
+      <td>2011.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>이어서 1인당 GDP 데이터임을 명시하기 위해 열 이름 <code>"2015"</code>를 <code>"GDP per capita"</code>로 변경한다.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gdp_per_capita</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;2015&quot;</span><span class="p">:</span> <span class="s2">&quot;GDP per capita&quot;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+
+<span class="n">gdp_per_capita</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Subject Descriptor</th>
+      <th>Units</th>
+      <th>Scale</th>
+      <th>Country/Series-specific Notes</th>
+      <th>GDP per capita</th>
+      <th>Estimates Start After</th>
+    </tr>
+    <tr>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Afghanistan</th>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>599.994</td>
+      <td>2013.0</td>
+    </tr>
+    <tr>
+      <th>Albania</th>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>3995.383</td>
+      <td>2010.0</td>
+    </tr>
+    <tr>
+      <th>Algeria</th>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>4318.135</td>
+      <td>2014.0</td>
+    </tr>
+    <tr>
+      <th>Angola</th>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>4100.315</td>
+      <td>2014.0</td>
+    </tr>
+    <tr>
+      <th>Antigua and Barbuda</th>
+      <td>Gross domestic product per capita, current prices</td>
+      <td>U.S. dollars</td>
+      <td>Units</td>
+      <td>See notes for:  Gross domestic product, curren...</td>
+      <td>14414.302</td>
+      <td>2011.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h4 id="&#49334;&#51032;-&#47564;&#51313;&#46020;-&#45936;&#51060;&#53552;-&#51201;&#51116;,-&#51221;&#51228;,-&#51204;&#52376;&#47532;">&#49334;&#51032; &#47564;&#51313;&#46020; &#45936;&#51060;&#53552; &#51201;&#51116;, &#51221;&#51228;, &#51204;&#52376;&#47532;<a class="anchor-link" href="#&#49334;&#51032;-&#47564;&#51313;&#46020;-&#45936;&#51060;&#53552;-&#51201;&#51116;,-&#51221;&#51228;,-&#51204;&#52376;&#47532;">&#182;</a></h4>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>OECD 국가별 삶의 만족도 데이터는 '더 나은 삶의 지수' 데이터 파일에 포함되어 있다. 
-따라서 먼저 해당 csv 파일을 판다스의 데이터프레임 객체(값)으로 불러온 후에 
+따라서 먼저 해당 csv 파일을 판다스의 데이터프레임 객체로 불러온 후에 
 삶의 만족도와 관련된 내용을 추출하는 과정을 밟는다.</p>
-<p><code>pandas.read_csv()</code> 함수는 지정한 경로에 저장되어 있는 csv 파일을 다운로드하여 바로 데이터프레임 객체를
-생성한다.</p>
+<ul>
+<li><code>pandas.read_csv()</code> 함수는 지정한 경로에 저장되어 있는 csv 파일을 다운로드하여 바로 데이터프레임 객체를
+생성한다.</li>
+</ul>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14749,6 +15205,43 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">oecd_bli</span><span class="o">.</span><span class="n">Indicator</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(24,)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;Life satisfaction&#39;</span> <span class="ow">in</span> <span class="n">oecd_bli</span><span class="o">.</span><span class="n">Indicator</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 </pre></div>
 
@@ -14780,13 +15273,21 @@ a.anchor-link {
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>그런데 삶의 만족도와 관련된 행이 OECD 회원국의 수인 37보다 많다.
+이는 삶의 만족도와 관련해서 데이터의 중복이 있다는 것을 의미한다.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">oecd_bli</span><span class="o">.</span><span class="n">Indicator</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">oecd_bli</span><span class="o">.</span><span class="n">Indicator</span> <span class="o">==</span> <span class="s1">&#39;Life satisfaction&#39;</span>
+<span class="n">oecd_bli</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 
      </div>
@@ -14802,13 +15303,13 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>24</pre>
+<pre>(179, 17)</pre>
 </div>
 
 </div>
@@ -14820,7 +15321,8 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>따라서 OECD 회원국가별로 <code>'Indicator'</code> 열에 포함된 24개 측정지표에 해당하는 값(value)만을 추출하자.
+<p>무엇이 중복되었는지를 알아내기 위해 
+OECD 회원국가별로 <code>'Indicator'</code> 열에 포함된 24개 측정지표에 해당하는 값(value)만을 따로 추출해보자.
 즉, <a href="https://stats.oecd.org/Index.aspx?DataSetCode=BLI">'더 나은 삶의 지수'(BLI, Better Life Index) 자료</a>(2021년 5월 18일 자)에서
 볼 수 있는 아래 테이블 이미지와 같은 데이터프레임을 생성하고자 한다.</p>
 <ul>
@@ -14890,7 +15392,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">oecd_bli</span><span class="o">.</span><span class="n">INEQUALITY</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
@@ -14909,7 +15411,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
 
 
 
@@ -14933,7 +15435,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr1</span> <span class="o">=</span> <span class="n">oecd_bli</span><span class="o">.</span><span class="n">INEQUALITY</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
@@ -14989,7 +15491,7 @@ HGH:	328행
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">oecd_bli</span> <span class="o">=</span> <span class="n">oecd_bli</span><span class="p">[</span><span class="n">oecd_bli</span><span class="p">[</span><span class="s2">&quot;INEQUALITY&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;TOT&quot;</span><span class="p">]</span>
@@ -15009,7 +15511,7 @@ HGH:	328행
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">oecd_bli</span><span class="o">.</span><span class="n">shape</span>
@@ -15028,7 +15530,7 @@ HGH:	328행
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
 
 
 
@@ -15048,111 +15550,19 @@ HGH:	328행
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>여기서 <code>37 * 24 = 888</code>이 성립함에 주목해야 한다. 
 왜냐하면 이는 위데이터프레임이 37개 OECD 회원국별로 24개의 지표를 조사한 데이터를 포함한다는 의미이기 때문이다.
-또한 측정된 지표값은 <code>'Value'</code> 열에 포함되어 있다. 
-실제로 해당 열엔 부동소수점이 사용된다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">oecd_bli</span><span class="o">.</span><span class="n">Value</span><span class="o">.</span><span class="n">dtype</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>dtype(&#39;float64&#39;)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>크기도 정확히 888이다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">oecd_bli</span><span class="o">.</span><span class="n">Value</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(888,)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+또한 측정된 지표값은 <code>'Value'</code> 열에 포함되어 있다.</p>
 <p>이제 데이터프레임 객체의 <code>pivot()</code> 메서드를 이용하여 
 <code>'Indicator'</code> 의 항목에 대한 각 국가별 수치만을 추출하기 위해
 국가명(<code>'Country'</code> 열의 항목)을 행의 인덱스 이름으로, 
 <code>'Indicator'</code>의 항목을 열의 인덱스 이름으로 사용하면서
 해당 행과 열의 항목에는 <code>'Value'</code> 열에 포함된 값을 사용하는 
 데이터프레임을 아래와 같이 생성할 수 있다.</p>
-<p><code>pivot()</code> 메서드 사용되는 옵션 인자의 의미는 다음과 같다.</p>
-<ul>
-<li>행: <code>'Country'</code>(국가)</li>
-<li>열: <code>'Indicator'</code>(측정 지표)</li>
-<li>항목 값: <code>'Value'</code> (지표별 측정값)</li>
-</ul>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">oecd_bli</span> <span class="o">=</span> <span class="n">oecd_bli</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;Indicator&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;Value&quot;</span><span class="p">)</span>
@@ -15172,7 +15582,7 @@ HGH:	328행
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">oecd_bli</span>
@@ -15191,7 +15601,7 @@ HGH:	328행
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 
 
 
@@ -16171,7 +16581,7 @@ HGH:	328행
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">oecd_bli</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Korea&#39;</span><span class="p">]</span>
@@ -16190,7 +16600,7 @@ HGH:	328행
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 
 
 
@@ -16239,7 +16649,7 @@ Name: Korea, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">oecd_bli</span><span class="p">[</span><span class="s2">&quot;Life satisfaction&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -16258,7 +16668,7 @@ Name: Korea, dtype: float64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
 
 
 
@@ -16282,479 +16692,16 @@ Name: Life satisfaction, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="1&#51064;&#45817;-GDP-&#45936;&#51060;&#53552;-&#51201;&#51116;,-&#51221;&#51228;,-&#51204;&#52376;&#47532;">1&#51064;&#45817; GDP &#45936;&#51060;&#53552; &#51201;&#51116;, &#51221;&#51228;, &#51204;&#52376;&#47532;<a class="anchor-link" href="#1&#51064;&#45817;-GDP-&#45936;&#51060;&#53552;-&#51201;&#51116;,-&#51221;&#51228;,-&#51204;&#52376;&#47532;">&#182;</a></h4>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>아래 코드는 IMF 에서 다운로드한 csv 파일에서 2015년 기준 국가별 1인당 GDP 관련 데이터를 데이터프레임 객체로 불러온다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gdp_per_capita</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">datapath</span><span class="o">+</span><span class="s2">&quot;gdp_per_capita.csv&quot;</span><span class="p">,</span> 
-                             <span class="n">thousands</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> 
-                             <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span>
-                             <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;latin1&#39;</span><span class="p">,</span> 
-                             <span class="n">na_values</span><span class="o">=</span><span class="s2">&quot;n/a&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>총 190개 국가의 1인당 GDP 정보를 담고 있다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gdp_per_capita</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Country</th>
-      <th>Subject Descriptor</th>
-      <th>Units</th>
-      <th>Scale</th>
-      <th>Country/Series-specific Notes</th>
-      <th>2015</th>
-      <th>Estimates Start After</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Afghanistan</td>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>599.994</td>
-      <td>2013.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Albania</td>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>3995.383</td>
-      <td>2010.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Algeria</td>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>4318.135</td>
-      <td>2014.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Angola</td>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>4100.315</td>
-      <td>2014.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Antigua and Barbuda</td>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>14414.302</td>
-      <td>2011.0</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>185</th>
-      <td>Vietnam</td>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>2088.344</td>
-      <td>2012.0</td>
-    </tr>
-    <tr>
-      <th>186</th>
-      <td>Yemen</td>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>1302.940</td>
-      <td>2008.0</td>
-    </tr>
-    <tr>
-      <th>187</th>
-      <td>Zambia</td>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>1350.151</td>
-      <td>2010.0</td>
-    </tr>
-    <tr>
-      <th>188</th>
-      <td>Zimbabwe</td>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>1064.350</td>
-      <td>2012.0</td>
-    </tr>
-    <tr>
-      <th>189</th>
-      <td>International Monetary Fund, World Economic Ou...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-<p>190 rows × 7 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>국가명을 행 인덱스로 지정한다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gdp_per_capita</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">gdp_per_capita</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Subject Descriptor</th>
-      <th>Units</th>
-      <th>Scale</th>
-      <th>Country/Series-specific Notes</th>
-      <th>2015</th>
-      <th>Estimates Start After</th>
-    </tr>
-    <tr>
-      <th>Country</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Afghanistan</th>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>599.994</td>
-      <td>2013.0</td>
-    </tr>
-    <tr>
-      <th>Albania</th>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>3995.383</td>
-      <td>2010.0</td>
-    </tr>
-    <tr>
-      <th>Algeria</th>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>4318.135</td>
-      <td>2014.0</td>
-    </tr>
-    <tr>
-      <th>Angola</th>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>4100.315</td>
-      <td>2014.0</td>
-    </tr>
-    <tr>
-      <th>Antigua and Barbuda</th>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>14414.302</td>
-      <td>2011.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>이어서 1인당 GDP 데이터임을 명시하기 위해 열 이름 <code>"2015"</code>를 <code>"GDP per capita"</code>로 변경한다.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gdp_per_capita</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;2015&quot;</span><span class="p">:</span> <span class="s2">&quot;GDP per capita&quot;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
-
-<span class="n">gdp_per_capita</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Subject Descriptor</th>
-      <th>Units</th>
-      <th>Scale</th>
-      <th>Country/Series-specific Notes</th>
-      <th>GDP per capita</th>
-      <th>Estimates Start After</th>
-    </tr>
-    <tr>
-      <th>Country</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Afghanistan</th>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>599.994</td>
-      <td>2013.0</td>
-    </tr>
-    <tr>
-      <th>Albania</th>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>3995.383</td>
-      <td>2010.0</td>
-    </tr>
-    <tr>
-      <th>Algeria</th>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>4318.135</td>
-      <td>2014.0</td>
-    </tr>
-    <tr>
-      <th>Angola</th>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>4100.315</td>
-      <td>2014.0</td>
-    </tr>
-    <tr>
-      <th>Antigua and Barbuda</th>
-      <td>Gross domestic product per capita, current prices</td>
-      <td>U.S. dollars</td>
-      <td>Units</td>
-      <td>See notes for:  Gross domestic product, curren...</td>
-      <td>14414.302</td>
-      <td>2011.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h4 id="&#45936;&#51060;&#53552;-&#48337;&#54633;">&#45936;&#51060;&#53552; &#48337;&#54633;<a class="anchor-link" href="#&#45936;&#51060;&#53552;-&#48337;&#54633;">&#182;</a></h4>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>두 데이터를 하나의 데이터프레임으로 병합한다.
-더 나은 삶의 지수에서는 삶의 만족도를, GDP 데이터에서는 1인당 GDP 열만 이용하며 기준은 국가명이다.</p>
+<p>앞서 살펴본 대로 1인당 GDP 데이터는 OECD 회원국 이상의 국가 데이터가 포함되어 있다.
+OECD 회원국으로 제한해서 1인당 GDP와 삶의 만족도 사이의 관계를 파악하기 위해
+여기서는 앞서 구한 두 개의 데이터프레임을 하나로 병합하는 방식을 이용한다. 
+더 나은 삶의 지수에서는 삶의 만족도를, GDP 데이터에서는 1인당 GDP 열만 이용하며 
+국가명을 기준으로 하면 자연스럽게 OECD 회원국에 해당하는 행만 추출된다.</p>
 
 </div>
 </div>
@@ -16767,7 +16714,7 @@ Name: Life satisfaction, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">oecd_country_stats</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="n">gdp_per_capita</span><span class="p">[</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">],</span>
@@ -16783,13 +16730,19 @@ Name: Life satisfaction, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>또한 1인당 GDP 기준으로 오름차순으로 국가를 정렬시킨다.</p>
+<h3 id="4&#45800;&#44228;:-&#47784;&#45944;-&#49440;&#53469;&#44284;-&#54984;&#47144;">4&#45800;&#44228;: &#47784;&#45944; &#49440;&#53469;&#44284; &#54984;&#47144;<a class="anchor-link" href="#4&#45800;&#44228;:-&#47784;&#45944;-&#49440;&#53469;&#44284;-&#54984;&#47144;">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>1인당 GDP와 삶의 만족도 사이의 선형 관계를 확인하기 위해 국가를 
+1인당 GDP 기준 오름차순으로 정렬시킨다.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">oecd_country_stats</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;GDP per capita&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -16810,7 +16763,7 @@ Name: Life satisfaction, dtype: float64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
 
 
 
@@ -17037,7 +16990,7 @@ Name: Life satisfaction, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>아래 코드는 이어서 다룰 선형회귀 모델의 적합도 설명에 활용하기 위해 
+<p>아래 코드는 이어서 다룰 선형회귀 모델의 적합도를 설명하기 위해 
 고의로 7개 국가의 데이터를 데이터셋에서 제외시킨다.</p>
 
 </div>
@@ -17052,7 +17005,7 @@ Name: Life satisfaction, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">remove_indices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">35</span><span class="p">]</span>
@@ -17074,7 +17027,7 @@ Name: Life satisfaction, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">missing_data</span> <span class="o">=</span> <span class="n">oecd_country_stats</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">remove_indices</span><span class="p">]</span>
@@ -17095,7 +17048,7 @@ Name: Life satisfaction, dtype: float64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
 
 
 
@@ -17185,7 +17138,7 @@ Name: Life satisfaction, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_data</span> <span class="o">=</span> <span class="n">oecd_country_stats</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">keep_indices</span><span class="p">]</span> 
@@ -17196,6 +17149,11 @@ Name: Life satisfaction, dtype: float64</pre>
 </div>
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="&#49440;&#54805;-&#44288;&#44228;-&#54869;&#51064;">&#49440;&#54805; &#44288;&#44228; &#54869;&#51064;<a class="anchor-link" href="#&#49440;&#54805;-&#44288;&#44228;-&#54869;&#51064;">&#182;</a></h4>
+</div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -17214,7 +17172,7 @@ Name: Life satisfaction, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 7개 국가를 제외한 국가들의 데이터 산점도</span>
@@ -17374,16 +17332,6 @@ Name: Life satisfaction, dtype: float64</pre>
 
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="4&#45800;&#44228;:-(&#49440;&#54805;&#54924;&#44480;)-&#47784;&#45944;-&#54984;&#47144;/&#54617;&#49845;">4&#45800;&#44228;: (&#49440;&#54805;&#54924;&#44480;) &#47784;&#45944; &#54984;&#47144;/&#54617;&#49845;<a class="anchor-link" href="#4&#45800;&#44228;:-(&#49440;&#54805;&#54924;&#44480;)-&#47784;&#45944;-&#54984;&#47144;/&#54617;&#49845;">&#182;</a></h3>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="&#49440;&#54805;-&#44288;&#44228;-&#54869;&#51064;">&#49440;&#54805; &#44288;&#44228; &#54869;&#51064;<a class="anchor-link" href="#&#49440;&#54805;-&#44288;&#44228;-&#54869;&#51064;">&#182;</a></h4>
-</div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -17698,7 +17646,7 @@ $$
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="5&#45800;&#44228;:-&#54617;&#49845;-&#47784;&#45944;-&#54876;&#50857;">5&#45800;&#44228;: &#54617;&#49845; &#47784;&#45944; &#54876;&#50857;<a class="anchor-link" href="#5&#45800;&#44228;:-&#54617;&#49845;-&#47784;&#45944;-&#54876;&#50857;">&#182;</a></h3>
+<h3 id="5&#45800;&#44228;:-&#54617;&#49845;&#46108;-&#47784;&#45944;-&#54876;&#50857;">5&#45800;&#44228;: &#54617;&#49845;&#46108; &#47784;&#45944; &#54876;&#50857;<a class="anchor-link" href="#5&#45800;&#44228;:-&#54617;&#49845;&#46108;-&#47784;&#45944;-&#54876;&#50857;">&#182;</a></h3>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
