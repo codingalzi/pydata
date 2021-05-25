@@ -14429,6 +14429,12 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>아래 코드는 IMF 에서 다운로드한 csv 파일에서 2015년 기준 국가별 1인당 GDP 관련 데이터를 데이터프레임 객체로 불러온다.</p>
+<ul>
+<li><code>thousands=','</code>: 1000단위로 쉼표 찍기</li>
+<li><code>delimiter='\t'</code>: 탭(tab)으로 열 구분</li>
+<li><code>encoding='latin1'</code>: 인코딩 방식 지정. 파일에서 사용된 'C&ocirc;te d'Ivoire'(코트디브와르)와 같은 특수 알파벳을 사용하는 국가명 처리용</li>
+<li><code>na_values="n/a"</code>: 결측치를 'NaN'으로 처리.</li>
+</ul>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -17412,11 +17418,11 @@ OECD 회원국으로 제한해서 1인당 GDP와 삶의 만족도 사이의 관�
 <p>위 그림에서처럼 y축의 값이 x축의 값에 선형적으로 의존하는 관계를 <strong>선형관계</strong>라 하며,
 그런 선형관계를 함수로 구현하는 모델을 <strong>선형회귀 모델</strong>(linear regression model)이라 하며,
 여기서는 선형회귀 모델이 1인당 GDP 하나를 인자로 사용하는 1차 함수 형식으로 구현된다.
-그리고 1차 함수는 직선의 절편(y축과 만나는 점)과 기울기 두 개의 값을 알면 선형회귀 모델을 바로 구현할 수 있다.
-절편과 기울기처럼 모델 지정에 사용되는 값들을 <strong>모델 파라미터</strong>(model parameters)라 하며,
-바로 이 값들을 찾아내는 것이 머신러닝 모델훈련의 주요 과제이다.</p>
+그리고 1차 함수 모델은 직선의 절편(y축과 만나는 점)과 기울기 두 개의 값을 알면 바로 구현할 수 있다.
+절편과 기울기처럼 모델 구현에 사용되는 값들을 <strong>모델 파라미터</strong>(model parameters)라 하며,
+바로 이런 값들을 찾아내는 것이 머신러닝 모델훈련의 주요 과제이다.</p>
 <p>정리하면 다음과 같다. '1인당 GDP'와 '삶의 만족도' 사이의 선형관계를 최대한 잘 
-반영하는 선형회귀 모델은 아래 식을 만족시키는 적절한 절편 $\theta_0$와 기울기 $\theta_1$에 의해 결정된다.</p>
+반영하는 선형회귀 모델은 아래 식을 만족시키는 적절한 절편 $\theta_0$과 기울기 $\theta_1$에 의해 결정된다.</p>
 $$
 \text{'삶의만족도'} = \theta_0 + \theta_1 \cdot \text{'1인당GDP'}
 $$
@@ -17429,7 +17435,7 @@ $$
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>사이킷런(scikit-learn) 라이브러리는 머신러닝에서 사용되는 다양한 모델의 기본틀을 제공한다.
+<p>사이킷런(scikit-learn) 라이브러리는 머신러닝에서 사용되는 다양한 모델의 기본적인 틀(basic models)들을 제공한다.
 선형회귀의 경우 <code>LinearRegression</code> 클래스의 객체를 생성하여 훈련시키면 
 최적의 절편과 기울기를 계산해준다. 
 모델을 지정하고 훈련시키는 과정은 다음과 같다.</p>
@@ -17440,9 +17446,8 @@ $$
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
 <li>과정 1: 모델 지정. 
-  사이킷런(sklearn) 패키지의 <code>linear_model</code> 모듈에 포함된 <code>LinearRegression</code> 클래스의 객체 선언.
-  선언된 모델은 임의로 지정된 $\theta_0$와 $\theta_1$의 값을 사용함. 
-  따라서 최적의 모델은 아님.</li>
+  사이킷런(sklearn) 패키지의 <code>linear_model</code> 모듈에 포함된 <code>LinearRegression</code> 클래스의 객체를 선언한다.
+  선언된 모델은 아직 어떤 훈련도 하지 않은 상태이다. </li>
 </ul>
 
 </div>
@@ -17466,8 +17471,9 @@ $$
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>과정 2: 훈련 세트 지정. 특성과 타깃을 2차원 어레이로 지정해야 함.<ul>
-<li>특성 데이터: x축에 해당하는 값이며 여기서는 1인당 GDP 사용.</li>
+<li>과정 2: 훈련 세트 지정. 입력 데이터와 타깃 데이터를 2차원 어레이로 지정한다. 
+  이유는 선형회귀 모델이 2차원 어레이 형식의 입력 데이터를 요구하기 때문이다.<ul>
+<li>입력 데이터: x축에 해당하는 값이며 여기서는 1인당 GDP 사용.</li>
 <li>타깃 데이터: y축에 해당하는 값이며 여기서는 삶의 만족도 사용.</li>
 </ul>
 </li>
@@ -17492,6 +17498,119 @@ $$
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>입력 데이터 훈련 세트에 포함된 모든 데이터 샘플을 항목으로 갖는다.
+여기서는 각 샘플 데이터가 1인당 GDP에 해당하는 한 개의 값으로 이루어져 있기에 길이가 일인 1차원 어레이로 표현된다.
+일반적으로는 하나의 훈련 샘플 데이터는 다양한 특성을 가진, 즉, 길이가 1보다 큰 1차원 어레이로 표현된다.
+따라서 모든 입력 데이터를 아래와 같은 $m$x$n$ 모양의 2차원 어레이로 표현할 수 있다.</p>
+<ul>
+<li>$m$: 훈련 세트 크기, 즉 훈련 데이터 샘플의 개수. 여기서는 30개 OECD 국가 데이터를 사용하므로 $m = 30$.</li>
+<li>$n$: 훈련 데이터 샘플의 특성 수. 여기서는 국가별 특성으로 1인당 GDP만 사용하므로 $n=1$. </li>
+<li>$\mathbf{x}_{j}^{(i)}$: $i$ 번째 훈련 입력 데이터 샘플의 $j$번째 특성값.</li>
+</ul>
+$$
+\mathbf{X}_{\textit{train}} = 
+\begin{bmatrix}
+\mathbf{x}_{1}^{(1)} &amp; \mathbf{x}_{2}^{(1)} &amp; \cdots &amp; \mathbf{x}_{n}^{(1)}\\
+\mathbf{x}_{1}^{(2)} &amp; \mathbf{x}_{2}^{(2)} &amp; \cdots &amp; \mathbf{x}_{n}^{(2)}\\
+ &amp; \vdots &amp; \\
+\mathbf{x}_{1}^{(m)} &amp; \mathbf{x}_{2}^{(m)} &amp; \cdots &amp; \mathbf{x}_{n}^{(m)}
+\end{bmatrix}
+$$<p>처음 5개의 입력 데이터는 다음과 같다.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Xsample</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>array([[ 9054.914],
+       [ 9437.372],
+       [12239.894],
+       [12495.334],
+       [15991.736]])</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>타깃값 또한 여러 개의 값으로 이루어져 있는 경우가 있기 때문에 각 훈련 데이터 샘플에 대한 타깃도 1차원 어레이로 표현된다.
+따라서 타깃 데이터 세트 역시 2차원 어레이로 다뤄진다.</p>
+<p>처음 5개의 입력 데이터 샘플에 대한 타깃은 다음과 같다.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ysample</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>array([[6. ],
+       [5.6],
+       [4.9],
+       [5.8],
+       [6.1]])</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
 <li>과정 3: 모델 훈련. 최적의 $\theta_0$와 $\theta_1$를 찾아가는 과정.
   <code>LinearRegression</code> 모델의 경우 <code>fit()</code> 메서드를 지정된 훈련 세트와 함께 호출하면 됨.
@@ -17502,7 +17621,7 @@ $$
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lin1</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xsample</span><span class="p">,</span> <span class="n">ysample</span><span class="p">)</span>
@@ -17521,7 +17640,7 @@ $$
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[34]:</div>
 
 
 
@@ -17549,7 +17668,7 @@ $$
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">t0</span><span class="p">,</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">lin1</span><span class="o">.</span><span class="n">intercept_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lin1</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
@@ -17594,7 +17713,7 @@ $$
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 산점도</span>
@@ -17661,7 +17780,7 @@ $$
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cyprus_gdp_per_capita</span> <span class="o">=</span> <span class="n">gdp_per_capita</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Cyprus&quot;</span><span class="p">][</span><span class="s2">&quot;GDP per capita&quot;</span><span class="p">]</span>
@@ -17682,7 +17801,7 @@ $$
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[35]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
 
 
 
@@ -17706,7 +17825,7 @@ $$
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cyprus_predicted_life_satisfaction</span> <span class="o">=</span> <span class="n">lin1</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="n">cyprus_gdp_per_capita</span><span class="p">]])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
@@ -17727,7 +17846,7 @@ $$
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
 
 
 
@@ -17751,7 +17870,7 @@ $$
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;GDP per capita&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Life satisfaction&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -17844,7 +17963,7 @@ $$
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">missing_data</span>
@@ -17863,7 +17982,7 @@ $$
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
 
 
 
@@ -17951,7 +18070,7 @@ $$
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">position_text2</span> <span class="o">=</span> <span class="p">{</span>
@@ -17985,7 +18104,7 @@ $$
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 7개 국가를 제외한 국가들의 산점도 (파랑색 점)</span>
