@@ -77,13 +77,12 @@
         [[html]](./notebooks/pydata07-plotting-visualization-3.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata07-plotting-visualization-3.ipynb)
 1. 머신러닝 맛보기
-    - 1편: 머신러닝 한 눈에 보기 &nbsp;
+    - 1편: 선형회귀, 정규 방정식, 무어-펜로즈 역행렬 &nbsp;
         [[html]](./notebooks/pydata08-machine-learning-preview-1.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata08-machine-learning-preview-1.ipynb)
-    - 2편: 선형회귀, 경사하강법 &nbsp;
+    - 2편: 머신러닝 한 눈에 보기 &nbsp;
         [[html]](./notebooks/pydata08-machine-learning-preview-2.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata08-machine-learning-preview-2.ipynb)
-1. ...
 
 ### 실습 과제
 
