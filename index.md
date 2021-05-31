@@ -83,6 +83,9 @@
     - 2편: 머신러닝 한 눈에 보기 &nbsp;
         [[html]](./notebooks/pydata08-machine-learning-preview-2.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata08-machine-learning-preview-2.ipynb)
+    - 3편: 경사 하강법 &nbsp;
+        [[html]](./notebooks/pydata08-machine-learning-preview-3.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata08-machine-learning-preview-3.ipynb)
 
 ### 실습 과제
 
