@@ -14280,14 +14280,62 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="&#54596;&#49688;-&#47784;&#46280;-&#48520;&#47084;&#50724;&#44592;">&#54596;&#49688; &#47784;&#46280; &#48520;&#47084;&#50724;&#44592;<a class="anchor-link" href="#&#54596;&#49688;-&#47784;&#46280;-&#48520;&#47084;&#50724;&#44592;">&#182;</a></h2><p>선형대수에서 정의한 함수를 사용하기 위한 준비가 필요하며
+<h2 id="&#54596;&#49688;-&#47784;&#46280;-&#48520;&#47084;&#50724;&#44592;">&#54596;&#49688; &#47784;&#46280; &#48520;&#47084;&#50724;&#44592;<a class="anchor-link" href="#&#54596;&#49688;-&#47784;&#46280;-&#48520;&#47084;&#50724;&#44592;">&#182;</a></h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>선형대수에서 정의한 함수를 사용하기 위한 준비가 필요하며
 필요한 코드가 <code>pydata06_linear_algebra_basics.py</code> 파일에 저장되어 있다고 가정한다.</p>
+<p>먼저 파일을 다운로드한다.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">urllib.request</span>
+
+<span class="n">file_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/codingalzi/pydata/master/notebooks/pydata06_linear_algebra_basics.py&quot;</span>
+<span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;pydata06_linear_algebra_basics.py&quot;</span>
+<span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">file_url</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(&#39;pydata06_linear_algebra_basics.py&#39;,
+ &lt;http.client.HTTPMessage at 0x7f89b460b450&gt;)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pydata06_linear_algebra_basics</span> <span class="k">as</span> <span class="nn">LA</span>
@@ -14333,7 +14381,7 @@ $$<p>아래 코드에서 정의된 <code>sum_of_squares()</code>가 위 함수�
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sum_of_squares</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="n">LA</span><span class="o">.</span><span class="n">Vector</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
@@ -14494,7 +14542,7 @@ $$<p>즉, $f'(x)$ 는 $x$가 아주 조금 변할 때 $f(x)$가 변하는 정도
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
@@ -14515,7 +14563,7 @@ $$<p>즉, $f'(x)$ 는 $x$가 아주 조금 변할 때 $f(x)$가 변하는 정도
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">derivative</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
@@ -14552,7 +14600,7 @@ $h$가 0에 수렴하면 최종적으로 점 $x$에서의 접선이 되고
 <p>아래 코드는 임의의 단변수 함수에 대해 함수 변화율을 구해주는 함수를 간단하게 구현한 것이다.</p>
 <ul>
 <li><code>Callable</code>은 함수에 대한 자료형을 가리킨다. <ul>
-<li><code>Callable[[float], float]]</code>: 부동소수점을 하나 받아 부동소수점을 계산하는 함수들의 클래스를 가리킴.</li>
+<li><code>Callable[[float], float]</code>: 부동소수점을 하나 받아 부동소수점을 계산하는 함수들의 클래스를 가리킴.</li>
 </ul>
 </li>
 <li><code>different_quotient()</code> 함수가 사용하는 세 인자와 리턴값의 자료형은 다음과 같다. <ul>
@@ -14568,7 +14616,7 @@ $h$가 0에 수렴하면 최종적으로 점 $x$에서의 접선이 되고
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
@@ -14602,7 +14650,7 @@ $h$가 0에 수렴하면 최종적으로 점 $x$에서의 접선이 되고
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -14681,7 +14729,7 @@ $f(\mathbf x)$가 변하는 정도, 즉
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">partial_difference_quotient</span><span class="p">(</span><span class="n">f</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">LA</span><span class="o">.</span><span class="n">Vector</span><span class="p">],</span> <span class="nb">float</span><span class="p">],</span>
@@ -14718,7 +14766,7 @@ $f(\mathbf x)$가 변하는 정도, 즉
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">estimate_gradient</span><span class="p">(</span><span class="n">f</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">LA</span><span class="o">.</span><span class="n">Vector</span><span class="p">],</span> <span class="nb">float</span><span class="p">],</span>
@@ -14770,7 +14818,7 @@ $$<p>아래 코드는 리스트를 이용하여 그레이디언트를 구현하�
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sum_of_squares_gradient</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="n">LA</span><span class="o">.</span><span class="n">Vector</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LA</span><span class="o">.</span><span class="n">Vector</span><span class="p">:</span>
@@ -14788,23 +14836,25 @@ $$<p>아래 코드는 리스트를 이용하여 그레이디언트를 구현하�
 <p>아래 코드는 임의의 지점(<code>v</code>)에서 계산된 그레이디언트에 스텝(step)이라는 특정 상수를 곱한 값을
 더해 새로운 지점을 계산하는 함수를 구현한다.</p>
 <ul>
-<li><code>add</code>, <code>scalar_multiply</code>, <code>distance</code> 등은 선형대수 부분에서 정의한 <code>linear_algebra</code> 모듈에서 가져온다.</li>
-<li><code>add(v, step)</code>: 스텝사이즈가 음수이면 그레이디언트가 가리키는 방향의 반대방향으로 지정된 비율만큼 움직인 벡터.</li>
+<li><code>addV</code>, <code>scalar_multV</code>, <code>distance</code> 등은 선형대수 부분에서 정의한 
+  <code>pydata06_linear_algebra_basics.py</code> 모듈에서 가져온다.</li>
+<li><code>addV(v, step)</code>: 스텝사이즈가 음수이면 그레이디언트가 가리키는 방향의 반대방향으로 지정된 비율만큼 움직인 벡터.</li>
 </ul>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
-<span class="c1"># v에서의 그레이디언트를 구한 후 스텝이 지정한 크기 비율과 방향으로 이동한 새로운 벡터 v&#39;을 계산한다.</span>
+<span class="c1"># v에서의 그레이디언트가 가리키는 방향의 반대 방향으로 스텝이 지정한 비율만큼 v값 이동</span>
 <span class="k">def</span> <span class="nf">gradient_step</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="n">LA</span><span class="o">.</span><span class="n">Vector</span><span class="p">,</span> <span class="n">gradient</span><span class="p">:</span> <span class="n">LA</span><span class="o">.</span><span class="n">Vector</span><span class="p">,</span> <span class="n">step_size</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LA</span><span class="o">.</span><span class="n">Vector</span><span class="p">:</span>
     <span class="n">step</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">scalar_multV</span><span class="p">(</span><span class="n">step_size</span><span class="p">,</span> <span class="n">gradient</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">LA</span><span class="o">.</span><span class="n">addV</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+    <span class="n">new_V</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">subtractV</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>   <span class="c1"># 그레이디언트의 반대방향으로 이동</span>
+    <span class="k">return</span> <span class="n">new_V</span>
 </pre></div>
 
      </div>
@@ -14817,30 +14867,33 @@ $$<p>아래 코드는 리스트를 이용하여 그레이디언트를 구현하�
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>이제 임의의 지점에서 출발하여 <code>gradient_step</code>을 충분히 반복하면
 제곱함수의 최솟점에 충분히 가깝게 근사할 수 있음을 아래 코드가 보여준다.
-실제로 1.0e-07보다 작다.</p>
+실제로 전역 최솟값의 위치인 원점에 매우 가깝게 접근한다.</p>
 <ul>
 <li><code>random.seed(42)</code>: 실행할 때마다 동일한 결과를 보장해준다. 사용하지 않으면 매번 다른 결과가 나옴.</li>
 <li><code>grad</code>: 이동할 때마다 계산된 그레이디언트. 최종적으로 0 벡터에 가까운 값을 갖게 됨.</li>
 <li><code>if epoch%100 == 0</code>: 위치 이동을 100번 할 때마다 현재 위치 확인</li>
 <li><code>epoch</code>(에포크): 여기서는 그레이디언트 계산 횟수. 즉, 이동횟수를 가리킴.</li>
-<li><code>step_size=-0.01</code>: 그레이디언트 반대 방향, 즉, 최솟값 지점을 향해 이동할 때 사용되는 크기 비율</li>
+<li><code>step_size=0.01</code>: 그레이디언트 반대 방향, 즉, 최솟값 지점을 향해 이동할 때 사용되는 크기 비율</li>
 </ul>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 임의의 지점 선택</span>
-<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># 임의로 선택된 출발점 좌표</span>
 <span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
 
 <span class="c1"># gradient_step 1000번 반복</span>
 <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
-    <span class="n">grad</span> <span class="o">=</span> <span class="n">sum_of_squares_gradient</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-    <span class="n">v</span> <span class="o">=</span> <span class="n">gradient_step</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">)</span>
+    <span class="n">grad</span> <span class="o">=</span> <span class="n">sum_of_squares_gradient</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>  <span class="c1"># 그레이디언트 계산</span>
+    
+    <span class="n">v</span> <span class="o">=</span> <span class="n">gradient_step</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>  <span class="c1"># 좌표 업데이트</span>
+    
     <span class="k">if</span> <span class="n">epoch</span><span class="o">%</span><span class="k">100</span> == 0:
         <span class="nb">print</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
 
@@ -14921,7 +14974,7 @@ v의 최후 위치와 최솟점 사이의 거리: 1.830234305038648e-08
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>경사하강법을 이용하여 주어진 데이터들의 분포에 대한 선형 모델을 구하는 방법을
 <strong>선형회귀</strong>(linear regression)라 부른다.</p>
-<p>먼저 $y = f(x) = 20*x + 5$ 일차함수의 그래프에 해당하는 데이터를 구한다. 
+<p>먼저 $y = f(x) = 5 + 20x$ 일차함수의 그래프에 해당하는 데이터를 구한다. 
 여기서 $x$는 -0.5에서 0.5 사이에 있는 100개의 값으로 주어지며,
 $y$값에 약간의 잡음(가우시안 잡음)이 추가된다.</p>
 
@@ -14929,7 +14982,7 @@ $y$값에 약간의 잡음(가우시안 잡음)이 추가된다.</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># x는 -0.5에서 0.5 사이</span>
@@ -14938,7 +14991,7 @@ $y$값에 약간의 잡음(가우시안 잡음)이 추가된다.</p>
 <span class="c1"># 약간의 잡음 추가 (가우시안 잡음)</span>
 <span class="n">error</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span><span class="o">/</span><span class="mi">100</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">)]</span>
 
-<span class="c1"># y = 20*x + 5 + 가우시안 잡음</span>
+<span class="c1"># y = 5 + 20*x + 가우시안 잡음</span>
 <span class="n">ys</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">+</span> <span class="n">e</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">error</span><span class="p">)]</span>
 
 <span class="c1"># (x,y) 좌표값들의 리스트</span>
@@ -14960,7 +15013,7 @@ $y$값에 약간의 잡음(가우시안 잡음)이 추가된다.</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="s1">&#39;r.&#39;</span><span class="p">)</span>
@@ -15003,11 +15056,11 @@ $y$값에 약간의 잡음(가우시안 잡음)이 추가된다.</p>
 <p>이제 위 그래프를 선형적으로 묘사하는 함수를 경사하강법을 이용하여 구현한다.
 구현 대상은 아래 모양의 함수이다.</p>
 $$
-\hat y = f(x) = \theta_0 x + \theta_1
+\hat y = f(x) = \theta_0 + \theta_1\cdot x
 $$<ul>
-<li>$\theta_0$: 직선의 기울기</li>
-<li>$\theta_1$: 절편</li>
-<li>$\hat y$: $y$에 대한 예측치</li>
+<li>$\theta_0$: 절편</li>
+<li>$\theta_1$: 기울기</li>
+<li>$\hat y$: $y$에 대한 예측값</li>
 </ul>
 
 </div>
@@ -15031,48 +15084,43 @@ $$<ul>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>경사하강법을 적용하려면 최소화 대상함수를 정해야 한다.
+<p>경사하강법을 적용하려면 최소화 대상인 함수를 지정해야 한다.
 여기서는 예측치 $\hat y$와 실제 $y$ 사이의 오차의 <strong>평균제곱오차</strong>(mean squared error, MSE)를
 계산하는 함수를 사용한다.</p>
 $$
 \textrm{MSE}(\theta_0, \theta_1) = \sum_{y \in ys} (\hat y - y)^2
-= \sum_{x \in \textrm{xs}} (\theta_0 x + \theta_1 - y)^2
+= \sum_{x \in \textrm{xs}} (\theta_0 + \theta_1\cdot x - y)^2
 $$<p>즉, MSE를 최소로 하는 $\theta_0, \theta_1$을 구해야 한다.
 MSE의 그레이디언트는 다음과 같다.</p>
 $$
 \frac{\partial}{\partial \theta_0} \textrm{MSE}(\theta_0, \theta_1)
-= \sum_{x \in \textrm{xs}} 2(\hat y - y) x\, ,
+= \sum_{x \in \textrm{xs}} 2(\hat y - y)\, ,
 \qquad
 \frac{\partial}{\partial \theta_1} \textrm{MSE}(\theta_0, \theta_1)
-= \sum_{x \in \textrm{xs}} 2(\hat y - y)
-$$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사이의 제곱오차와
+= \sum_{x \in \textrm{xs}} 2(\hat y - y) x\
+$$<p>아래 코드는 특정 $x$에 대한 실제 값 $y$와 예측치 $\hat y$ 사이의 제곱오차와
 제곱오차의 그레이디언트를 계산한다.</p>
 <ul>
-<li><code>slope</code>: $\theta_0$ (기울기)</li>
-<li><code>intercept</code>: $\theta_1$ (절편)</li>
+<li><code>intercept</code>: $\theta_0$ (절편)</li>
+<li><code>slope</code>: $\theta_1$ (기울기)</li>
 <li><code>predicted</code>: $\hat y$</li>
 <li><code>error</code>: $(\hat y - y)$</li>
-<li><code>grad</code>: $(2(\hat y - y) x, 2(\hat y - y))$</li>
+<li><code>grad</code>: $(2(\hat y - y), 2(\hat y - y) x)$</li>
 </ul>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">linear_gradient</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="n">LA</span><span class="o">.</span><span class="n">Vector</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LA</span><span class="o">.</span><span class="n">Vector</span><span class="p">:</span>
-    <span class="c1"># 기울기와 절편</span>
-    <span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span> <span class="o">=</span> <span class="n">theta</span>
-    <span class="c1"># 예측치</span>
-    <span class="n">predicted</span> <span class="o">=</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">intercept</span>
-    <span class="c1"># 오차</span>
-    <span class="n">error</span> <span class="o">=</span> <span class="p">(</span><span class="n">predicted</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>          
-    <span class="c1"># 제곱 오차</span>
-    <span class="n">squared_error</span> <span class="o">=</span> <span class="n">error</span> <span class="o">**</span> <span class="mi">2</span>       
-    <span class="c1"># 특정 x에 대한 제곱오차의 그레이디언트 항목</span>
-    <span class="n">grad</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">error</span> <span class="o">*</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">error</span><span class="p">]</span>
+    <span class="n">intercept</span><span class="p">,</span> <span class="n">slope</span> <span class="o">=</span> <span class="n">theta</span>          <span class="c1"># 절편과 기울기</span>
+    <span class="n">predicted</span> <span class="o">=</span> <span class="n">intercept</span> <span class="o">+</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">x</span>  <span class="c1"># 예측값</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="p">(</span><span class="n">predicted</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>            <span class="c1"># 오차</span>
+    <span class="n">squared_error</span> <span class="o">=</span> <span class="n">error</span> <span class="o">**</span> <span class="mi">2</span>         <span class="c1"># 제곱 오차</span>
+    <span class="n">grad</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">error</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">error</span> <span class="o">*</span> <span class="n">x</span><span class="p">]</span>  <span class="c1"># (특정 x에 대한) 제곱 오차의 그레이디언트</span>
 
     <span class="k">return</span> <span class="n">grad</span>
 </pre></div>
@@ -15098,26 +15146,26 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pydata06_linear_algebra_basics</span> <span class="kn">import</span> <span class="n">vector_mean</span>
-
-<span class="c1"># 임의의 기울기와 절편으로 시작</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 임의의 기울기와 절편으로 시작</span>
 <span class="n">theta</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
 
 <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.001</span>
 
 <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5000</span><span class="p">):</span>
     <span class="c1"># 평균 제곱 오차 계산 (전체 훈련 데이터 대상)</span>
-    <span class="n">grad</span> <span class="o">=</span> <span class="n">vector_mean</span><span class="p">([</span><span class="n">linear_gradient</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">])</span>
+    <span class="n">grad</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">vector_mean</span><span class="p">([</span><span class="n">linear_gradient</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">])</span>
+    
     <span class="c1"># theta 값 업데이트. 그레이디언트 반대 방향으로 지정된 학습률 비율로 이동</span>
-    <span class="n">theta</span> <span class="o">=</span> <span class="n">gradient_step</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="o">-</span><span class="n">learning_rate</span><span class="p">)</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">gradient_step</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">)</span>
+    
     <span class="c1"># 500번에 한 번 학습과정 확인</span>
     <span class="k">if</span> <span class="n">epoch</span> <span class="o">%</span> <span class="mi">500</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
 
-<span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span> <span class="o">=</span> <span class="n">theta</span>
+<span class="n">intercept</span><span class="p">,</span> <span class="n">slope</span> <span class="o">=</span> <span class="n">theta</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;최종 기울기: </span><span class="si">{</span><span class="n">slope</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;최종 절편: </span><span class="si">{</span><span class="n">intercept</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -15140,17 +15188,17 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0 [-0.5573631781037754, -0.3409606698035382]
-500 [1.0860605634068832, 2.9677764519232985]
-1000 [2.6080336786406573, 4.18874863946214]
-1500 [4.011976376077862, 4.642064339793808]
-2000 [5.305013852497387, 4.812897015495151]
-2500 [6.495163711496766, 4.879577951303121]
-3000 [7.5903398484398314, 4.90767120517886]
-3500 [8.598020889846392, 4.921296576290668]
-4000 [9.525160097963871, 4.929341055389218]
-4500 [10.378181475323187, 4.9350917239397925]
-최종 기울기: 11.161
+<pre>0 [-0.5498750271006548, -0.348065046729531]
+500 [2.8916275137318697, 1.2779917858845682]
+1000 [4.161340996373953, 2.78438692444515]
+1500 [4.63252303459113, 4.174144289893471]
+2000 [4.809879153546342, 5.454184661194932]
+2500 [4.878918399660604, 6.6323964362145]
+3000 [4.907842395609395, 7.716596269085061]
+3500 [4.921739999085596, 8.714181270348421]
+4000 [4.929854101282013, 9.632032625512535]
+4500 [4.935602366135786, 10.476509096849366]
+최종 기울기: 11.252
 최종 절편: 4.940
 </pre>
 </div>
@@ -15163,7 +15211,7 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>그런데 최종 기울기가 11.398로 애초에 사용한 20과 차이가 크다.
+<p>그런데 최종 기울기가 11.4 정로 애초에 사용한 20과 차이가 크다.
 이유는 학습률이 너무 낮아서 5000번의 에포크가 충북한 학습을 위해 부족했기 때문이다.
 이에 대한 해결책은 보통 두 가지이다.</p>
 <ul>
@@ -15176,7 +15224,7 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 임의의 기울기와 절편으로 시작</span>
@@ -15187,13 +15235,15 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20000</span><span class="p">):</span>
     <span class="c1"># 평균 제곱 오차 계산 (전체 훈련 데이터 대상)</span>
     <span class="n">grad</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">vector_mean</span><span class="p">([</span><span class="n">linear_gradient</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">])</span>
+    
     <span class="c1"># theta 값 업데이트. 그레이디언트 반대 방향으로 지정된 학습률 비율로 이동</span>
-    <span class="n">theta</span> <span class="o">=</span> <span class="n">gradient_step</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="o">-</span><span class="n">learning_rate</span><span class="p">)</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">gradient_step</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">)</span>
+    
     <span class="c1"># 1000번에 한 번 학습과정 확인</span>
     <span class="k">if</span> <span class="n">epoch</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
 
-<span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span> <span class="o">=</span> <span class="n">theta</span>
+<span class="n">intercept</span><span class="p">,</span> <span class="n">slope</span> <span class="o">=</span> <span class="n">theta</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;최종 기울기: </span><span class="si">{</span><span class="n">slope</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;최종 절편: </span><span class="si">{</span><span class="n">intercept</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -15216,27 +15266,27 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0 [0.539845326196926, -0.8765658904200774]
-1000 [3.5347058588398195, 4.120657569741477]
-2000 [6.089146831484904, 4.807295221174362]
-3000 [8.254060613242245, 4.909957251324375]
-4000 [10.08698653375398, 4.932225333575831]
-5000 [11.63858380675949, 4.942345701376079]
-6000 [12.951998593477466, 4.949733516900191]
-7000 [14.063789219509484, 4.955827987429306]
-8000 [15.0049066769235, 4.960965378519356]
-9000 [15.801551256517898, 4.965311213690506]
-10000 [16.475901275838954, 4.968989518433547]
-11000 [17.046730424738943, 4.972103106006536]
-12000 [17.529930406587045, 4.974738713135767]
-13000 [17.938953356610103, 4.976969721779518]
-14000 [18.285186344872766, 4.978858243526626]
-15000 [18.57826838869039, 4.980456854364114]
-16000 [18.826358799830466, 4.981810059132508]
-17000 [19.036364337180647, 4.982955530628767]
-18000 [19.21413148874078, 4.983925158418778]
-19000 [19.36460923600656, 4.984745936634814]
-최종 기울기: 19.492
+<pre>0 [0.5453216196333258, -0.8846541803415932]
+1000 [4.3071961393797, 2.3344318287971526]
+2000 [4.827835026420881, 5.073878601499392]
+3000 [4.908792115820234, 7.394749506518404]
+4000 [4.928733502968913, 9.359603724571762]
+5000 [4.939051515502755, 11.022864887660349]
+6000 [4.9468993258866565, 12.430800212519703]
+7000 [4.953422706517003, 13.62260111714172]
+8000 [4.958928503638361, 14.631446280141436]
+9000 [4.96358691111091, 15.485421540772457]
+10000 [4.967529901914979, 16.208301288794544]
+11000 [4.97086755619471, 16.82021026697407]
+12000 [4.973692834861904, 17.338183828260746]
+13000 [4.976084398412164, 17.776642193387854]
+14000 [4.97810882798133, 18.147791905104715]
+15000 [4.979822483153499, 18.46196565445812]
+16000 [4.9812730715626445, 18.727909939652793]
+17000 [4.982500977134955, 18.95302856580554]
+18000 [4.98354038437498, 19.14358876454719]
+19000 [4.98442023005287, 19.30489567177664]
+최종 기울기: 19.441
 최종 절편: 4.985
 </pre>
 </div>
@@ -15255,7 +15305,7 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 임의의 기울기와 절편으로 시작</span>
@@ -15265,14 +15315,16 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 
 <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5000</span><span class="p">):</span>
     <span class="c1"># 평균 제곱 오차 계산 (전체 훈련 데이터 대상)</span>
-    <span class="n">grad</span> <span class="o">=</span> <span class="n">vector_mean</span><span class="p">([</span><span class="n">linear_gradient</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">])</span>
+    <span class="n">grad</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">vector_mean</span><span class="p">([</span><span class="n">linear_gradient</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">])</span>
+    
     <span class="c1"># theta 값 업데이트. 그레이디언트 반대 방향으로 지정된 학습률 비율로 이동</span>
-    <span class="n">theta</span> <span class="o">=</span> <span class="n">gradient_step</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="o">-</span><span class="n">learning_rate</span><span class="p">)</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">gradient_step</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">)</span>
+    
     <span class="c1"># 500번에 한 번 학습과정 확인</span>
     <span class="k">if</span> <span class="n">epoch</span> <span class="o">%</span> <span class="mi">500</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
 
-<span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span> <span class="o">=</span> <span class="n">theta</span>
+<span class="n">intercept</span><span class="p">,</span> <span class="n">slope</span> <span class="o">=</span> <span class="n">theta</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;최종 기울기: </span><span class="si">{</span><span class="n">slope</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;최종 절편: </span><span class="si">{</span><span class="n">intercept</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -15295,16 +15347,16 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0 [0.6757583873253522, 0.6957201300303815]
-500 [11.706690051576645, 4.942804228398626]
-1000 [16.50780846999213, 4.969163560245711]
-1500 [18.593137756203685, 4.98053795906695]
-2000 [19.498884502023184, 4.9854783387029045]
-2500 [19.89228863870891, 4.98762415462158]
-3000 [20.0631607014304, 4.988556173271237]
-3500 [20.137377668401463, 4.988960988407408]
-4000 [20.16961323750889, 4.9891368167500385]
-4500 [20.18361450915995, 4.9892131864390965]
+<pre>0 [0.7285600934134986, 0.6423040193614589]
+500 [4.942726752245414, 11.692237628170421]
+1000 [4.9691293209021055, 16.501531174187775]
+1500 [4.980523087447129, 18.590411261023977]
+2000 [4.985471879329149, 19.497700269800106]
+2500 [4.987621349042239, 19.891774276545842]
+3000 [4.988554954689417, 20.062937292178695]
+3500 [4.988960459125764, 20.137280632310304]
+4000 [4.989136586860627, 20.16957109062855]
+4500 [4.989213086588395, 20.183596202986426]
 최종 기울기: 20.190
 최종 절편: 4.989
 </pre>
@@ -15326,11 +15378,11 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 예측치</span>
-<span class="n">zs</span> <span class="o">=</span> <span class="p">[</span><span class="n">slope</span> <span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">intercept</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">]</span>
+<span class="n">zs</span> <span class="o">=</span> <span class="p">[</span><span class="n">intercept</span> <span class="o">+</span> <span class="n">slope</span> <span class="o">*</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">]</span>
 
 <span class="c1"># 실제 데이터 분포</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="s1">&#39;r.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Actuals&#39;</span><span class="p">)</span>
@@ -15362,7 +15414,7 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 
 
 <div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAEICAYAAABCnX+uAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAsTAAALEwEAmpwYAAAvYUlEQVR4nO3deXhTZfrG8e/TUigKqBRFVmFQh32zCh1EcQWUQZ0ZVxSYnwqoKCogi6IoKAy4ICogrrgALiOIyggiVlwKCorK5gCywwCCKIgsbd/fHyfFGJI2JWmTtPfnunq1TU5O3lP1zutz3sWcc4iISOJKinUDREQkMgpyEZEEpyAXEUlwCnIRkQSnIBcRSXAKchGRBKcglyJhZm3N7PtYt6MkMLOlZtYu1u2Q+KUgl4iY2VozOz/wcefcJ865P8eiTYHMbKiZHTSzPWa2y8w+N7OMWLcrXM65Rs65zFi3Q+KXglxKFDMrE+Kp15xzFYAqwEfAG0Xw3mZm+m9Kip3+pZMiYWbtzGyj3+9rzayfmX1rZj+b2Wtmlur3fCczW+zXY27q99xAM1ttZrvNbJmZXeb3XHcz+8zMHjOzncDQ/NrlnMsGXgVqmNnxvnMcY2bPmdkWM9tkZsPNLNn3XLKZPWJmP5rZGjPrbWYu7wPDzDLN7EEz+wzYC/zJzOqb2QdmttPMvjezK/zae5HvGnb73quf7/EqZvau7/p3mtkneR8K/v/XY2blzGyMmW32fY0xs3L+f3Mz62tm23zX888j+ycoiURBLsXpCqADUBdoCnQHMLOWwPNATyANeBqYkRdQwGqgLXAMcD/wiplV8ztvK+AH4ATgwfwaYGZlga7ADuAn38OTgGzgZKAFcCFwg++5G4GOQHOgJXBpkNNeB/QAKgLbgQ+Ayb72XA2MM7NGvmOfA3o65yoCjYG5vsf7AhuB44GqwGAg2PoZdwOtfe1pBpwB3OP3/Il4f6cawPXAU2Z2XD5/EikBFORSnMY65zY753YC7+CFEXhh+bRzboFzLsc5NwnYjxdYOOfe8L0u1zn3GrASL8DybHbOPeGcy3bO/Rbiva8ws13Ab773+4dzLtvMquIF9e3OuV+dc9uAx4Cr8l4HPO6c2+ic+wkYGeTcLzrnlvp6+x2Atc65F3zt+Qr4N/AP37EHgYZmVsk595Pv+bzHqwEnOecO+u4xBAvyLsADzrltzrnteB9s1/k9f9D3/EHn3ExgDxAX9yqk6CjIpTj9z+/nvUAF388nAX19ZYVdvsCtBVQHMLOufmWXXXg92Sp+59oQxnu/7pw7Fq+3uwQ4ze+9U4Atfud/Gq83ja8N/ucP9l7+j50EtAq4li54PWWAvwMXAevM7GO/m66jgVXAbDP7wcwGhriO6sA6v9/X+R7Ls8P3gZLH/+8sJVSoG0MixWkD8KBz7rCyiJmdBDwDnAdkOedyzGwxYH6Hhb2Ep3PuRzPrCXxpZpN9770fqBIQgHm2ADX9fq8V7LQB1/Kxc+6CEO//JXCJmaUAvYHXgVrOud145ZW+vjLMR2b2pXPuw4BTbMb7sFjq+7227zEpxdQjl2hIMbNUv6/CdhCeAXqZWSvfyI+jzexiM6sIHI0XlNsBfDfvGkfSWOfcCmAWcJdzbgswG3jEzCqZWZKZ1TOzs32Hvw70MbMaZnYsMKCA078LnGpm15lZiu/rdDNrYGZlzayLmR3jnDsI/ALk+K6rk5mdbGbm93hOkPNPAe4xs+PNrApwL/BKJH8PSXwKcomGmXi157yvoYV5sXNuIV7d+km8G5Cr8N0Idc4tAx4BsoCtQBPgsyi0eTTQw8xOwLv5WRZY5nv/N/Hq1eB9yMwGvgW+xrvWbIKHLL6e9YV4NfbNeOWkfwF5N26vA9aa2S9AL+Ba3+OnAHPwatpZwLgQY8eHAwt97fkO+Mr3mJRipo0lRMJnZh2BCc65k2LdFpE86pGL5MPMyvvGfpcxsxrAfcC0WLdLxJ965CL5MLOjgI+B+nhlo/eAPs65X2LaMBE/CnIRkQSn0oqISIKLyTjyKlWquDp16sTirUVEEtaiRYt+dM4dH/h4TIK8Tp06LFy4MBZvLSKSsMxsXbDHVVoREUlwCnIRkQSnIBcRSXBxs2jWwYMH2bhxI/v27Yt1U0qE1NRUatasSUpKSqybIiJFLG6CfOPGjVSsWJE6dergrRskR8o5x44dO9i4cSN169aNdXNEpIjFTWll3759pKWlKcSjwMxIS0vT/92IlBJxE+SAQjyK9LcUiQNZWTBihPe9CMVNaUVEpETJyoLzzoMDB6BsWfjwQ8jIKPh1RyCueuTxYNq0aZgZK1asyPe4MWPGsHfv3iN+nxdffJHevXsf8etFJM5lZnohnpPjfc/MLLIeethBbmbPm9k2M1vi99hQM9vk209xsZldFNXWxcCUKVM488wzmTp1ar7HRRrkIlJC5YV1WprXE09O9r6npXk99CFDvO9RDPPC9MhfxNshPNBjzrnmvq+Z0WlWmKL86bZnzx4+++wznnvuuUNBnpOTQ79+/WjSpAlNmzbliSeeYOzYsWzevJlzzjmHc845B4AKFX7f3/bNN9+ke/fuALzzzju0atWKFi1acP7557N169bD3veNN96gcePGNGvWjLPOOisq1yIiMZBXThkyBG6/HcaMgWHDvLLKjh2H99CjJOwauXNunpnVido7R6oI6k/Tp0+nQ4cOnHrqqVSuXJmvvvqKBQsWsGbNGr7++mvKlCnDzp07qVy5Mo8++igfffQRVapUyfecZ555JvPnz8fMePbZZxk1ahSPPPLIH4554IEHmDVrFjVq1GDXrl0RXYOIxFBgOWXHDhg06NDTO1OqUpmtXma1axe1t41Gjby3mX3rK70cF+ogM+thZgvNbOH27dsjf9dg9acITZkyhauuugqAq666iilTpjBnzhx69epFmTLeZ17lypULdc6NGzfSvn17mjRpwujRo1m6dOlhx7Rp04bu3bvzzDPPkJMTdCtIEUkE7dr9sZziC+uDB2HUJxnUYj0f//PFqN/4jHTUynhgGN4u58PwNsn9v2AHOucmAhMB0tPTI9/NIu8Pltcjj/DTbceOHcydO5clS5ZgZuTk5GBmnHbaaWEN5fM/xn/89q233sqdd95J586dyczMZOjQoYe9dsKECSxYsID33nuP5s2bs3jxYtLS0iK6HhGJgYwML6QzM71MysggKwt69oTvvoNLLknmT/deC7Wi+7YR9cidc1udcznOuVy83cbPiE6zwpD3B8urP0X46fbmm2/StWtX1q1bx9q1a9mwYQN169alZcuWTJgwgezsbAB27twJQMWKFdm9e/eh11etWpXly5eTm5vLtGm/b+n4888/U6NGDQAmTZoU9L1Xr15Nq1ateOCBB6hSpQobNmyI6FpEJIYyMmDQIHY1yOCmm6BNG/jpJ5g2DaZPh1pRDnGIMMjNrJrfr5cBS0IdWyR8f7Bo/C/KlClTuOyyy/7w2N///nc2b95M7dq1adq0Kc2aNWPy5MkA9OjRg44dOx662Tly5Eg6derEueeeS7Vqv/9Zhg4dyuWXX07btm1D1tP79+9PkyZNaNy4MWeddRbNmjWL+HpEJDacg6lToX59mDgR+vSBZcvg0kuL7j3D3rPTzKYA7YAqwFa83cTbAc3xSitrgZ7OuS0FnSs9Pd0FbiyxfPlyGjRoEHbDpWD6m4oUrx9+gJtvhlmz4LTTvCBv2TJ65zezRc659MDHCzNq5eogDz8XUatEREqAAwfgkUfggQegTBlv1GHv3t49z+KgKfoiIhH47DPvZubSpfC3v8Hjj0PNmsXbBgW5iAh4c1P8RpsUdMxPvyQzcEgKE79sQe3aMGMG/PWvxdhePwpyEZFwJhj6jnH7DzDFruGOnNHsII2+ZcYwtG8lKizZClXaFdnCWPlRkIuIBJtgGBjImZms2l+Lm3Of4AMu5AwWMIv2NM/9DvolQ25uka9yGIpWPxQRCTEjM8+BA/Dg2i40zv2GBbTiyeQ+fF72HJonL4GkJO8DoAjWUAmXgtxPcnIyzZs3P/Q1cuTIkMdOnz6dZcuWHfr93nvvZc6cORG3YdeuXYwbNy7i84hIIeQzwfCTT6B5c7hnYm06n7uH5QNf4pZPriI503f8U09BuXIhPwSKhXOu2L9OO+00F2jZsmWHPVbcjj766LCP7datm3vjjTei3oY1a9a4Ro0aReVc8fA3FUlUO3Y4d/31zoFzJ53k3Lvv5nPw558799BD3vciBCx0QTJVPfIwDBw4kIYNG9K0aVP69evH559/zowZM+jfvz/Nmzdn9erVdO/enTfffBOAOnXqMHjwYDIyMkhPT+err76iffv21KtXjwkTJgDekrnnnXceLVu2pEmTJrz99tuH3mv16tU0b96c/v37AzB69GhOP/10mjZtyn333QfAr7/+ysUXX0yzZs1o3Lgxr732Wgz+MiIJLshS2M7Byy97MzNffBHuussbWnjxxfmcJ4qzzI9EXN7svP12WLw4uuds3twbpJ+f3377jebNmx/6fdCgQVxwwQVMmzaNFStWYGbs2rWLY489ls6dO9OpUyf+8Y9/BD1XrVq1yMrK4o477qB79+589tln7Nu3j0aNGtGrVy9SU1OZNm0alSpV4scff6R169Z07tyZkSNHsmTJEhb7/gCzZ89m5cqVfPHFFzjn6Ny5M/PmzWP79u1Ur16d9957D/DWdBGRQggyUuW/ad76KHPnQqtWMGcONG0a64YWLC6DPFbKly9/KEDzZGdnk5qayg033MDFF19Mp06dwjpX586dAWjSpAl79uyhYsWKVKxYkdTUVHbt2sXRRx/N4MGDmTdvHklJSWzatCnophOzZ89m9uzZtGjRAvB68itXrqRt27b069ePAQMG0KlTJ9q2bRvZxYuUZMHGiPuNVNm/H/415CAPfQqpqTB+PPTo4d3HTARxGeQF9ZyLU5kyZfjiiy/48MMPmTp1Kk8++SRz584t8HXlypUDICkp6dDPeb9nZ2fz6quvsn37dhYtWkRKSgp16tT5w/K3eZxzDBo0iJ49ex723KJFi5g5cyaDBg3iwgsv5N57743gSkVKqFBjxH0jVT7e35qebjzff/hnrrjCy59qa7PgX5n5Tw6KI3EZ5PFkz5497N27l4suuojWrVtz8sknA4cvY1tYP//8MyeccAIpKSl89NFHrFu3Luh527dvz5AhQ+jSpQsVKlRg06ZNpKSkkJ2dTeXKlbn22mupUKECL774YkTXKVLi5PXC168POkb8x1MyuOvctbzw3gnUrb6P/zwHHTpwePCPGePt9BPHoa4g9xNYI+/QoQN9+vThkksuYd++fTjneOyxxwBvB6Ebb7yRsWPHHrrJWRhdunThr3/9K+np6TRv3pz69esDkJaWRps2bWjcuDEdO3Zk9OjRLF++nAzfv0AVKlTglVdeYdWqVfTv35+kpCRSUlIYP3585H8AkZLCP4yTk72VrADKlsWd3Y6XJkHfvvDzzycwcCAMGZLKUUf5Xus/OWj/fm/1qxhO9glH2MvYRpOWsS0e+ptKqTVihLcBck6OF+Q33gi1a/N93Q70eroFmZnwl7/A009D48YBr/X/EDDzQjw31zvPsGF/2IOzuEW8jK2ISNwJtdBVwFaQ+67sxsjM1ozoBkcd5a0Tfv31IW5m+m/XlpbmDaOL0paSRUVBLiKJJS+8A0PWv+zhF8YfVexMr56N+O9/4Zpr4NFHoWrVAt4jI+P3czVpUvCqiDEWV0HunAtro2MpWCxKZiJFJlh4+5c9gix0tf3kDPpNyOCll6BePZg9Gy644Aje2z/U41TcBHlqaio7duwgLS1NYR4h5xw7duwgNTU11k0RiVyomnVSkle3NvtD2cM5eOEF6N8fdu+Gu+/2vsqXj+1lFKW4CfKaNWuyceNGtm/fHuumlAipqanULO5tSkSKgv8oksDwDhgauHw59OoF8+bBmWd6NzMbNgw4XzgbSCSYuAnylJQU6tatG+tmiEi8CbhxGWxc97598NC9MHIkVKgAzz4L//xnkJuZ4WwgkYDiJshFRILyH0USpBf94YdeL3zVKrj2Wm8T5BNOCHGucDaQSEAKchGJH6HKHkFuOG7b5k3qeeUVOPlk+OADOP/8As4f2LuP0+GEhaUgF5H4EGbZIzcXnn/eW152zx5v3s/gwd5iVwUqoHefqBTkIhIfwih7LFsGPXvCp5/CWWfBhAlQ6MnLCTCcsLASZJFGESnx8tk387ff4J57vH0Fli3zeuSZmUcQ4iWUeuQiEh9ClD1mz4abb4bVq6FbNxg9Go4/PqYtjTsKchGJH35lj61b4c47YfJkOPVUb9eec84p4PUlcIx4OBTkIhJXcnO9ceADBsDevTB0KAwc6G1Un68SOkY8HKqRi0jcWLIE2rb1bmi2aAHffgv33RdGiEPwm6WlhIJcRGJu715vme8WLeD772HSJPhweBZ/fuuPO9znK5+bpSWdSisiElOzZsFNN8GaNd60+lGjoMrKIyiTlNAx4uFQkItITGzZAnfcAa+9BvXre/l79tm+J5/JPLKp9CVwjHg4VFoRkWKVm/v7RJ7p073d0xYv9gtxKNVlkiOhHrmIRC7MYX/ffuvdyJw/H86rt4bxD+3ilCtaHH5gKS6THAkFuYhEJoxhf7/+Cvf33MSjU6pR+ej9vJxyC13WvIR1Lwu7xhy2LC1QasskR0JBLiKRKWCNlPfeg1tu2Me6/9XgenuOUXsHUdnt8Gos+/dD797ez6Vs7Hc0qUYuIpEJUc/evBkuvxw6dYKjcvYwL6kdz7obvBBPTva+kpK8D4BSOPY7mtQjF5HIBNSzc87IYMJT3rjwgwdh+HDo33YVZTt8AQeS/7jLj/9myrqpecTCDnIzex7oBGxzzjX2PVYZeA2oA6wFrnDO/RT9ZopIXPPVsxcvhp5Nd/PFsopccPouxk0+lpNPBmgd+uZlkya6qRkhc86Fd6DZWcAe4CW/IB8F7HTOjTSzgcBxzrkBBZ0rPT3dLVy4MIJmi0g82bPHWxNlzBhHWs42HrO+XF3uLWyuat7RZGaLnHPpgY+HXSN3zs0DdgY8fAkwyffzJODSI22giCSYrCwYMYJ3Rq+gUSNvr8zrWy5mRVIjrnGvYgdV8y4ukdbIqzrntgA457aYWagtTzGzHkAPgNq1a0f4tiISU1lZbDy3K7ftG8U06tOo7l4+/fQo2iTtg/P2/l4LT0uDESNUNilixXaz0zk3EZgIXmmluN5XRKIrJweeemgPd+/7imzKMMIGc+c/j6FsmwGA343PwBuZGlpYZCIdfrjVzKoB+L5vi7xJIhKvFi2CVq2gz7sX0CZpPkuTmjIwdQxlzz/r94MyMrwhKzt2lNplZYtbpEE+A+jm+7kb8HaE5xOROLR7t7fA1RlnwMaNMHUq/OeTCvxp+P+F7mlrvZRiU5jhh1OAdkAVM9sI3AeMBF43s+uB9cDlRdFIEYlAhNufTR+5gltHVmfjz5Xo2RNGjoRjjwXIgL/kcz6tl1Jswg5y59zVIZ46L0ptEZFoi2D7sw0b4NYuO3n7k/o04VteL3sbGS2vgfFB1kUJReulFAvN7BQpyQpYByWY7Gx48km45x7IPVCRkTaIO93DpGTnQu/PtS5KHNJaKyIlWSHr1AsXenXwO+6As86CpVO+Y0Dq46QkO62LEsfUIxcpycKsU//yCwwZ4vXETzjB27Xn8svBrCVUDzGcUDcv40bYU/SjSVP0ReKDczBtGtx6q7f12s03w4MPwjHHhHhBhDdOJTKhpuirRy5SSq1f7y0F/s470LQpvPWWN0Y8X7p5GZdUIxcpKXxrn5CVle9h2dneuigNGnhVl9Gjvdp4gSEucUs9cpGSIMxhhl984e2ZuXixt+HDk0/CSSehkkmCU5CLlAQFDDP8+We4+24YNw6qVYN//xsuuwzMOPxDIG/TB4V6wlCQi5QEecMMA0aUOOeF9m23wf/+B73/voXhDSdTqdpfwHwh7f8hoD00E5Jq5CKJoKD6d94ww2HDDoXv2rVe+eTyy+HEE2HBM98y9r16VHpwgNcDzzuX/1hzjRVPSOqRi8S7cKfZ+0aUHDwIY0bDffd5ufzoo97wwjKj3wtefvEfa66x4glJQS4S7woxzX7+fO9m5rffQufO8MQTcGgfl8DyS+CmD3nn1B6aCUdBLhLvQtS//e3aBYMHw4QJUKOGN8nn0ksDDsqv5+3fy9dY8YSjGrlIvAtS/87jnDedvkEDePpp76bmsmVwadUQNXVt+lAiqUcukgiC9JLXrPGm1L//Ppx2Grz7rvc9rJp6GL18SRzqkYskmIMHvc0dGjWCTz/1hn0vWOALcQheUw+UTy9fEo965CLxpIAZlp9/7t3MXLLEm9AzdizUrBlwULi9bdXCSwwFuUi8yKck8tNPXmn76aehVi14+21vVEpQ2mKt1FGQi8SLICUR1zqDqVO9jR62b4c774T774cKFQo4l3rbpYqCXKS4hSqfBJREVp/cnps7wOzZkJ4O//kPtGgRozZLXFOQixSn/EaU+EoiB+bM4+FNVzOsa21SUrxJPTfd5M2gFwlGQS5SHPJ64evX5ztL89OcDHpOzWDZMvj73+Hxx70JPiL5UZCLFDX/XnhyMpTx/WfnN6Jk504YMACefdabUv/OO96CV2GdWzc1Sz0FuUhR87+JCXDjjV5at2uHa53B5KEruePh6uzcdxT9+hn33VfAzcy88M5vmr2UKgpykaIWOK67a1fIyGDlSri51S7mfHkKrVjAB+Vuo9nfxkAFXxgH62379+7NvHXDc3MLXExLSjYFuUhRCxjXvb9lBqOHw/DhkGqpjLNb6OEmkJxtv4dxqJui/r37pCSvVGOmafalnIJcJJpC1ax947rnzYNeLWD5crjySnisyxKqXfkCHAgI41BL1wb27rUtm6AgF4mefIYW7tgBd90Fzz8PderAzJnQsSNAevBZmKGm2WvWpgShIBeJlhAzM19+Gfr29dYMHzgQhgyBo47ye12wWZj5BbZmbUoABblItAT0ov/7pw7cdD7Mnevl7tNPe5vvhE2BLWFSkItEi68XvX/OJ4xcdzUPda1F+fLerj033ujdmxQpCgpykSjK3J9Br1cz+P57uPqCH3k0fTInNj0dktSzlqKjPoJIFPz4I3TvDuec42388P6jy5j8aW1OHHWndwM0cMs1kShSkIuAF7TB9rgsgHPwwgtQvz68+qq3AfKSJdB+39vaE1OKjUorIvmtSBhqXHhWFite/5ZeH1/Fx18fQ5s23s3MRo18z2tPTClGCnKRUJNvQgT8vsz5PHRBJiOz+3I0v/LMwNX834P1/ngzU+O9pRgpyEVC9Z6DBPyHezO46cpTWZndmi68wiNJd1G10q2QNOjw82r4oBQTBblIqN6zX8BvT6lO33k38PJgOLlmeT4oezHn58xS2UTigjnnIj+J2VpgN5ADZDvn0vM7Pj093S1cuDDi9xUpEn518dxceOHRnfT/oD179pXhrrvg7ruh/GKtAy7Fz8wWBcvXaPbIz3HO/RjF84kUP7+6+LIyTelVP5NPvqlE27bezcwGDXzHqWwicUTDD0X8ZWby2/4k7skZSvP981n63xSefdbrfB8K8UBHOHRRJFqi1SN3wGwzc8DTzrmJUTqvSLH64KhLuMldwWrq0TX5FR5+888cf9HpoV+Q39BFkWISrR55G+dcS6AjcIuZnRV4gJn1MLOFZrZw+/btUXpbkTCE0WPeuhW6dIELb29IUs3qzPm/yUz6pN4fQzzYeYINXRQpZlHpkTvnNvu+bzOzacAZwLyAYyYCE8G72RmN9xUpUAE95txcb8PjAQNg71647z4YOLA8qanXhHceTfyROBBxj9zMjjazink/AxcCSyI9r0hU5NNjXrIE2raFnj2hWTP45hsYOhRSUwtxnryhi8OGqawiMRONHnlVYJqZ5Z1vsnPu/SicVyRyQXrMe/d6ufvww3DMMd5aKd26eVtfFuY8h2gEi8RYxEHunPsBaBaFtohEX8Bkn1m/ZHBTY1izxlutcPRoqFKl8OdRcEs80cxOKfkyMthSJ4M77oDXXoM//xk++ugIytnqeUucUpBLiZabCxMnentl/vYb3H/DBgbUnkK5cm0BhbKUDApyKbG++w569ID58+Hcc2F8j6859Z9tvDr3CI35lpJDMzulxPn1Vxhw7SZaNM9l1YqDTJoEc+bAqT+8rzHfUiIpyKVEmTkTGp+yj1Gv1qCbe5EV++rS9ZQsb0RK3siT5GSN+ZYSRUEuJcLmGQu5oslyLr4YUrP38HHSOTznrift4P9Cj/kGrZEiJYJq5BJbobZSC1NODkwY8AODHzmF/ZRjWJn76X9fDcr1XwAHgvS880aeaI0UKUEU5BI7EYbpN994NzO/+OJPnM8cxtOLk91a+GVYwWO+Q23vJpKAFOQSO0cSpllZ/Dr7M4b+9xoee606lSvDq0NXcvXIzthBv1mXBY351hopUoIoyCV2ChumWVm82+5hbjnwKOupzo2dtzLyhapUrnwKXFjIWZeaqSkliIJcYqcQYbppE/S58Tj+feDfNGQpnySdzZmtO0DlQb+fq7BhrJmaUkIoyCW2CgjTnBwYN87bJ/Pg/lN5qMy99M0dTdlyBu1GFmNDReKXglzi1tdfezczFy6ECy+EceOSqLetI2SWVzlExI+CXOLOnj1w773w+ONw/PEwZQpceaVvmdl6fj34CIcuipQUCnKJKzNmQO/esGGDt+HDiBFw3HFBDtQ4cJFDNLNT4sLGjfC3dju45BI4JmUvn30GEyaECHHQXpkifhTkElM5OV4JpcGfc3j/4/KMsMF8tflE/mIFTJvXuikih6i0IjGzaJFXPlm0CDqcupZxq9pTN3c1HEz+4+SgYLVwjQMXOURBLsVu924YMgSeeAJOOAGmToUram3Dzt98+Poo+dXCNQ5cBFCQy5E6whEj06fDrbd6E3xuugkefBCOPRYgoIcN3p3O9eu1JopIARTkUnhHMGJk/XovwGfMgKZN4Y03oHXrgIOCrUyYnAxlfP+aqhYuEpSCXAqvEItdZWfD2LHeuHDnvF3r+/SBlJQwzw9w441Qu7Zq4SIhKMgltFDlkzAXu/ryS29m5uLFcPHF8OSTUKdOPucNdf6uXRXgIvlQkEtwBd1kzGfEyC+/wD33eMFdrRq8+Sb87W++mZnhlGU0IkWkUBTkElxB5ZOMw6fKu7Pb8VZmZW77V3W27K5A77//j+ENJ1Op+l/AMsI7b7Dzi0i+FOQSXLhrhft62Ov2n0hv15R3XQYt+IrpZXpz+jtfwbRsGF0WxoyBHTsgLU0bOohEmYJcgguzvJH94cc8vu8W7nVDMRyPcie3MpYyObmQg3eHc/9+bwGV3FwvvPNCXWUTkahQkEtoBZQ3FiyAni/dyjfuaP7KOzyZcge1kzZCNpCc4hXFs7O97zk5XpAfOOCF+KBBxXcdIiWcglwK7eefvY0exo2D6tWPZtqIFVzqlkC7l70D/Cf1ZGZ65ZTbb1c5RaSIKMglbM55I1D69IGtW+G222DYMKhYsT7g18MOvCkK0KSJRqGIFBEFuYRlzRq45Rb4z3+gZUt45x047bRCnECjUESKjJaxlXwdPAj/+hc0agSffOLdp1ywoJAhLiJFSj3y0iqMRa+ysrxlZr/7Di67zJtqX7NmsbZSRMKgIC+NCphd+dNP3qCSp5/2gnv6dLjkktg1V0Typ9JKaRRimzTnvI2OGzSAZ56BO++E5ct9IZ6V5S0rm1XAzj0iUuzUIy+NgszaXL0abr4ZZs+G9HSYOdO7qQloo2OROKceeWmUN2tz2DAOvD+XEZkZNG7s5fXYsTB/vl+IgzY6Folz6pGXJgE3OD/NyaBXL1i6FP7WaAVjH/qVGp2DDEcJd90VEYkJBXkiK8x2a37lkZ0pVRl44Vc8M6MqtavuZ0bZLvx1xXS4SsvKiiSiqAS5mXUAHgeSgWedcyOjcV7JR2Hr1pmZuP0HmJx7JXfkPMbOd6vQty8MrfAEFYZP17KyIgks4hq5mSUDTwEdgYbA1WbWMNLzSgEC69YvvZTvqJJVJ3fgQmZxLa9S19ax6IXvePhhqNC+jfdBkJyssolIgopGj/wMYJVz7gcAM5sKXAIsi8K5JVBeOcV/Xe/kZHjhBW+lwYBlYg+clsGoUTB8eAvKlc/mqfNm0bN/JZLPPN07n8omIgkvGkFeA9jg9/tGoFXgQWbWA+gBULt27Si8bSniH97+qwjmBfb69d7A75ycP6z9/UlyO3pWn8HytUdx+eUwZkwZqldvf/j5g+z2o1AXSRzRCHIL8pg77AHnJgITAdLT0w97XkLwr4WbeWt6B67rnZUFkyYdOmZH9jEMcCN4LucG6vy8i/feO4qLLirke2m8uEjCiEaQbwRq+f1eE9gchfMK/LEWnpTklVHM/ljP9pVH3EeZvLKqNXe+0JifOI67yjzCfQ8cy1HfbIPj2hUcyuHupykicSUaQf4lcIqZ1QU2AVcB10ThvAKHj+EOsU3af9MyuOnDDObOhdaNdvP0uS/StHFFuP3W8HvYGi8ukpAiDnLnXLaZ9QZm4Q0/fN45tzTilomngJuR+/d7y8w++CCULw/jx0OPHhVJSrrBG8VSmB62bnyKJKSojCN3zs0EZkbjXBJEiDHcH3/sLTP7/fdw5ZXw2GNQrZrfAUfSw9Z4cZGEo5mdCejHH+Guu7wRh3Xrerv2dOgQ5ED1sEVKBQV5PClg6J9z3ryfvn29DZAHDYJ77oGjjsrnnOphi5R4CvJ4UcDQvxUr4Kabfi9zT5wIjRvHrrkiEj+0jG28CLFU7L59MHQoNGsGixd7u/Z8+qlCXER+px55cQtVPglyY3LuXOjVC1auhKuv9m5mVq0ao3aLSNxSkBen/Monfjcmtzc7n34TTuell6BePZg1Cy68MLZNF5H4pSAvTgXMnHStM3hheQb9r4Pdu2HwYO9mZvnyMWuxiCQABXlxymdc9/LlXhll3jw480yYMAEaNYpZS0UkgehmZ3HI24EeDu2VmVdW+e03GDLEu5n53XfeIoYffwyNftGu9SISHvXIi1qwuvigQQDMmeMNKVy1Cq69Fh55BE44IcRrNBZcREJQj7yoBamLb9vmBfcFF3iHfPABvPyyL8RDvEZEJBT1yIuaX108N6Ucz/9yBXfVhz17vJLK4MGQmhr6NVqFUEQKoiAvar5hhUtfW0KvzCv5dGQlzjrLu5nZoEH+r9EaKSISDgV5EfvtNxj+bgajnsqgUiVvoatu3by9IfKlNVJEJEwK8iI0e7Z3M/OHH6BrV3j4YTj++Fi3SkRKGt3sLAJbt0KXLtC+PZQpA3PneltqKsRFpCgoyKMoN9dblbB+fXjzTW+xq2++gXPOCfGCLI0VF5HIqbQSJd99583M/Pxz7/7khJ5f8+c178PX7YLXujVWXESiREEeob17vYmaDz8MxxzjlVCuOzkLO7+AkNaO9SISJQryCLz/Ptx8M6xZA//8J4y+4kvSvp4DWesLDmmNFReRKFGQBypguzWALVvg9tvh9de9enhmJpxd1q9Ukpzs3eWE0CGtseIiEiUKcn8F1K1zc70degYOhP374f77YcAAKFcOGJH5ey8c4MYboXbt/ENaY8VFJApKV5AX1NsOrFu/9NKh4789OoMePWDBAi/rx4+HU07xe21gqaRrV4W0iBSL0hPk4YwS8Q/j5GR44QV+PViW+5PK8ahrTeXKxiuvwDXXBJmZqVKJiMRI6QnycEaJ+Ifx+vXMnLiRm3OfYF1uHW5IX8y/ZjWncuWA8wb28hXgIlLMSnaQ+4dsYOkjLc2bjBPYe87IYPNJGdx+3Y+8kVuFhizlk7LncebY4RAsxDUWXERirOQGebCQzettp6V5w04CAjgnx1uVcPBgOHCgCg/2XE+/Gu9S9vzh4dXUNRZcRGKgZAR5sJuYwUJ20CDv+REjDntucfkMevaEL77wNnwYPx7q1asNDAj9vhoLLiJxIPGDPFR5I7+Q9XtuT8pxDP2uG2OGeB31yZPhqqsKWGbW/4NDNzhFJMYSP8hDlTfyG0Xie+6d8RvpPbsz66eUo0cPGDkSjjsuxPvkhXewsoxvD04RkVhI/CDPr+cdYhTJxo1w2+gMpk2Dxo3h039Dmzb5vId/r9/MmxmUm6u6uIjEhcQP8kKM387Jgaeegrvv9n4eMQL69oWUlALew7/Xn5TkjTE3U11cROJC4gc5hDV++6uvoEcPWLQIOnTwAv1Pfwrz/IG9/jFjYMcO1cVFJC6UjCDPx+7dcO+9MHast0PPa6/B5ZeHsWemP83aFJE4VqKDfPp0uPVW2LTJ2/ThoYfg2GODHBjGioeatSki8apEBvmGDV6Av/02NGniLTcbMoM1O1NEElyJ2rMzOxseewwaNPB2sB81yquJ55vLwYYviogkkBLTI1+40LuZ+fXX0LEjjBsHdeqE8ULNzhSRBBdRj9zMhprZJjNb7Pu6KFoNC9cvv8Btt0GrVvC//8Ebb8B774UZ4vD7jcxhw1RWEZGEFI0e+WPOuYejcJ5CcQ7eessL8S1bvL0zH3zQ2wC50HQjU0QSWELWyNetg86d4R//8IYUzp8PTz55hCEuIpLgohHkvc3sWzN73sxCrVQSFdnZ8Mgj0LAhzJ0Lo0d7tfEzzvA7KCvLm7KZlVWUTRERiRsFllbMbA5wYpCn7gbGA8MA5/v+CPB/Ic7TA+gBULt27SNq7A03wKRJ0KmT1wM/6aSAAzSUUERKoQKD3Dl3fjgnMrNngHfzOc9EYCJAenq6C7eB/vr08Uoql10WYmamNnoQkVIoopudZlbNObfF9+tlwJLImxRai31ZtPg+E+a38x4InI2poYQiUgpFOmpllJk1xyutrAV6RtqgkPzLJnmrD2Zn/7GEojVRRKQUiijInXPXRashBfIvm+Tm5jXg8BKKhhKKSCmTODM7/csmgT1ylVBEpBRLnCAPLJuASigiIiRSkMPhZRMFuIhIYs7sFBGR3ynIRUQSnIJcRCTBKchFRBKcglxEJMEpyEVEEpw5d0TrV0X2pmbbgXXF/saRqwL8GOtGFLPSeM1QOq+7NF4zJNZ1n+ScOz7wwZgEeaIys4XOufRYt6M4lcZrhtJ53aXxmqFkXLdKKyIiCU5BLiKS4BTkhTMx1g2IgdJ4zVA6r7s0XjOUgOtWjVxEJMGpRy4ikuAU5CIiCU5Bng8zq2xmH5jZSt/34/I5NtnMvjazkBtQJ4JwrtnMapnZR2a23MyWmlmfWLQ1Gsysg5l9b2arzGxgkOfNzMb6nv/WzFrGop3RFMY1d/Fd67dm9rmZNYtFO6OpoGv2O+50M8sxs38UZ/sipSDP30DgQ+fcKcCHvt9D6QMsL5ZWFa1wrjkb6OucawC0Bm4xs4bF2MaoMLNk4CmgI9AQuDrIdXQETvF99QDGF2sjoyzMa14DnO2cawoMI8FvBoZ5zXnH/QuYVbwtjJyCPH+XAJN8P08CLg12kJnVBC4Gni2eZhWpAq/ZObfFOfeV7+fdeB9gNYqrgVF0BrDKOfeDc+4AMBXv+v1dArzkPPOBY82sWnE3NIoKvGbn3OfOuZ98v84HahZzG6MtnH/OALcC/wa2FWfjokFBnr+qzrkt4IUXcEKI48YAdwG5xdSuohTuNQNgZnWAFsCCom9a1NUANvj9vpHDP5DCOSaRFPZ6rgf+U6QtKnoFXrOZ1QAuAyYUY7uiJrG2eisCZjYHODHIU3eH+fpOwDbn3CIzaxfFphWZSK/Z7zwV8HowtzvnfolG24qZBXkscDxuOMckkrCvx8zOwQvyM4u0RUUvnGseAwxwzuWYBTs8vpX6IHfOnR/qOTPbambVnHNbfP87Hex/udoAnc3sIiAVqGRmrzjnri2iJkcsCteMmaXghfirzrm3iqipRW0jUMvv95rA5iM4JpGEdT1m1hSvVNjRObejmNpWVMK55nRgqi/EqwAXmVm2c256sbQwQiqt5G8G0M33czfg7cADnHODnHM1nXN1gKuAufEc4mEo8JrN+7f9OWC5c+7RYmxbtH0JnGJmdc2sLN4/vxkBx8wAuvpGr7QGfs4rPSWoAq/ZzGoDbwHXOef+G4M2RluB1+ycq+ucq+P77/hN4OZECXFQkBdkJHCBma0ELvD9jplVN7OZMW1Z0QnnmtsA1wHnmtli39dFsWnukXPOZQO98UYpLAded84tNbNeZtbLd9hM4AdgFfAMcHNMGhslYV7zvUAaMM73z3ZhjJobFWFec0LTFH0RkQSnHrmISIJTkIuIJDgFuYhIglOQi4gkOAW5iEiCU5CLiCQ4BbmISIL7f9nepQUZPfv8AAAAAElFTkSuQmCC
+<img src="data:image/png;base64,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
 "
 >
 </div>
@@ -15428,7 +15480,7 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Iterator</span>
@@ -15473,7 +15525,7 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 임의의 기울기와 절편으로 시작</span>
@@ -15488,13 +15540,13 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
     <span class="c1"># 따라서 한 번의 에포크마다 5번 MSE와 그레이디언트 계산 후 기울기와 절편 업데이트</span>
     <span class="c1"># 섞기 옵션 사용</span>
     <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">minibatches</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
-        <span class="n">grad</span> <span class="o">=</span> <span class="n">vector_mean</span><span class="p">([</span><span class="n">linear_gradient</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">])</span>
-        <span class="n">theta</span> <span class="o">=</span> <span class="n">gradient_step</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="o">-</span><span class="n">learning_rate</span><span class="p">)</span>
+        <span class="n">grad</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">vector_mean</span><span class="p">([</span><span class="n">linear_gradient</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">])</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="n">gradient_step</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">)</span>
     <span class="c1"># 100개의 에포크가 지날 때마다 학습 내용 출력</span>
     <span class="k">if</span> <span class="n">epoch</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
 
-<span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span> <span class="o">=</span> <span class="n">theta</span>
+<span class="n">intercept</span><span class="p">,</span> <span class="n">slope</span> <span class="o">=</span> <span class="n">theta</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;최종 기울기: </span><span class="si">{</span><span class="n">slope</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;최종 절편: </span><span class="si">{</span><span class="n">intercept</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -15517,18 +15569,18 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0 [-0.18096617572366355, -0.810253155496382]
-100 [1.4325823295978932, 2.7965832049687727]
-200 [2.9277291181808662, 4.127583024520555]
-300 [4.307256114408177, 4.6201205624228345]
-400 [5.577858834315078, 4.805372329280058]
-500 [6.747297927532496, 4.877973082222024]
-600 [7.823358363323769, 4.9075106536945095]
-700 [8.813363542511828, 4.9227014341159645]
-800 [9.724173605813512, 4.930098309332715]
-900 [10.562099366999867, 4.935898279024058]
-최종 기울기: 11.326
-최종 절편: 4.940
+<pre>0 [-0.14700601161032584, -0.850324957636322]
+100 [3.0383003005334195, 0.81879593562066]
+200 [4.21458258079334, 2.363808765349366]
+300 [4.65037766647808, 3.7887387104243513]
+400 [4.814916905651929, 5.100937311842601]
+500 [4.880054707558669, 6.308581062740375]
+600 [4.906941797916403, 7.419765388918784]
+700 [4.921300749140654, 8.442074919728974]
+800 [4.928451522266928, 9.382601070352939]
+900 [4.934261548296817, 10.247863490712117]
+최종 기울기: 11.036
+최종 절편: 4.939
 </pre>
 </div>
 </div>
@@ -15546,7 +15598,7 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 임의의 기울기와 절편으로 시작</span>
@@ -15561,13 +15613,13 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
     <span class="c1"># 따라서 한 번의 에포크마다 5번 MSE와 그레이디언트 계산 후 기울기와 절편 업데이트</span>
     <span class="c1"># 섞기 옵션 사용</span>
     <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">minibatches</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
-        <span class="n">grad</span> <span class="o">=</span> <span class="n">vector_mean</span><span class="p">([</span><span class="n">linear_gradient</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">])</span>
-        <span class="n">theta</span> <span class="o">=</span> <span class="n">gradient_step</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="o">-</span><span class="n">learning_rate</span><span class="p">)</span>
+        <span class="n">grad</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">vector_mean</span><span class="p">([</span><span class="n">linear_gradient</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">])</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="n">gradient_step</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">)</span>
     <span class="c1"># 100개의 에포크가 지날 때마다 학습 내용 출력</span>
     <span class="k">if</span> <span class="n">epoch</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
 
-<span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span> <span class="o">=</span> <span class="n">theta</span>
+<span class="n">intercept</span><span class="p">,</span> <span class="n">slope</span> <span class="o">=</span> <span class="n">theta</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;최종 기울기: </span><span class="si">{</span><span class="n">slope</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;최종 절편: </span><span class="si">{</span><span class="n">intercept</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -15590,16 +15642,16 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0 [1.0089547406154515, 0.9789387260040882]
-100 [11.920008658960944, 4.952894140709578]
-200 [16.630466145513115, 4.970879458498564]
-300 [18.65959750842576, 4.983489508744]
-400 [19.533544758414724, 4.986114887570471]
-500 [19.910159234650248, 4.9876175552247615]
-600 [20.072120246973697, 4.988277830931272]
-700 [20.141813699267466, 4.989044796751943]
-800 [20.171950036505514, 4.989673862726055]
-900 [20.18490980813245, 4.988704425280094]
+<pre>0 [1.237825277922001, 0.7249192271332124]
+100 [4.952368308578804, 11.798388090708]
+200 [4.970608256534244, 16.578080917985734]
+300 [4.983392717759511, 18.637033407981054]
+400 [4.986056813379833, 19.523825735584676]
+500 [4.987595092175629, 19.90597277649338]
+600 [4.988266095521663, 20.070316968833907]
+700 [4.989040195003638, 20.14103697686222]
+800 [4.989672228772879, 20.17161547560229]
+900 [4.988703699118148, 20.184765698131514]
 최종 기울기: 20.190
 최종 절편: 4.989
 </pre>
@@ -15619,7 +15671,7 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 임의의 기울기와 절편으로 시작</span>
@@ -15628,19 +15680,19 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 <span class="c1"># 학습률 지정</span>
 <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.01</span>
 
-<span class="c1"># 3000번의 에포크</span>
+<span class="c1"># 1000번의 에포크</span>
 <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3000</span><span class="p">):</span>
     <span class="c1"># 미니배치의 크기를 20으로 지정함</span>
     <span class="c1"># 따라서 한 번의 에포크마다 5번 MSE와 그레이디언트 계산 후 기울기와 절편 업데이트</span>
     <span class="c1"># 섞기 옵션 사용</span>
     <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">minibatches</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
-        <span class="n">grad</span> <span class="o">=</span> <span class="n">vector_mean</span><span class="p">([</span><span class="n">linear_gradient</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">])</span>
-        <span class="n">theta</span> <span class="o">=</span> <span class="n">gradient_step</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="o">-</span><span class="n">learning_rate</span><span class="p">)</span>
+        <span class="n">grad</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">vector_mean</span><span class="p">([</span><span class="n">linear_gradient</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">])</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="n">gradient_step</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">)</span>
     <span class="c1"># 100개의 에포크가 지날 때마다 학습 내용 출력</span>
-    <span class="k">if</span> <span class="n">epoch</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">epoch</span> <span class="o">%</span> <span class="mi">300</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
 
-<span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span> <span class="o">=</span> <span class="n">theta</span>
+<span class="n">intercept</span><span class="p">,</span> <span class="n">slope</span> <span class="o">=</span> <span class="n">theta</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;최종 기울기: </span><span class="si">{</span><span class="n">slope</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;최종 절편: </span><span class="si">{</span><span class="n">intercept</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -15663,36 +15715,16 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0 [-0.818987279044814, 0.5496759496355055]
-100 [11.132254675200233, 4.944402547449223]
-200 [16.29128890751974, 4.967275599762484]
-300 [18.51315652813586, 4.978364613062517]
-400 [19.470399111844596, 4.984337308055089]
-500 [19.882668827278895, 4.988157388454654]
-600 [20.060140900004065, 4.987966154755475]
-700 [20.136885552244106, 4.987828522542775]
-800 [20.16977510712028, 4.988976100905835]
-900 [20.183962972393914, 4.989098169073801]
-1000 [20.19002718033645, 4.989306092251666]
-1100 [20.19268900836928, 4.989013649684174]
-1200 [20.193941008879644, 4.98931327368746]
-1300 [20.194440751083505, 4.988662935916931]
-1400 [20.194676502572356, 4.989409414992472]
-1500 [20.19501205890768, 4.989279358430207]
-1600 [20.194844639671665, 4.9895094830280255]
-1700 [20.195038900604747, 4.989915517219994]
-1800 [20.195104991373057, 4.988570101328778]
-1900 [20.195111383724566, 4.989401145459436]
-2000 [20.194820820191822, 4.988704721391355]
-2100 [20.194956704659234, 4.989706094313501]
-2200 [20.194893907702024, 4.989209975413154]
-2300 [20.19482708931829, 4.989765252131663]
-2400 [20.19497162191007, 4.990361301343332]
-2500 [20.19504959681753, 4.989715152995273]
-2600 [20.195037903439133, 4.989885179868943]
-2700 [20.195048938410093, 4.989683544147567]
-2800 [20.194794217945287, 4.988956630961846]
-2900 [20.19472935840392, 4.9896646884885545]
+<pre>0 [-0.43549987222961334, 0.26254473969499653]
+300 [4.978902536543744, 18.599116202912136]
+600 [4.988010821486811, 20.067010548132913]
+900 [4.989101560704833, 20.18451199354063]
+1200 [4.989313445216165, 20.193984886037637]
+1500 [4.98927937941379, 20.195015565259936]
+1800 [4.988570103335046, 20.195105271575724]
+2100 [4.989706094445955, 20.194956727051277]
+2400 [4.990361301352804, 20.194971623699445]
+2700 [4.989683544148361, 20.19504893855309]
 최종 기울기: 20.194
 최종 절편: 4.989
 </pre>
@@ -15706,7 +15738,7 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>학습 과정을 살펴보면 기울기가 19.966 정도에서 더 이상 좋아지지 않는다.
+<p>학습 과정을 살펴보면 기울기가 20.195 정도에서 더 이상 좋아지지 않는다.
 이런 경우 특별히 더 좋은 결과를 얻을 수 없다는 것을 의미한다.
 사실, 데이터셋을 지정할 때 가우시안 잡음을 추가하였기에 완벽한 선형함수를 찾는 것은 애초부터 불가능하다.
 따라서 위 결과를 미니배치 경사하강법을 사용한 선형회귀로 얻을 수 있는 최선으로 볼 수 있다.</p>
@@ -15731,7 +15763,7 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
@@ -15743,11 +15775,11 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">:</span>
         <span class="n">grad</span> <span class="o">=</span> <span class="n">linear_gradient</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
-        <span class="n">theta</span> <span class="o">=</span> <span class="n">gradient_step</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="o">-</span><span class="n">learning_rate</span><span class="p">)</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="n">gradient_step</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">epoch</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
 
-<span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span> <span class="o">=</span> <span class="n">theta</span>
+<span class="n">intercept</span><span class="p">,</span> <span class="n">slope</span> <span class="o">=</span> <span class="n">theta</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;최종 기울기: </span><span class="si">{</span><span class="n">slope</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;최종 절편: </span><span class="si">{</span><span class="n">intercept</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -15770,16 +15802,16 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0 [-0.15554810709612274, 1.509287732512692]
-100 [16.342595331414632, 5.034998314265212]
-200 [19.472338990801568, 4.997992330602081]
-300 [20.06303054508488, 4.991008012136133]
-400 [20.174514599453477, 4.989689828163571]
-500 [20.19555552053715, 4.989441040970666]
-600 [20.199526674641238, 4.989394086168721]
-700 [20.200276169630307, 4.98938522416341]
-800 [20.200417625419696, 4.9893835515945835]
-900 [20.200444323050316, 4.989383235922631]
+<pre>0 [0.550382182232026, 0.9895536437047407]
+100 [5.032490886155949, 16.554658325069674]
+200 [4.997519092010245, 19.51236265820966]
+300 [4.990918695543546, 20.070584404084553]
+400 [4.989672971014022, 20.175940275546683]
+500 [4.9894378594398585, 20.19582459523417]
+600 [4.9893934857031255, 20.19957745840122]
+700 [4.989385110834649, 20.20028575429328]
+800 [4.989383530205495, 20.200419434379114]
+900 [4.989383231885758, 20.20044466446389]
 최종 기울기: 20.200
 최종 절편: 4.989
 </pre>
@@ -15793,13 +15825,13 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>학습률을 0.01로 하면 오히려 결과가 나빠진다.</p>
+<p>학습률을 0.01로 하면 결과가 오히려 좀 더 나빠진다.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
@@ -15811,11 +15843,11 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">:</span>
         <span class="n">grad</span> <span class="o">=</span> <span class="n">linear_gradient</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
-        <span class="n">theta</span> <span class="o">=</span> <span class="n">gradient_step</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="o">-</span><span class="n">learning_rate</span><span class="p">)</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="n">gradient_step</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">epoch</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
 
-<span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span> <span class="o">=</span> <span class="n">theta</span>
+<span class="n">intercept</span><span class="p">,</span> <span class="n">slope</span> <span class="o">=</span> <span class="n">theta</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;최종 기울기: </span><span class="si">{</span><span class="n">slope</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;최종 절편: </span><span class="si">{</span><span class="n">intercept</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -15838,16 +15870,16 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0 [2.259915006214208, 6.8246196207535865]
-100 [20.261030045940156, 4.990193171642614]
-200 [20.26103222379059, 4.990192825899716]
-300 [20.26103222379092, 4.990192825899663]
-400 [20.26103222379092, 4.990192825899663]
-500 [20.26103222379092, 4.990192825899663]
-600 [20.26103222379092, 4.990192825899663]
-700 [20.26103222379092, 4.990192825899663]
-800 [20.26103222379092, 4.990192825899663]
-900 [20.26103222379092, 4.990192825899663]
+<pre>0 [6.8116974087303825, 2.3020744483619793]
+100 [4.990193170861476, 20.26103005086055]
+200 [4.990192825899716, 20.26103222379059]
+300 [4.990192825899663, 20.26103222379092]
+400 [4.990192825899663, 20.26103222379092]
+500 [4.990192825899663, 20.26103222379092]
+600 [4.990192825899663, 20.26103222379092]
+700 [4.990192825899663, 20.26103222379092]
+800 [4.990192825899663, 20.26103222379092]
+900 [4.990192825899663, 20.26103222379092]
 최종 기울기: 20.261
 최종 절편: 4.990
 </pre>
@@ -15868,9 +15900,18 @@ $$<p>아래 코드는 특정 x에 대한 실제 값 y와 예측치 $\hat y$ 사�
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>앞서 살펴본 것에 따르면 확률적 경사하강법의 성능이 가장 좋았다.
 하지만 이것은 경우에 따라 다르다.
-배치 경사하강법, 미니배치 경사하강법, 확률적 경사하강법 각각의 장단점이 있지만
-여기서는 더 이상 자세히 다루지 않는다.</p>
+아래 그림은 각각의 방식에서 절편과 기울기가 학습되는 과정을 잘 보여준다.</p>
+<ul>
+<li>배치학습: 수렴값에 진동 없이 가장 빠르게 접근.</li>
+<li>미니배치 학습: 중간 속도로 접근함. 수렴값 근처에서 진동이 어느 정도 있음.</li>
+<li>확률적 경사 하강법: 매우 변화가 심함. 극한값 근처에서 여전히 진동이 심함.</li>
+</ul>
 
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div align="center"><img src="https://raw.githubusercontent.com/codingalzi/handson-ml2/master/slides/images/ch04/homl04-05.png" width="500"/></div>
 </div>
 </div>
 </body>
