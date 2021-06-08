@@ -53,6 +53,12 @@
     - 4편: 고급 넘파이 기능 &nbsp;
         [[html]](./notebooks/pydata04_numpy_basics_4.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata04_numpy_basics_4.ipynb)
+1. 선형대수 기초 밑바닥부터: 벡터와 행렬 &nbsp;
+        [[html]](./notebooks/pydata06_linear_algebra_basics.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata06_linear_algebra_basics.ipynb)
+1. 통계 기초 밑바닥부터: 중심경향성, 산포도, 상관관계 &nbsp;
+        [[html]](./notebooks/pydata07_Statistics_basics.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata07_Statistics_basics.ipynb)
 1. 판다스(pandas) 
     - 1편: 시리즈(Series), 데이터프레임(DataFrame) 소개 &nbsp;
         [[html]](./notebooks/pydata05_pandas_basics_1.html),
@@ -63,12 +69,6 @@
     - 3편: 기초 통계 활용 &nbsp;
         [[html]](./notebooks/pydata05_pandas_basics_3.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata05_pandas_basics_3.ipynb)
-1. 선형대수 기초 밑바닥부터: 벡터와 행렬 &nbsp;
-        [[html]](./notebooks/pydata06_linear_algebra_basics.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata06_linear_algebra_basics.ipynb)
-1. 통계 기초 밑바닥부터: 중심경향성, 산포도, 상관관계 &nbsp;
-        [[html]](./notebooks/pydata07_Statistics_basics.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata07_Statistics_basics.ipynb)
 1. 그래프와 시각화
     - 1편: 막대 그래프, 히스토그램, 선 그래프, 산점도 &nbsp;
         [[html]](./notebooks/pydata08_plotting_visualization_1.html),
