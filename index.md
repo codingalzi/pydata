@@ -66,26 +66,29 @@
 1. 선형대수 기초 밑바닥부터: 벡터와 행렬 &nbsp;
         [[html]](./notebooks/pydata06_linear_algebra_basics.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata06_linear_algebra_basics.ipynb)
+1. 통계 기초 밑바닥부터: 평균, 분산, 표준편차, 상관관계 &nbsp;
+        [[html]](./notebooks/pydata07_Statistics_basics.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata07_Statistics_basics.ipynb)
 1. 그래프와 시각화
     - 1편: 막대 그래프, 히스토그램, 선 그래프, 산점도 &nbsp;
-        [[html]](./notebooks/pydata07_plotting_visualization_1.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata07_plotting_visualization_1.ipynb)
+        [[html]](./notebooks/pydata08_plotting_visualization_1.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata08_plotting_visualization_1.ipynb)
     - 2편: matplotlib.pyplot의 시각화 도구 API &nbsp;
-        [[html]](./notebooks/pydata07_plotting_visualization_2.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata07_plotting_visualization_2.ipynb)
+        [[html]](./notebooks/pydata08_plotting_visualization_2.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata08_plotting_visualization_2.ipynb)
     - 3편: 판다스와 Seaborn의 시각화 도구 API &nbsp;
-        [[html]](./notebooks/pydata07_plotting_visualization_3.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata07_plotting_visualization_3.ipynb)
+        [[html]](./notebooks/pydata08_plotting_visualization_3.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata08_plotting_visualization_3.ipynb)
 1. 머신러닝 맛보기
     - 1편: 선형회귀, 정규 방정식, 무어_펜로즈 역행렬 &nbsp;
-        [[html]](./notebooks/pydata08_machine_learning_preview_1.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata08_machine_learning_preview_1.ipynb)
+        [[html]](./notebooks/pydata09_machine_learning_preview_1.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata09_machine_learning_preview_1.ipynb)
     - 2편: 경사 하강법 &nbsp;
-        [[html]](./notebooks/pydata08_machine_learning_preview_2.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata08_machine_learning_preview_2.ipynb)
+        [[html]](./notebooks/pydata09_machine_learning_preview_2.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata09_machine_learning_preview_2.ipynb)
     - 3편: 머신러닝 한 눈에 보기 &nbsp;
-        [[html]](./notebooks/pydata08_machine_learning_preview_3.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata08_machine_learning_preview_3.ipynb)
+        [[html]](./notebooks/pydata09_machine_learning_preview_3.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata09_machine_learning_preview_3.ipynb)
 
 ### 실습 과제
 
