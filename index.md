@@ -66,7 +66,7 @@
 1. 선형대수 기초 밑바닥부터: 벡터와 행렬 &nbsp;
         [[html]](./notebooks/pydata06_linear_algebra_basics.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata06_linear_algebra_basics.ipynb)
-1. 통계 기초 밑바닥부터: 평균, 분산, 표준편차, 상관관계 &nbsp;
+1. 통계 기초 밑바닥부터: 중심경향성, 산포도, 상관관계 &nbsp;
         [[html]](./notebooks/pydata07_Statistics_basics.html),
         [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata07_Statistics_basics.ipynb)
 1. 그래프와 시각화
