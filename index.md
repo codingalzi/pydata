@@ -1,4 +1,4 @@
-[&lt;파이썬 라이브러리를 활용한 데이터 분석(2판)&gt;의 소스코드](https://github.com/wesm/pydata-book)를 
+[&lt;파이썬 라이브러리를 활용한 데이터 분석(2판)&gt;의 소스코드](https://github.com/wesm/pydata_book)를 
 담고 있는 주피터 노트북과
 [&lt;밑바닥부터 시작하는 데이터 과학(2판)&gt;의 소스코드](https://github.com/joelgrus/data-science-from-scratch)를 
 기본 틀로 삼아
@@ -12,80 +12,80 @@
 ### 목차
 
 1. 강의 목표 및 주요 내용 &nbsp; 
-    [[html]](./notebooks/pydata01-intro.html)
+    [[html]](./notebooks/pydata01_intro.html)
 
 1. 파이썬 프로그래밍 기초 1부 
     - 1편: 기초 문법 &nbsp;
-        [[html]](./notebooks/pydata02-python-basics-1.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata02-python-basics-1.ipynb)
+        [[html]](./notebooks/pydata02_python_basics_1.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata02_python_basics_1.ipynb)
     - 2편: 스칼라 자료형, 제어문(if 조건문, for 반복문, while 반복문) &nbsp;
-        [[html]](./notebooks/pydata02-python-basics-2.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata02-python-basics-2.ipynb)
+        [[html]](./notebooks/pydata02_python_basics_2.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata02_python_basics_2.ipynb)
 1. 파이썬 프로그래밍 기초 2부
     - 1편: 모음 자료형 1편(튜플, 리스트), `range()` 함수 &nbsp;
-        [[html]](./notebooks/pydata03-python-basics-1.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata03-python-basics-1.ipynb)
+        [[html]](./notebooks/pydata03_python_basics_1.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata03_python_basics_1.ipynb)
     - 2편: 모음 자료형 2편(사전, 집합), 조건 제시법(comprehension) &nbsp;
-        [[html]](./notebooks/pydata03-python-basics-2.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata03-python-basics-2.ipynb)
+        [[html]](./notebooks/pydata03_python_basics_2.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata03_python_basics_2.ipynb)
     - 3편: 함수 &nbsp;
-        [[html]](./notebooks/pydata03-python-basics-3.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata03-python-basics-3.ipynb)
+        [[html]](./notebooks/pydata03_python_basics_3.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata03_python_basics_3.ipynb)
     - 4편: 이터러블/이터레이터/제너레이터, 오류와 예외처리, 파일 &nbsp;
-        [[html]](./notebooks/pydata03-python-basics-4.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata03-python-basics-4.ipynb)
+        [[html]](./notebooks/pydata03_python_basics_4.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata03_python_basics_4.ipynb)
     - 5편: 클래스와 자료형 &nbsp;
-        [[html]](./notebooks/pydata03-python-basics-5.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata03-python-basics-5.ipynb)
+        [[html]](./notebooks/pydata03_python_basics_5.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata03_python_basics_5.ipynb)
     - 6편: 자료형 명시(type annotation) &nbsp;
-        [[html]](./notebooks/pydata03-python-basics-6.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata03-python-basics-6.ipynb)
+        [[html]](./notebooks/pydata03_python_basics_6.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata03_python_basics_6.ipynb)
 1. 넘파이(numpy)
     - 1편: 넘파이 어레이 소개, 어레이 기초 연산 &nbsp;
-        [[html]](./notebooks/pydata04-numpy-basics-1.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata04-numpy-basics-1.ipynb)
+        [[html]](./notebooks/pydata04_numpy_basics_1.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata04_numpy_basics_1.ipynb)
     - 2편: 어레이 인덱싱, 슬라이싱, 전치 어레이 &nbsp;
-        [[html]](./notebooks/pydata04-numpy-basics-2.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata04-numpy-basics-2.ipynb)
+        [[html]](./notebooks/pydata04_numpy_basics_2.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata04_numpy_basics_2.ipynb)
     - 3편: 어레이 활용: 정렬, 확률과 통계, 선형대수, 난수 생성 &nbsp;
-        [[html]](./notebooks/pydata04-numpy-basics-3.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata04-numpy-basics-3.ipynb)
+        [[html]](./notebooks/pydata04_numpy_basics_3.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata04_numpy_basics_3.ipynb)
     - 4편: 고급 넘파이 기능 &nbsp;
-        [[html]](./notebooks/pydata04-numpy-basics-4.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata04-numpy-basics-4.ipynb)
+        [[html]](./notebooks/pydata04_numpy_basics_4.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata04_numpy_basics_4.ipynb)
 1. 판다스(pandas) 
     - 1편: 시리즈(Series), 데이터프레임(DataFrame) 소개 &nbsp;
-        [[html]](./notebooks/pydata05-pandas-basics-1.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata05-pandas-basics-1.ipynb)
+        [[html]](./notebooks/pydata05_pandas_basics_1.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata05_pandas_basics_1.ipynb)
     - 2편: 시리즈, 데이터프레임 핵심 기능 &nbsp;
-        [[html]](./notebooks/pydata05-pandas-basics-2.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata05-pandas-basics-2.ipynb)
+        [[html]](./notebooks/pydata05_pandas_basics_2.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata05_pandas_basics_2.ipynb)
     - 3편: 기초 통계 활용 &nbsp;
-        [[html]](./notebooks/pydata05-pandas-basics-3.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata05-pandas-basics-3.ipynb)
+        [[html]](./notebooks/pydata05_pandas_basics_3.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata05_pandas_basics_3.ipynb)
 1. 선형대수 기초 밑바닥부터: 벡터와 행렬 &nbsp;
-        [[html]](./notebooks/pydata06-linear-algebra-basics.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata06-linear-algebra-basics.ipynb)
+        [[html]](./notebooks/pydata06_linear_algebra_basics.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata06_linear_algebra_basics.ipynb)
 1. 그래프와 시각화
     - 1편: 막대 그래프, 히스토그램, 선 그래프, 산점도 &nbsp;
-        [[html]](./notebooks/pydata07-plotting-visualization-1.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata07-plotting-visualization-1.ipynb)
+        [[html]](./notebooks/pydata07_plotting_visualization_1.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata07_plotting_visualization_1.ipynb)
     - 2편: matplotlib.pyplot의 시각화 도구 API &nbsp;
-        [[html]](./notebooks/pydata07-plotting-visualization-2.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata07-plotting-visualization-2.ipynb)
+        [[html]](./notebooks/pydata07_plotting_visualization_2.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata07_plotting_visualization_2.ipynb)
     - 3편: 판다스와 Seaborn의 시각화 도구 API &nbsp;
-        [[html]](./notebooks/pydata07-plotting-visualization-3.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata07-plotting-visualization-3.ipynb)
+        [[html]](./notebooks/pydata07_plotting_visualization_3.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata07_plotting_visualization_3.ipynb)
 1. 머신러닝 맛보기
-    - 1편: 선형회귀, 정규 방정식, 무어-펜로즈 역행렬 &nbsp;
-        [[html]](./notebooks/pydata08-machine-learning-preview-1.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata08-machine-learning-preview-1.ipynb)
-    - 2편: 머신러닝 한 눈에 보기 &nbsp;
-        [[html]](./notebooks/pydata08-machine-learning-preview-2.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata08-machine-learning-preview-2.ipynb)
-    - 3편: 경사 하강법 &nbsp;
-        [[html]](./notebooks/pydata08-machine-learning-preview-3.html),
-        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata08-machine-learning-preview-3.ipynb)
+    - 1편: 선형회귀, 정규 방정식, 무어_펜로즈 역행렬 &nbsp;
+        [[html]](./notebooks/pydata08_machine_learning_preview_1.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata08_machine_learning_preview_1.ipynb)
+    - 2편: 경사 하강법 &nbsp;
+        [[html]](./notebooks/pydata08_machine_learning_preview_2.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata08_machine_learning_preview_2.ipynb)
+    - 3편: 머신러닝 한 눈에 보기 &nbsp;
+        [[html]](./notebooks/pydata08_machine_learning_preview_3.html),
+        [[colab]](https://colab.research.google.com/github/codingalzi/pydata/blob/master/notebooks/pydata08_machine_learning_preview_3.ipynb)
 
 ### 실습 과제
 
