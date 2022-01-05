@@ -118,7 +118,7 @@
 
 파이썬 프로그래밍이 처음이거나 기초가 약하다면 아래 파이썬 데이터 분석 프로그래밍 왕기초 내용을 먼저 읽기를 추천합니다.
 
-* [Elements of Data Science](https://allendowney.github.io/ElementsOfDataScience/README.html)
+* [Elements of Data Science](https://allendowney.github.io/ElementsOfDataScience/README.html), Allen B. Downey
 * [파이썬 데이터 과학 입문](https://formal.hknu.ac.kr/Gongsu-DataSci/)
 
 ### 프로그래밍 환경
