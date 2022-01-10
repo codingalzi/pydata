@@ -1,4 +1,4 @@
-[&lt;파이썬 라이브러리를 활용한 데이터 분석(2판)&gt;의 소스코드](https://github.com/wesm/pydata_book)를 
+[&lt;파이썬 라이브러리를 활용한 데이터 분석(2판)&gt;의 소스코드](https://github.com/wesm/pydata-book)를 
 담고 있는 주피터 노트북과
 [&lt;밑바닥부터 시작하는 데이터 과학(2판)&gt;의 소스코드](https://github.com/joelgrus/data-science-from-scratch)를 
 기본 틀로 삼아
